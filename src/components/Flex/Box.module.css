@@ -1,0 +1,36 @@
+.flex {
+  display: flex;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.p1 {
+  padding: 0;
+}
+
+.p1 {
+  padding: 4px;
+}
+
+.p2 {
+  padding: 8px;
+}
+
+.p3 {
+  padding: 16px;
+}
+
+.p4 {
+  padding: 32px;
+}
+
+.p5 {
+  padding: 32px;
+}
+
+.p6 {
+  padding: 64px;
+}

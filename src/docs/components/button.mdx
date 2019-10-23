@@ -1,0 +1,96 @@
+---
+title: Button
+path: /components/button
+group: Components
+status: In Progress
+updated: '2019-09-01'
+owner: CM
+---
+
+Buttons are simple controls for executing specific on-page actions and code. Buttons are most commonly used in forms, dialogs, and modals to facilitate required user actions.
+
+## Useage Guidelines
+
+- **Do** make sure the label conveys a clear purpose of the button to the user.
+- **Do not** use generic labels like "Ok," especially in the case of an error; errors are never "Ok."
+
+## Variations
+
+```jsx
+<div>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button>Bare</Button>
+</div>
+```
+
+## Small
+
+```jsx
+<div>
+  <Button color="primary" small>
+    Primary
+  </Button>
+  <Button color="secondary" small>
+    Secondary
+  </Button>
+  <Button small>Bare</Button>
+</div>
+```
+
+## Icon Buttons
+
+```jsx
+<div>
+  <Button type="circle" color="primary">
+    <Icon iconName="pause" />
+  </Button>
+
+  <Button small type="circle" color="primary">
+    <Icon iconName="pause" />
+  </Button>
+</div>
+```
+
+## Toggle Buttons
+
+```jsx
+<div>
+  <Button small color="secondary">
+    <Icon iconName="cross-thin" color="muted" />
+    <Text>Delete</Text>
+  </Button>
+
+  <Button small toggled color="secondary">
+    <Icon iconName="cross-thin" color="danger" />
+    <Text>Delete</Text>
+  </Button>
+</div>
+```
+
+## Special Buttons
+
+- Next & Previous
+- Media Buttons
+
+## Accessibility
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+## Properties
+
+## See Also
+
+- [Icon](http://github.com)
+
+## References
+
+- [Material UI](https://material.io/components/buttons/)
+- [WCAG Submit Button](https://www.w3.org/WAI/WCAG21/Techniques/general/G80)
+- [Just use button -- A11ycasts #05](https://www.youtube.com/watch?v=CZGqnp06DnI)
+
+## Fine Print
+
+- Version: 0.1
+- Last Updated: April 1, 2019
+- Owner: CM

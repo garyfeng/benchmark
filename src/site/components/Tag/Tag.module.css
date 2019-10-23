@@ -1,0 +1,18 @@
+.tag {
+  font-size: 0.75rem;
+  padding: 6px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.success {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.warning {
+  background-color: var(--color-warning);
+}
+
+.danger {
+  background-color: var(--color-danger);
+}

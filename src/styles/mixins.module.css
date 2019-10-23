@@ -1,0 +1,9 @@
+.focus {
+  outline-offset: -4px;
+  outline: 1px dotted;
+}
+
+.debug * {
+  background: rgba(83, 201, 255, 0.1);
+  box-shadow: 0 0 0 1px rgb(153, 198, 254);
+}

@@ -1,0 +1,100 @@
+---
+title: Colors
+path: /guidelines/colors
+group: Guidelines
+status: In Progress
+---
+
+## Overview
+
+NDS provides a base set of colors from which everything is built upon.
+
+- Consitancy
+- Easy to update
+- Design tokens
+- CSS variables
+  - Colors are not hard coded
+- AAA WCAG
+
+### Semantec Naming
+
+All colors semantic. Their semantic name is static and does not change over time. This provides the following benefits:
+
+1. Intent. The name of the color provides a clear understanding of the colors intended purpose. A color with name of color-warning makes is clear that the color is to convey a "warning" to the student.
+
+2. Shared Language. It is much easier to communicate within and between teams using semantic names. Communicating with color values or off the cuff references is confusing and inconsistent.
+
+3. Maintainability. A semantic name such as primary-color is agnostic of the color it is bound to. Today the primary-color is blue but we can change this to green tomorrow.
+
+4. Theming. Semantic names makes theming easy. One themes `primary-color` is a light blue while a color blind accessible theme may set it to a dark orange.
+
+## Colors
+
+### Main Colors
+
+<ColorSwatch name="Primary" color="--color-primary" />
+<ColorSwatch name="Secondary" color="--color-secondary" />
+
+### Neutrals
+
+A range of neutral colors are available. These colors play a supporting role in building out the UI.
+
+The scale ranges from 0 (black) to 10 (white). Each step in color increases the lightness by 10%. By default these neutral colors are on a grey scale but that may be set to another tone in other themes.
+
+To ensure that the UI is accessbile and maintains a high level of contrast the scale does not include colors in the middle of the range (4 to 6).
+
+For the dark theme the scale is reversed where 0 is white and 10 is black.
+
+<div>
+  <ColorSwatch name="Neutral 0" color="--color-neutral-0" />
+  <ColorSwatch name="Neutral 1" color="--color-neutral-1" />
+  <ColorSwatch name="Neutral 2" color="--color-neutral-2" />
+  <ColorSwatch name="Neutral 3" color="--color-neutral-3" />
+</div>
+<div>
+  <ColorSwatch name="Neutral 7" color="--color-neutral-7" />
+  <ColorSwatch name="Neutral 8" color="--color-neutral-8" />
+  <ColorSwatch name="Neutral 9" color="--color-neutral-9" />
+  <ColorSwatch name="Neutral 10" color="--color-neutral-10" border/>
+</div>
+
+### Feedback
+
+A set of colors available to help convey feedback to the student. Feedback is typically a result of an action they have just performed and is most often used within forms, modal dialogs and alerts.
+
+Color alone is not enough to convey meaning for students that are color blind. These colors should be used in a complimentary manner with other viual cues such as an icon.
+
+<ColorSwatch name="Info" color="--color-info" />
+<ColorSwatch name="Success" color="--color-success" />
+<ColorSwatch name="Warning" color="--color-warning" />
+<ColorSwatch name="Danger" color="--color-danger" />
+
+## See Also
+
+- Design Tokens
+- Forms
+- Modals
+- Calls to Action
+
+## References
+
+- [Carbon - Color Accessbility](https://www.carbondesignsystem.com/guidelines/accessibility/color)
+- [Re-approaching Color](https://design.lyft.com/re-approaching-color-9e604ba22c88)
+- [Designing accessible color systems](https://stripe.com/blog/accessible-color-systems)
+- [The Myths of Color Contrast Accessibility](https://uxmovement.com/buttons/the-myths-of-color-contrast-accessibility/)
+- [The light and the dark side](https://uxdesign.cc/the-light-and-the-dark-side-creating-a-ui-colour-system-in-3-steps-41818c5bdb60)
+- [Building a design system — where to start?](https://uxdesign.cc/building-a-design-system-where-to-start-part-2-colour-54fbe9b76d85)
+- [A Design System Approach to Improving Usability through Color](https://automattic.design/2019/03/11/a-design-system-approach-to-improving-usability-through-color/)
+
+## todo
+
+- Color variants (light and dark)
+  - Used for hover etc.
+- Color system (HSL)
+- Usage
+  - CSS Variables
+  - Tokens
+  - Using your own colors
+- Accesibility
+  - High contrast
+  - Dont rely on color alone to convey meaning

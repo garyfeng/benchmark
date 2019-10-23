@@ -1,0 +1,11 @@
+.theme {
+  /* colors: text */
+  --color-text: var(--color-neutral-1);
+  --color-links: var(--color-primary);
+
+  /* typography */
+  --font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Ubuntu, Arial, sans-serif;
+  --font-size: 18px;
+  --font-weight: 200;
+}

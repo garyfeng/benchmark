@@ -1,0 +1,19 @@
+.theme {
+  --color-text: #fff;
+  --color-bg: #000;
+  --color-primary: #143d66;
+  --color-accent: #3399ff;
+
+  /* button */
+  --btn-bg: var(--color-primary);
+  --btn-border-color: var(--color-accent);
+  --btn-border-width: var(--border-width);
+  --btn-color: var(--color-text);
+  --btn-primary-color: var(--color-text);
+  --btn-secondary-color: var(--color-accent);
+
+  --btn-primary-border: var(--border-width) solid var(--color-text);
+
+  /* form inputs */
+  --input-border: 1px solid var(--color-text);
+}

@@ -1,0 +1,45 @@
+.example {
+  width: 100%;
+  margin-top: 40px;
+  border: 1px solid #dfdfdf;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
+  /* border-radius: 4px; */
+}
+
+.codeframe {
+  position: relative;
+}
+
+.preview {
+  padding: 1.5em;
+}
+
+.code-utils {
+  position: absolute;
+  right: 0;
+  top: 2px;
+  padding: 6px;
+  font-family: Menlo, monospace;
+  font-size: 12px;
+}
+
+.code-utils span {
+  margin-right: 6px;
+  cursor: pointer;
+  padding: 3px;
+  user-select: none;
+  color: #999;
+}
+
+.code-utils span:hover {
+  text-decoration: underline;
+}
+
+.code {
+  position: relative;
+}
+
+.editor {
+  font-family: Menlo, monospace;
+  font-size: 16px;
+}

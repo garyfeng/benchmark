@@ -1,0 +1,39 @@
+.icon {
+  font-family: icons;
+}
+
+.icon:before {
+  content: attr(data-icon);
+}
+
+.small {
+  font-size: 16px;
+}
+
+.medium {
+  font-size: 24px;
+}
+
+.large {
+  font-size: 32px;
+}
+
+.huge {
+  font-size: 48px;
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.muted {
+  color: var(--color-muted);
+}
+
+.danger {
+  color: var(--color-danger);
+}

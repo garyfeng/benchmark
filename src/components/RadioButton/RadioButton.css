@@ -1,0 +1,26 @@
+.input {
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 0.292em 0;
+}
+
+.icon {
+  margin-right: 0.667em;
+}
+
+.disabled {
+  cursor: default;
+}
+
+.disabled .icon {
+  opacity: 0.3;
+}
