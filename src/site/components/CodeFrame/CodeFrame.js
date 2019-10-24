@@ -13,7 +13,7 @@ class CodeFrame extends PureComponent {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      theme: 0
+      theme: props.themes.indexOf(props.theme) || 0
     };
     this.toggleTheme = this.toggleTheme.bind(this);
   }
@@ -24,21 +24,21 @@ class CodeFrame extends PureComponent {
 
   render() {
     return (
-      <div className={classnames(global.base, typography.base)}>
-        <div className={css.toolbar}>
-          <div className={css.codeUtils}>
-            <div className={css.util}>
-              <span onClick={() => this.props.onToggleCode()}>Code</span>
-            </div>
-            <div className={css.util}>
-              <span>Playroom</span>
-            </div>
-            <div className={css.util}>
-              <span onClick={this.toggleTheme}>Theme</span>
+      <div className={classnames(css.codeframe, global.base, typography.base)}>
+        <ThemeProvider theme={this.props.themes[this.state.theme]}>
+          <div className={css.toolbar}>
+            <div className={css.codeUtils}>
+              <div className={css.util}>
+                <span onClick={() => this.props.onToggleCode()}>Code</span>
+              </div>
+              <div className={css.util}>
+                <span>Playroom</span>
+              </div>
+              <div className={css.util}>
+                <span onClick={this.toggleTheme}>Theme</span>
+              </div>
             </div>
           </div>
-        </div>
-        <ThemeProvider theme={this.props.themes[this.state.theme]}>
           <div className={css.content}>{this.props.children}</div>
         </ThemeProvider>
       </div>
@@ -47,11 +47,13 @@ class CodeFrame extends PureComponent {
 }
 
 CodeFrame.propTypes = {
-  themes: PropTypes.array
+  themes: PropTypes.array,
+  theme: PropTypes.string
 };
 
 CodeFrame.defaultProps = {
-  themes: ['Default', 'Dark', 'Beige']
+  themes: ['Default', 'Dark', 'Beige'],
+  theme: 'Default'
 };
 
 export default CodeFrame;

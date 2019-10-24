@@ -3,10 +3,10 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { mdx } from '@mdx-js/react';
 import * as Components from '../../../index.js';
 import css from './Example.module.css';
-import theme from './themes/github.js';
+import codeTheme from './themes/github.js';
 import CodeFrame from '../CodeFrame';
 
-export default ({ children, render }) => {
+export default ({ children, render, renderTheme = 'Default' }) => {
   const [showEditor, toggleCode] = useState(false);
 
   function Editor() {
@@ -37,9 +37,12 @@ export default ({ children, render }) => {
         code={children.trim()}
         transformCode={code => '/** @jsx mdx */' + code}
         scope={{ mdx, ...Components }}
-        theme={theme}
+        theme={codeTheme}
       >
-        <CodeFrame onToggleCode={() => toggleCode(!showEditor)}>
+        <CodeFrame
+          onToggleCode={() => toggleCode(!showEditor)}
+          theme={renderTheme}
+        >
           <div className={css.codeframe}>
             <LivePreview className={css.preview} />
           </div>

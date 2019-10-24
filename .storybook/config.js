@@ -30,7 +30,7 @@ const withStoryStyles = storyFn => {
 };
 
 // automatically import all files ending in *.stories.js
-const req = require.context('../src/components', true, /\.story\.js$/);
+const req = require.context('../src', true, /\.story\.js$/);
 
 function loadStories() {
   addDecorator(withA11y);

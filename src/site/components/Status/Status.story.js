@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Tag from './Tag';
+import Status from './Status';
 
-storiesOf('Docs', module).add('Tag', () => {
+storiesOf('Docs', module).add('Status', () => {
   const style = {
     display: 'grid',
     gridRowGap: '10px'
@@ -11,9 +11,9 @@ storiesOf('Docs', module).add('Tag', () => {
 
   return (
     <div style={style}>
-      <Tag type="success">Success</Tag>
-      <Tag type="warning">Warning</Tag>
-      <Tag type="danger">Danger</Tag>
+      <Status status="Pending" />
+      <Status status="In Progress" />
+      <Status status="Complete" />
     </div>
   );
 });
