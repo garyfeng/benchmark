@@ -1,9 +1,7 @@
 .example {
   width: 100%;
   margin-top: 40px;
-  border: 1px solid #dfdfdf;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
-  /* border-radius: 4px; */
+  border: 1px solid var(--color-neutral-9);
 }
 
 .codeframe {
@@ -28,7 +26,7 @@
   cursor: pointer;
   padding: 3px;
   user-select: none;
-  color: #999;
+  color: var(--color-neutral-1);
 }
 
 .code-utils span:hover {

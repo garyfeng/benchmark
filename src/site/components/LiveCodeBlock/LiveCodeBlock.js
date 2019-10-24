@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { mdx } from '@mdx-js/react';
 import * as Components from '../../../index.js';
-import css from './Example.module.css';
+import css from './LiveCodeBlock.module.css';
 import codeTheme from './themes/github.js';
 import CodeFrame from '../CodeFrame';
 

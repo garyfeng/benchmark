@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
 import '../components/GlobalStyles';
 import Layout from './components/Layout';
-import Example from './components/Example';
+import LiveCodeBlock from './components/LiveCodeBlock';
 import { Heading, Paragraph, Button, Icon, Text } from '../index.js';
 import Tag from './components/Tag';
 import ColorSwatch from './components/ColorSwatch';
@@ -17,7 +17,7 @@ const components = {
   h5: props => <Heading level={5} {...props} />,
   p: Paragraph,
   pre: props => <div {...props} />,
-  code: Example,
+  code: LiveCodeBlock,
   Tag: Tag,
   Button: Button,
   ColorSwatch,
