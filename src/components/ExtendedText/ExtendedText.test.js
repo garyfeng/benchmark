@@ -4,6 +4,6 @@ import ExtendedText from './ExtendedText';
 
 describe('ExtendedText', () => {
   it('renders without crashing', () => {
-    render(<ExtendedText />);
+    render(<ExtendedText label={'test'} />);
   });
 });

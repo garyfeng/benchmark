@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton should show a radio-selected icon when checked 1`] = `
+<label
+  class="radio"
+>
+  <span
+    class="icon icon radio-selected medium"
+    data-icon=""
+  />
+  <input
+    checked=""
+    class="input"
+    type="radio"
+    value=""
+  />
+</label>
+`;
+
+exports[`RadioButton should show a radio-unselected icon when not checked 1`] = `
+<label
+  class="radio"
+>
+  <span
+    class="icon icon radio-unselected medium"
+    data-icon=""
+  />
+  <input
+    class="input"
+    type="radio"
+    value=""
+  />
+</label>
+`;

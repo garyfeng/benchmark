@@ -5,6 +5,7 @@
   "main": "./dist/components/index.js",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watch",
     "lint": "eslint ./src; exit 0",
     "test-coverage": "jest --coverage",
     "styleguidist": "styleguidist server",
