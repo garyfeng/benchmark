@@ -1,16 +1,17 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import ExtendedText from './ExtendedText';
 import { axe, toHaveNoViolations } from 'jest-axe';
+import { render } from '@testing-library/react';
+import Icon from './Icon';
+
 expect.extend(toHaveNoViolations);
 
-describe('ExtendedText', () => {
+describe('Icon', () => {
   it('renders without crashing', () => {
-    render(<ExtendedText label={'test'} />);
+    render(<Icon />);
   });
 
   it('should not have basic accessibility issues', async () => {
-    const { container } = render(<ExtendedText label={'test'} />);
+    const { container } = render(<Icon />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

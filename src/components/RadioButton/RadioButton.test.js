@@ -1,6 +1,9 @@
 import React from 'react';
+import { axe, toHaveNoViolations } from 'jest-axe';
 import { render } from '@testing-library/react';
 import RadioButton from './RadioButton';
+
+expect.extend(toHaveNoViolations);
 
 function handleChange() {
   console.log('change');
@@ -9,6 +12,12 @@ function handleChange() {
 describe('RadioButton', () => {
   it('renders without crashing', () => {
     render(<RadioButton onChange={handleChange} />);
+  });
+
+  it('should not have basic accessibility issues', async () => {
+    const { container } = render(<RadioButton />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 
   xit('should have a label element wrapping the input', () => {
