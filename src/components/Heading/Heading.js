@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 function Heading({ children, className, id, level = 1 }) {
-  const classes = classnames(className, css.heading);
+  const classes = classnames(className, css[`level${level}`]);
   const H = 'h' + level;
 
   return (

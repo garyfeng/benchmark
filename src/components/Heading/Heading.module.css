@@ -1,3 +1,18 @@
-.heading {
-  /* stub */
+.level1 {
+  font-size: var(--font-size-9);
+}
+.level2 {
+  font-size: var(--font-size-8);
+}
+.level3 {
+  font-size: var(--font-size-7);
+}
+.level4 {
+  font-size: var(--font-size-6);
+}
+.level5 {
+  font-size: var(--font-size-5);
+}
+.level6 {
+  font-size: var(--font-size-4);
 }
