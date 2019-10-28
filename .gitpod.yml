@@ -1,8 +1,26 @@
 tasks:
-  - init: npm install
-    command: npm run storybook 
+  - init: >
+      touch /tmp/.npm-lock &&
+      npm install &&
+      rm /tmp/.npm-lock
+  # storybook
+  - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
+    command: npm run storybook
+  # playroom
+  - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
+    command: npm run playroom
+  # docs
+  - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
+    command: npm run docs
 
 # Ports to expose on workspace startup (optional)
 ports:
-  - port: 80
+  # storybook
+  - port: 5000
+    onOpen: open-browser
+  # playroom
+  - port: 5001
+    onOpen: open-browser
+  # Gasby docs
+  - port: 8000
     onOpen: open-browser
