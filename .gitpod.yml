@@ -1,10 +1,10 @@
 tasks:
-  - init: >
+  # storybook
+  - before: export DANGEROUSLY_DISABLE_HOST_CHECK=true
+    init: >
       touch /tmp/.npm-lock &&
       npm install &&
       rm /tmp/.npm-lock
-  # storybook
-  - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done
     command: npm run storybook
   # playroom
   - init: sleep 1 && while [ -f /tmp/.npm-lock ]; do sleep 1; done

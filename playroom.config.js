@@ -10,13 +10,17 @@ module.exports = {
   frameComponent: './src/components/private/FrameComponent.js',
   widths: [1600],
   port: 5001,
-  openBrowser: true,
+  openBrowser: false,
   exampleCode: `
     <Button>
       Hello World!
     </Button>
   `,
   webpackConfig: () => ({
+    devServer: {
+      host: '0.0.0.0',
+      allowedHosts: ['localhost', '.gitpod.io']
+    },
     module: {
       rules: [
         {
