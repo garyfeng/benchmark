@@ -8,7 +8,7 @@ export { default as Global } from './components/GlobalStyles';
 
 // general components
 export { default as Button } from './components/Button';
-export { default as Box } from './components/Flex';
+export { default as Flex } from './components/Flex';
 export { default as Icon } from './components/Icon';
 export { default as Paragraph } from './components/Paragraph';
 export { default as RadioButton } from './components/RadioButton';
