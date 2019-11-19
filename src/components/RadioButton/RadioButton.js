@@ -1,5 +1,6 @@
 import React from 'react';
-import css from './RadioButton.css';
+import { useId } from '@reach/auto-id';
+import css from './RadioButton.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from '../Icon/Icon.js';
@@ -7,9 +8,7 @@ import Icon from '../Icon/Icon.js';
 function RadioButton({
   checked,
   children,
-  className,
   disabled,
-  id,
   onBlur,
   onClick,
   onChange,
@@ -19,7 +18,6 @@ function RadioButton({
   const inputProps = {
     checked,
     disabled,
-    id,
     onClick,
     onChange,
     onFocus,
@@ -27,17 +25,26 @@ function RadioButton({
     value
   };
 
-  const icon = checked ? 'radio-selected' : 'radio-unselected';
-  const classes = classnames(className, css.radio, {
+  const classes = classnames(css.radio, {
     [css.disabled]: disabled
   });
+  const inputId = `radio-${useId()}`;
+  const icon = checked ? 'radio-selected' : 'radio-unselected';
 
   return (
-    <label className={classes}>
-      <Icon className={css.icon} iconName={icon} size="medium" />
-      <input type="radio" className={css.input} {...inputProps} />
-      {children}
-    </label>
+    <div role="radio" aria-checked={checked}>
+      <label className={classes} htmlFor={inputId}>
+        <input
+          tabIndex="0"
+          id={inputId}
+          type="radio"
+          className={css.input}
+          {...inputProps}
+        />
+        <Icon className={css.icon} iconName={icon} size="medium" />
+        {children}
+      </label>
+    </div>
   );
 }
 

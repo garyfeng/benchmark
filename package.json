@@ -20,6 +20,7 @@
   "author": "Corey McGeachie",
   "license": "ISC",
   "dependencies": {
+    "@reach/auto-id": "^0.6.1",
     "classnames": "^2.2.6",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
