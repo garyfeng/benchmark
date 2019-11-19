@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 function ExtendedText({
-  children,
   onChange,
   className,
   id,
@@ -37,9 +36,7 @@ function ExtendedText({
       onChange={checkLimit}
       rows={rows}
       autoComplete="off"
-    >
-      {children}
-    </textarea>
+    />
   );
 }
 

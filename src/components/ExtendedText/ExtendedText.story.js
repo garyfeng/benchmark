@@ -16,8 +16,6 @@ storiesOf('Elements', module).add('Extended Text', () => {
       rows={rows}
       maxLength={maxLength}
       onMaxLength={action('onMaxLength')}
-    >
-      Hello World
-    </ExtendedText>
+    />
   );
 });
