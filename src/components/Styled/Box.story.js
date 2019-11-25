@@ -25,6 +25,37 @@ storiesOf('Styled System', module).add('Default', () => {
   );
 });
 
+storiesOf('Styled System', module).add('Stack', () => {
+  return (
+    <Global>
+      <ThemeProvider theme={theme}>
+        <Stack spacing="2" border="1" borderColor="gray.500">
+          <Box bg="blue.100" p="2">
+            Column
+          </Box>
+          <Box bg="green.100" p="2">
+            Column
+          </Box>
+          <Box bg="orange.100" p="2">
+            Column
+          </Box>
+        </Stack>
+        <Stack mt="3" direction="row" border="1" borderColor="gray.500">
+          <Box bg="blue.100" p="2">
+            Row
+          </Box>
+          <Box bg="green.100" p="2">
+            Row
+          </Box>
+          <Box bg="orange.100" p="2">
+            Row
+          </Box>
+        </Stack>
+      </ThemeProvider>
+    </Global>
+  );
+});
+
 storiesOf('Styled System', module).add('Toolbar', () => {
   const [helpActive, setHelpActive] = useState(false);
   const [ttsActive, setTTSActive] = useState(false);
