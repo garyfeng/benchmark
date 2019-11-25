@@ -1,18 +1,9 @@
 const theme = {
-  fontSizes: [12, 14, 16, 24, 32, 48, 64, 96, 128],
-  space: [
-    // margin and padding
-    0,
-    4,
-    8,
-    16,
-    32,
-    64,
-    128,
-    256
-  ],
+  fontSizes: [12, 16, 18, 24, 32, 48, 64, 96, 128],
+  space: [0, 4, 8, 16, 32, 64, 128, 256],
   radii: {
     none: '0',
+    default: '0.25rem',
     sm: '0.125rem',
     md: '0.25rem',
     lg: '0.5rem',
@@ -40,6 +31,7 @@ const theme = {
     current: 'currentColor',
     black: '#000',
     white: '#fff',
+    primary: '#2478cc',
 
     whiteAlpha: {
       50: 'rgba(255, 255, 255, 0.04)',
@@ -67,17 +59,18 @@ const theme = {
       900: 'rgba(0, 0, 0, 0.92)'
     },
 
+    // http://www.colorbox.io/#steps=10#hue_start=0#hue_end=0#hue_curve=easeInQuad#sat_start=0#sat_end=0#sat_curve=easeOutQuad#sat_rate=130#lum_start=94#lum_end=5#lum_curve=easeOutQuad#minor_steps_map=0
     gray: {
-      50: '#F7FAFC',
-      100: '#EDF2F7',
-      200: '#E2E8F0',
-      300: '#CBD5E0',
-      400: '#A0AEC0',
-      500: '#718096',
-      600: '#4A5568',
-      700: '#2D3748',
-      800: '#1A202C',
-      900: '#171923'
+      '50': '#eeeeee',
+      '100': '#ebebeb',
+      '200': '#e4e4e4',
+      '300': '#d8d8d8',
+      '400': '#c7c7c7',
+      '500': '#afafaf',
+      '600': '#909090',
+      '700': '#696969',
+      '800': '#3c3c3c',
+      '900': '#0d0d0d'
     },
 
     red: {
@@ -195,6 +188,72 @@ const theme = {
       700: '#97266d',
       800: '#702459',
       900: '#521B41'
+    }
+  },
+  buttons: {
+    primary: {
+      fontSize: 2,
+      fontWeight: 'bold',
+      color: 'white',
+      bg: 'primary',
+      borderRadius: 'default',
+      borderWidth: 0,
+      transition: 'background .2s,border .2s,box-shadow .2s,color .2s',
+      ':hover': {
+        bg: 'blue.400'
+      }
+    },
+    next: {
+      variant: 'buttons.primary',
+      fontSize: 3,
+      paddingRight: 2,
+      paddingLeft: 3,
+      fontWeight: 'extrabold',
+      borderRadius: 'full',
+      borderColor: 'primary'
+    },
+    prev: {
+      variant: 'buttons.primary',
+      color: 'primary',
+      bg: 'white',
+      p: 2,
+      borderRadius: 'full',
+      borderWidth: 2,
+      borderColor: 'gray.400',
+      ':hover': {
+        bg: 'white',
+        color: 'blue.400'
+      },
+      ':active': {
+        borderStyle: 'solid'
+      }
+    },
+    toolbar: {
+      fontSize: 2,
+      fontWeight: 'bold',
+      color: 'gray.800',
+      bg: 'transparent',
+      border: 1,
+      borderColor: 'transparent',
+      borderRadius: 'default',
+      padding: 1,
+      ':hover': {
+        bg: 'white',
+        border: 1,
+        borderColor: 'gray.300'
+      }
+    },
+
+    outline: {
+      variant: 'buttons.primary',
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 2px'
+    },
+    secondary: {
+      variant: 'buttons.primary',
+      color: 'background',
+      bg: 'secondary'
     }
   }
 };

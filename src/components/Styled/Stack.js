@@ -1,24 +1,32 @@
 import React from 'react';
-import { Box, Flex } from './Box';
+import { Children, cloneElement } from 'react';
+import { Flex } from './Box';
 
-export default function Stack({
-  spacing,
+const Stack = ({
+  direction = 'column',
+  children,
   align,
   justify,
-  direction = 'column',
-  children
-}) {
+  spacing = 2,
+  ...rest
+}) => {
   return (
-    <Flex align={align} justify={justify} flexDirection={direction}>
-      {children.map((child, index) => {
+    <Flex
+      alignItems={align}
+      justifyContent={justify}
+      flexDirection={direction}
+      {...rest}
+    >
+      {Children.toArray(children).map((child, index) => {
         let isLastChild = children.length === index + 1;
-        let spacingProps = { mb: isLastChild ? null : spacing };
-        return (
-          <Box d="inline-block" {...spacingProps}>
-            {child}
-          </Box>
-        );
+        let spacingProps =
+          direction === 'row'
+            ? { mr: isLastChild ? null : spacing }
+            : { mb: isLastChild ? null : spacing };
+        return cloneElement(child, spacingProps);
       })}
     </Flex>
   );
-}
+};
+
+export default Stack;
