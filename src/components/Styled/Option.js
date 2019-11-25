@@ -1,6 +1,7 @@
 import React from 'react';
-import { Flex, Text } from 'rebass';
-import { Box } from './Box.js';
+import { Text } from 'rebass';
+import { Box, Flex } from './Box.js';
+// import { Flex } from 'rebass';
 // import { Icon } from './Icon.js';
 import Icon from '../Icon';
 import {
@@ -24,23 +25,27 @@ const Option = styled('div')(
   })
 );
 
-function Choice({ children, selected = false, isDisabled = false }) {
+function Choice({ children, selected = false, isDisabled = false, ...props }) {
   const icon = selected ? MdRadioButtonChecked : MdRadioButtonUnchecked;
 
   return (
-    <Option>
-      <Flex>
-        <Flex bg="blue.100" p="3" alignItems="center" alignContent="middle">
-          <Box size="32" as={icon} />
-        </Flex>
-        <Flex p="3" flexGrow="1">
-          <Text>{children}</Text>
-        </Flex>
-        <Flex p="3" alignContent="center" alignItems="center">
-          <Box color="gray.500" size="32" as={MdRemoveCircleOutline} />
-        </Flex>
+    <Flex
+      {...props}
+      border="2"
+      cursor="pointer"
+      borderRadius="default"
+      borderColor="gray.300"
+    >
+      <Flex bg="blue.100" p="3" alignItems="center" alignContent="middle">
+        <Box size="32" as={icon} />
       </Flex>
-    </Option>
+      <Flex p="3" flexGrow="1">
+        <Text>{children}</Text>
+      </Flex>
+      <Flex p="3" alignContent="center" alignItems="center">
+        <Box color="gray.500" size="32" as={MdRemoveCircleOutline} />
+      </Flex>
+    </Flex>
   );
 }
 

@@ -16,7 +16,7 @@ storiesOf('Styled System', module).add('Default', () => {
   return (
     <Global>
       <ThemeProvider theme={theme}>
-        <Stack spacing="3">
+        <Stack spacing="2">
           <Option selected={false}>Midnight</Option>
           <Option selected={true}>Cocoa</Option>
         </Stack>

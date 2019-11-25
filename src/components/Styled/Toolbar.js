@@ -32,7 +32,13 @@ const Toolbar = ({
   onToggleTTS
 }) => {
   return (
-    <Flex id={id} bg="gray.100" borderBottom={1} borderBottomColor="gray.400">
+    <Flex
+      id={id}
+      width="100vw"
+      bg="gray.100"
+      borderBottom={1}
+      borderBottomColor="gray.400"
+    >
       {/* HELP */}
       <ToolbarGroup>
         <ToolbarToggleButton
@@ -133,6 +139,7 @@ const Toolbar = ({
         <Button id="next-btn" variant="next">
           <Text
             display={['none', 'none', 'none', 'block']}
+            // todo: add adjustments into base text component
             sx={{
               '::before': {
                 content: "''",
