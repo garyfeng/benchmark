@@ -3,9 +3,11 @@ import { storiesOf } from '@storybook/react';
 import Global from './Global';
 
 import { ThemeProvider } from './Box';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import Choice from './Choice.js';
 import Stack from './Stack.js';
 import Button from './Button';
+import { Box, Text } from './Box';
 import theme from './theme.js';
 import Option from './Option.js';
 import Toolbar from './Toolbar';
@@ -42,6 +44,26 @@ storiesOf('Styled System', module).add('Toolbar', () => {
           onToggleScratch={() => setSratchActive(!scratchActive)}
           onToggleCalc={() => setCalcActive(!calcActive)}
         />
+      </ThemeProvider>
+    </Global>
+  );
+});
+
+storiesOf('Styled System', module).add('Buttons', () => {
+  return (
+    <Global>
+      <ThemeProvider theme={theme}>
+        <Stack spacing="2" direction="row">
+          <Button>Primary</Button>
+          <Button disabled>Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="secondary" disabled>
+            Secondary
+          </Button>
+          <Button id="prev-btn" variant="prev">
+            <IoMdArrowRoundBack size={32} />
+          </Button>
+        </Stack>
       </ThemeProvider>
     </Global>
   );

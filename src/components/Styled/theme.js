@@ -198,9 +198,36 @@ const theme = {
       bg: 'primary',
       borderRadius: 'default',
       borderWidth: 0,
-      transition: 'background .2s,border .2s,box-shadow .2s,color .2s',
       ':hover': {
-        bg: 'blue.400'
+        bg: 'blue.400',
+        boxShadow: '0 2px 3px rgba(0,0,0,.25)'
+      },
+      ':disabled': {
+        cursor: 'default',
+        bg: 'gray.200',
+        color: 'gray.700',
+        boxShadow: 'none'
+      }
+    },
+    secondary: {
+      fontSize: 2,
+      color: 'primary',
+      fontWeight: 'bold',
+      bg: 'white',
+      borderRadius: 'default',
+      border: 2,
+      borderColor: 'gray.400',
+      ':hover': {
+        boxShadow: '0 2px 3px rgba(0,0,0,.25)',
+        borderColor: 'blue.400',
+        color: 'blue.400'
+      },
+      ':disabled': {
+        cursor: 'default',
+        bg: 'gray.200',
+        color: 'gray.700',
+        borderColor: 'gray.200',
+        boxShadow: 'none'
       }
     },
     next: {
@@ -213,16 +240,14 @@ const theme = {
       borderColor: 'primary'
     },
     prev: {
-      variant: 'buttons.primary',
+      variant: 'buttons.secondary',
       color: 'primary',
-      bg: 'white',
       p: 2,
       borderRadius: 'full',
-      borderWidth: 2,
-      borderColor: 'gray.400',
       ':hover': {
-        bg: 'white',
-        color: 'blue.400'
+        color: 'blue.400',
+        borderColor: 'blue.400',
+        boxShadow: '0 2px 3px rgba(0,0,0,.25)'
       },
       ':active': {
         borderStyle: 'solid'
@@ -240,20 +265,8 @@ const theme = {
       ':hover': {
         bg: 'white',
         border: 1,
-        borderColor: 'gray.300'
+        borderColor: 'gray.400'
       }
-    },
-
-    outline: {
-      variant: 'buttons.primary',
-      color: 'primary',
-      bg: 'transparent',
-      boxShadow: 'inset 0 0 2px'
-    },
-    secondary: {
-      variant: 'buttons.primary',
-      color: 'background',
-      bg: 'secondary'
     }
   }
 };

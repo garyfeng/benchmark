@@ -9,11 +9,12 @@ const Button = forwardRef((props, ref) => (
     variant="primary"
     {...props}
     __css={{
-      px: 3,
+      px: 4,
       py: 2,
       alignItems: 'center',
       display: 'inline-flex',
       cursor: 'pointer',
+      transition: 'background .2s,border .2s,box-shadow .2s,color .2s',
       ':focus': {
         outline: '1px dotted',
         outlineColor: 'black',
