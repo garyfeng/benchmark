@@ -5,6 +5,7 @@ import shouldForwardProp from '@styled-system/should-forward-prop';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import {
   compose,
+  grid,
   space,
   color,
   border,
@@ -49,6 +50,11 @@ export const Text = styled(Box)`
 
 export const Flex = styled(Box)({
   display: 'flex'
+});
+
+export const Grid = styled(Box)({
+  grid,
+  display: 'grid'
 });
 
 export default Box;
