@@ -25,6 +25,24 @@ storiesOf('Styled System', module).add('Default', () => {
   );
 });
 
+storiesOf('Styled System', module).add('Text', () => {
+  return (
+    <Global>
+      <ThemeProvider theme={theme}>
+        <Stack>
+          <Text fontSize={1}>Size 1</Text>
+          <Text fontSize={2}>Size 2</Text>
+          <Text fontSize={3}>Size 3</Text>
+          <Text fontSize={4}>Size 4</Text>
+          <Text fontSize={5}>Size 5</Text>
+          <Text fontSize={6}>Size 6</Text>
+          <Text fontSize={7}>Size 7</Text>
+        </Stack>
+      </ThemeProvider>
+    </Global>
+  );
+});
+
 storiesOf('Styled System', module).add('Stack', () => {
   return (
     <Global>
