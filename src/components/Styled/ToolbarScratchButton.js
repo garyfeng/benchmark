@@ -10,16 +10,6 @@ const ToolbarScratchButton = ({
   onToggleScratch,
   ...rest
 }) => {
-  const containerActive = {
-    overflow: 'hidden',
-    border: '1',
-    borderColor: 'blue.400',
-    borderRadius: 'default',
-    borderTopLeftRadius: 'none',
-    borderBottomLeftRadius: 'none',
-    borderLeft: 0
-  };
-
   const toggleButtonActive = {
     borderRight: '1',
     bg: 'blue.100',
@@ -43,19 +33,24 @@ const ToolbarScratchButton = ({
         <IoIosColorPalette size="42" />
       </Button>
 
-      <Flex
-        direction="row"
-        bg="white"
-        width={!isScratchActive ? '0' : '100%'}
-        p={isScratchActive ? 1 : 0}
-        flex={isScratchActive ? 1 : 0}
-        sx={isScratchActive ? containerActive : null}
-      >
-        <ToolbarButton icon={IoIosApps} variant="tray" />
-        <ToolbarButton icon={IoIosApps} variant="tray" />
-        <ToolbarButton icon={IoIosApps} variant="tray" />
-        <ToolbarButton icon={IoIosApps} variant="tray" />
-      </Flex>
+      {isScratchActive ? (
+        <Flex
+          bg="white"
+          p={1}
+          flex={1}
+          border={1}
+          borderColor="blue.400"
+          borderRadius="default"
+          borderTopLeftRadius="none"
+          borderBottomLeftRadius={0}
+          borderLeft={0}
+        >
+          <ToolbarButton icon={IoIosApps} variant="tray" />
+          <ToolbarButton icon={IoIosApps} variant="tray" />
+          <ToolbarButton icon={IoIosApps} variant="tray" />
+          <ToolbarButton icon={IoIosApps} variant="tray" />
+        </Flex>
+      ) : null}
     </Flex>
   );
 };
