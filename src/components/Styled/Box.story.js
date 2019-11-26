@@ -4,7 +4,6 @@ import Global from './Global';
 
 import { ThemeProvider } from './Box';
 import { IoMdArrowRoundBack } from 'react-icons/io';
-import Choice from './Choice.js';
 import Stack from './Stack.js';
 import Button from './Button';
 import { Box, Text } from './Box';

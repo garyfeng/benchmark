@@ -84,7 +84,6 @@ const Toolbar = ({
         justifyContent="center"
         direction="column"
         overflow="hidden"
-        display={['none', 'none', 'none', 'flex']}
       >
         <Text
           id="accnum"
@@ -138,7 +137,6 @@ const Toolbar = ({
         </Button>
         <Button id="next-btn" variant="next">
           <Text
-            display={['none', 'none', 'none', 'block']}
             // todo: add adjustments into base text component
             sx={{
               '::before': {
