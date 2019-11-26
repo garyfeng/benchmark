@@ -18,7 +18,7 @@ const Stack = ({
       {...rest}
     >
       {Children.toArray(children).map((child, index) => {
-        let isLastChild = children.length === index + 1;
+        let isLastChild = (children.length || 1) === index + 1;
         let spacingProps =
           direction === 'row'
             ? { mr: isLastChild ? null : spacing }
