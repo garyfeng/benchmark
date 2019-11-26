@@ -9,6 +9,10 @@ const theme = {
     lg: '6px',
     full: '9999px'
   },
+  shadows: {
+    md: '0 2px 3px rgba(0,0,0,.25)',
+    none: 'none'
+  },
   fontWeights: {
     hairline: 100,
     thin: 200,
@@ -200,7 +204,7 @@ const theme = {
       borderWidth: 0,
       ':hover': {
         bg: 'blue.400',
-        boxShadow: '0 2px 3px rgba(0,0,0,.25)'
+        boxShadow: 'md'
       },
       ':disabled': {
         cursor: 'default',
@@ -222,7 +226,7 @@ const theme = {
       border: 2,
       borderColor: 'gray.400',
       ':hover': {
-        boxShadow: '0 2px 3px rgba(0,0,0,.25)',
+        boxShadow: 'md',
         borderColor: 'blue.400',
         color: 'blue.400'
       },

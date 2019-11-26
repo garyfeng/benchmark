@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import css, { get } from '@styled-system/css';
 import shouldForwardProp from '@styled-system/should-forward-prop';
-
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import {
   compose,
@@ -10,6 +9,7 @@ import {
   color,
   border,
   typography,
+  shadow,
   layout,
   flexbox,
   width
@@ -37,6 +37,7 @@ export const Box = styled('div', {
   compose(
     space,
     layout,
+    shadow,
     border,
     width,
     color,
