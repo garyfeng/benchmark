@@ -6,6 +6,7 @@ import ToolbarGroup from './ToolbarGroup';
 import ToolbarButton from './ToolbarButton';
 import ToolbarToggleButton from './ToolbarToggleButton';
 import ToolbarScratchButton from './ToolbarScratchButton';
+import ToolbarTimerButton from './ToolbarTimerButton';
 import { MdZoomIn, MdZoomOut } from 'react-icons/md';
 import {
   IoMdHelpCircle,
@@ -22,14 +23,18 @@ const Toolbar = ({
   progress = 50,
   accnum = 'VH12345',
   blockTitle = 'Block Title',
+  language = 'en',
   isHelpActive,
   isTTSActive,
   isCalcActive,
   isScratchActive,
+  isTimerActive,
   onToggleHelp,
   onToggleScratch,
   onToggleCalc,
-  onToggleTTS
+  onToggleLang,
+  onToggleTTS,
+  onToggleTimer
 }) => {
   return (
     <Flex
@@ -54,7 +59,16 @@ const Toolbar = ({
         <ToolbarButton id="theme-btn" icon={IoIosApps} />
         <ToolbarButton id="zoomin-btn" icon={MdZoomIn} />
         <ToolbarButton id="zoomout-btn" icon={MdZoomOut} />
-        <ToolbarButton id="lang-btn" icon={IoIosGlobe} />
+        <ToolbarButton
+          id="lang-btn"
+          icon={IoIosGlobe}
+          onClick={onToggleLang}
+          sx={{
+            transform: language === 'es' ? 'rotateY(180deg);' : null,
+            color: language === 'es' ? 'green.500' : 'gray.800',
+            transition: 'transform .2s'
+          }}
+        />
       </ToolbarGroup>
 
       {/* UTILITIES */}
@@ -107,7 +121,11 @@ const Toolbar = ({
 
       {/* TIMER */}
       <ToolbarGroup display={['none', 'none', 'none', 'block']}>
-        <ToolbarButton id="timer-btn" icon={IoIosTimer} />
+        <ToolbarTimerButton
+          id="timer-btn"
+          isTimerActive={isTimerActive}
+          onToggleTimer={onToggleTimer}
+        />
       </ToolbarGroup>
 
       {/* PROGRESS */}

@@ -75,9 +75,12 @@ storiesOf('Styled System', module).add('Stack', () => {
 
 storiesOf('Styled System', module).add('Toolbar', () => {
   const [helpActive, setHelpActive] = useState(false);
+  const [timerActive, setTimerActive] = useState(true);
   const [ttsActive, setTTSActive] = useState(false);
   const [scratchActive, setSratchActive] = useState(false);
   const [calcActive, setCalcActive] = useState(false);
+  const [language, setLanguage] = useState('en');
+  const progress = 50;
 
   return (
     <Global>
@@ -85,12 +88,17 @@ storiesOf('Styled System', module).add('Toolbar', () => {
         <Toolbar
           isHelpActive={helpActive}
           isTTSActive={ttsActive}
+          isTimerActive={timerActive}
           isScratchActive={scratchActive}
           isCalcActive={calcActive}
           onToggleHelp={() => setHelpActive(!helpActive)}
           onToggleTTS={() => setTTSActive(!ttsActive)}
           onToggleScratch={() => setSratchActive(!scratchActive)}
           onToggleCalc={() => setCalcActive(!calcActive)}
+          onToggleTimer={() => setTimerActive(!timerActive)}
+          onToggleLang={() => setLanguage(language === 'en' ? 'es' : 'en')}
+          progress={progress}
+          language={language}
         />
       </ThemeProvider>
     </Global>

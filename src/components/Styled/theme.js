@@ -4,9 +4,9 @@ const theme = {
   radii: {
     none: '0',
     default: '0.25rem',
-    sm: '0.125rem',
-    md: '0.25rem',
-    lg: '0.5rem',
+    sm: '2px',
+    md: '4px',
+    lg: '6px',
     full: '9999px'
   },
   fontWeights: {
@@ -266,6 +266,11 @@ const theme = {
         bg: 'white',
         border: 1,
         borderColor: 'gray.400'
+      },
+      ':focus': {
+        outline: '1px dotted',
+        outlineColor: 'black',
+        outlineOffset: 0
       }
     }
   }

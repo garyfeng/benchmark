@@ -17,6 +17,7 @@ const ToolbarScratchButton = ({
     borderRadius: 'default',
     borderTopRightRadius: 'none',
     borderBottomRightRadius: 'none',
+    zIndex: '1',
     ':hover': {
       bg: 'blue.50',
       borderColor: 'blue.400'
