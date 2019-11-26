@@ -207,6 +207,10 @@ const theme = {
         bg: 'gray.200',
         color: 'gray.700',
         boxShadow: 'none'
+      },
+      ':active': {
+        bg: 'blue.600',
+        boxShadow: 'none'
       }
     },
     secondary: {
@@ -228,6 +232,11 @@ const theme = {
         color: 'gray.700',
         borderColor: 'gray.200',
         boxShadow: 'none'
+      },
+      ':active': {
+        bg: 'gray.50',
+        border: 'gray.700',
+        boxShadow: 'none'
       }
     },
     next: {
@@ -237,21 +246,24 @@ const theme = {
       paddingLeft: 3,
       fontWeight: 'extrabold',
       borderRadius: 'full',
-      borderColor: 'primary'
+      borderColor: 'primary',
+      ':focus': {
+        outlineOffset: 1
+      }
     },
     prev: {
       variant: 'buttons.secondary',
       color: 'primary',
       p: 2,
       borderRadius: 'full',
-      ':hover': {
-        color: 'blue.400',
-        borderColor: 'blue.400',
-        boxShadow: '0 2px 3px rgba(0,0,0,.25)'
-      },
-      ':active': {
-        borderStyle: 'solid'
+      ':focus': {
+        outlineOffset: 1
       }
+    },
+    bare: {
+      p: 0,
+      bg: 'transparent',
+      border: 0
     },
     toolbar: {
       fontSize: 2,

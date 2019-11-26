@@ -9,7 +9,7 @@ const Button = forwardRef((props, ref) => (
     variant="primary"
     {...props}
     __css={{
-      px: 4,
+      px: 3,
       py: 2,
       alignItems: 'center',
       display: 'inline-flex',
@@ -18,7 +18,7 @@ const Button = forwardRef((props, ref) => (
       ':focus': {
         outline: '1px dotted',
         outlineColor: 'black',
-        outlineOffSet: 0
+        outlineOffset: 2
       }
     }}
   />

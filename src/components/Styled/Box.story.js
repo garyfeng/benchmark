@@ -6,19 +6,57 @@ import { ThemeProvider } from './Box';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import Stack from './Stack.js';
 import Button from './Button';
+import MultipleChoice from './MultipleChoice';
 import { Box, Text } from './Box';
 import theme from './theme.js';
 import Option from './Option.js';
 import Toolbar from './Toolbar';
+import { useArrayToggle } from '../../util/hooks.js';
 
 storiesOf('Styled System', module).add('Default', () => {
   return (
     <Global>
       <ThemeProvider theme={theme}>
         <Stack spacing="2">
-          <Option selected={false}>Midnight</Option>
-          <Option selected={true}>Cocoa</Option>
+          <Option isSelected={false}>Unselected</Option>
+          <Option isSelected={true}>Selected</Option>
+          <Option isEliminated={true}>Eliminated</Option>
         </Stack>
+      </ThemeProvider>
+    </Global>
+  );
+});
+
+storiesOf('Styled System', module).add('MultipleChoice', () => {
+  function handleEliminate(value) {
+    setEliminated(value);
+    if (value === selected) {
+      setSelected(null);
+    }
+  }
+
+  function handleSelect(value) {
+    setSelected(value);
+    if (eliminated.includes(value)) {
+      setEliminated(value);
+    }
+  }
+  const [selected, setSelected] = useState();
+  const [eliminated, setEliminated] = useArrayToggle();
+  return (
+    <Global>
+      <ThemeProvider theme={theme}>
+        <MultipleChoice
+          onClear={() => setSelected()}
+          onChange={option => handleSelect(option)}
+          onEliminate={option => handleEliminate(option)}
+          selected={selected}
+          eliminated={eliminated}
+        >
+          <Option value="a">Unselected</Option>
+          <Option value="b">Selected</Option>
+          <Option value="c">Eliminated</Option>
+        </MultipleChoice>
       </ThemeProvider>
     </Global>
   );
@@ -109,16 +147,27 @@ storiesOf('Styled System', module).add('Buttons', () => {
   return (
     <Global>
       <ThemeProvider theme={theme}>
-        <Stack spacing="2" direction="row">
-          <Button>Primary</Button>
-          <Button disabled>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="secondary" disabled>
-            Secondary
-          </Button>
-          <Button id="prev-btn" variant="prev">
-            <IoMdArrowRoundBack size={32} />
-          </Button>
+        <Stack>
+          <Stack spacing="2" direction="row">
+            <Button>Primary</Button>
+            <Button disabled>Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="secondary" disabled>
+              Secondary
+            </Button>
+          </Stack>
+          <Stack>
+            <Box>
+              <Button variant="secondary">Clear Answer</Button>
+            </Box>
+          </Stack>
+          <Stack>
+            <Box>
+              <Button id="prev-btn" variant="prev">
+                <IoMdArrowRoundBack size={32} />
+              </Button>
+            </Box>
+          </Stack>
         </Stack>
       </ThemeProvider>
     </Global>

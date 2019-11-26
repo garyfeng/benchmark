@@ -1,49 +1,74 @@
 import React from 'react';
-import { Text } from 'rebass';
-import { Box, Flex } from './Box.js';
-// import { Flex } from 'rebass';
-// import { Icon } from './Icon.js';
-import Icon from '../Icon';
+import { Flex, Text } from './Box.js';
+import Button from './Button.js';
 import {
   MdRadioButtonUnchecked,
   MdRadioButtonChecked,
-  MdRemoveCircleOutline
+  MdRemoveCircleOutline,
+  MdAddCircleOutline
 } from 'react-icons/md';
-import styled from '@emotion/styled';
-import css from '@styled-system/css';
 
-const Option = styled('div')(
-  css({
-    border: 2,
-    borderColor: 'gray.300',
-    cursor: 'pointer',
-    borderRadius: 'md',
-    overflow: 'hidden',
-    '&:hover': {
-      borderColor: 'blue.300'
-    }
-  })
-);
-
-function Choice({ children, selected = false, isDisabled = false, ...props }) {
-  const icon = selected ? MdRadioButtonChecked : MdRadioButtonUnchecked;
-
+function Choice({
+  children,
+  isSelected = false,
+  isEliminated = false,
+  isDisabled = false,
+  onEliminate,
+  value,
+  onChange,
+  ...props
+}) {
+  function handleEliminate(e, value) {
+    onEliminate(value);
+    e.stopPropagation();
+  }
   return (
     <Flex
       {...props}
       border="2"
       cursor="pointer"
-      borderRadius="default"
+      borderRadius="lg"
       borderColor="gray.300"
+      sx={{
+        cursor: 'pointer',
+        overflow: 'hidden',
+        transition: 'opacity .2s, border .2s, color .2s',
+        ':hover': {
+          borderColor: isEliminated ? null : 'blue.300'
+        }
+      }}
     >
-      <Flex bg="blue.100" p="3" alignItems="center" alignContent="middle">
-        <Box size="32" as={icon} />
+      <Flex
+        flexGrow="1"
+        onClick={() => onChange(value)}
+        opacity={isEliminated ? '50%' : '100%'}
+      >
+        <Flex bg="blue.100" px="3" py="3" alignItems="center">
+          <Button variant="bare">
+            {isSelected ? (
+              <MdRadioButtonChecked size="28" />
+            ) : (
+              <MdRadioButtonUnchecked size="28" />
+            )}
+          </Button>
+        </Flex>
+        <Flex px="3" py="3" flexGrow="1" alignItems="center">
+          <Text>{children}</Text>
+        </Flex>
       </Flex>
-      <Flex p="3" flexGrow="1">
-        <Text>{children}</Text>
-      </Flex>
-      <Flex p="3" alignContent="center" alignItems="center">
-        <Box color="gray.500" size="32" as={MdRemoveCircleOutline} />
+      {/* ELIMINATE BUTTON */}
+      <Flex px="3" py="3" alignContent="center" alignItems="center">
+        <Button
+          variant="bare"
+          color="gray.700"
+          onClick={e => handleEliminate(e, value)}
+        >
+          {isEliminated ? (
+            <MdAddCircleOutline size="28" />
+          ) : (
+            <MdRemoveCircleOutline size="28" />
+          )}
+        </Button>
       </Flex>
     </Flex>
   );
