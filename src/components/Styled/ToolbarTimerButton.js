@@ -19,7 +19,9 @@ const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
 
   return (
     <Flex {...rest}>
+      {/* todo: compose from another button */}
       <Button
+        title="Timer. Shows the time remaining."
         variant="toolbar"
         onClick={onClickTimer}
         sx={isTimerActive ? toggleButtonActive : null}

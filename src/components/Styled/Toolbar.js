@@ -22,7 +22,7 @@ const Toolbar = ({
 
   // data
   progress = 50,
-  accnum = 'VH12345',
+  itemTitle = 'VH12345',
   blockTitle = 'Block Title',
   language = 'en',
 
@@ -69,6 +69,7 @@ const Toolbar = ({
       <ToolbarGroup>
         <ToolbarToggleButton
           id="help-btn"
+          title="Help. Shows help and directions."
           icon={IoMdHelpCircle}
           isActive={isHelpActive}
           onClick={onClickHelp}
@@ -80,22 +81,27 @@ const Toolbar = ({
       <ToolbarGroup>
         <ToolbarButton
           id="theme-btn"
+          title="Change Theme. Changes the colors used on the screen."
           icon={IoIosApps}
           disabled={isThemeDisabled}
         />
         <ToolbarButton
+          id="zoomout-btn"
+          title="Zoom Out. Makes the words and images smaller."
+          icon={MdZoomOut}
+          disabled={isZoomOutDisabled}
+        />
+        <ToolbarButton
+          title="Zoom In. Makes the words and images larger."
           id="zoomin-btn"
           icon={MdZoomIn}
           disabled={isZoomInDisabled}
         />
         <ToolbarButton
-          id="zoomout-btn"
-          icon={MdZoomOut}
-          disabled={isZoomOutDisabled}
-        />
-        <ToolbarButton
           id="lang-btn"
           icon={IoIosGlobe}
+          // todo: update label for english
+          title="Change to Spanish."
           onClick={onClickLang}
           disabled={isLangDisabled}
           sx={{
@@ -110,22 +116,26 @@ const Toolbar = ({
       <ToolbarGroup>
         <ToolbarToggleButton
           id="tts-btn"
+          title="Read Aloud. Turns on read aloud mode. You can tap any box to hear the text read out loud."
           icon={IoIosApps}
           isActive={isTTSActive}
           onClick={onClickTTS}
           disabled={isTTSDisabled}
         />
         <ToolbarScratchButton
+          title="Scratchwork. Turns on scratchwork mode. This lets you write on the screen. You must turn scratchwork off to answer questions."
           isScratchActive={isScratchActive}
           onClickScratch={onClickScratch}
           disabled={isScratchDisabled}
         />
         <ToolbarButton
+          title="Math Keyboard. Shows the on-screen math keyboard."
           id="math-btn"
           icon={IoIosApps}
           disabled={isMathDisabled}
         />
         <ToolbarToggleButton
+          title="Calculator. Shows the calculator."
           id="calc-btn"
           icon={IoMdCalculator}
           isActive={isCalcActive}
@@ -149,7 +159,7 @@ const Toolbar = ({
             whiteSpace: 'nowrap'
           }}
         >
-          {accnum}
+          {itemTitle}
         </Text>
         <Text
           id="block"
@@ -188,6 +198,7 @@ const Toolbar = ({
           borderRadius={3}
           width="100%"
           height="18px"
+          title="Progress. This is how far you are in the section."
         >
           <Box width={progress + '%'} height="100%" bg="green.500"></Box>
         </Box>
@@ -197,6 +208,7 @@ const Toolbar = ({
       <ToolbarGroup borderRight="none">
         <Button
           id="prev-btn"
+          title="Back. Returns to the previous screen."
           variant="prev"
           flexShrink={0}
           onClick={onClickPrev}
@@ -206,6 +218,7 @@ const Toolbar = ({
         </Button>
         <Button
           id="next-btn"
+          title="Next. Moves to the next screen."
           variant="next"
           flexShrink={0}
           onClick={onClickNext}
