@@ -22,20 +22,6 @@ import Option from './Option.js';
 import Toolbar from './Toolbar';
 import { useArrayToggle } from '../../util/hooks.js';
 
-storiesOf('Styled System', module).add('Default', () => {
-  return (
-    <Global>
-      <ThemeProvider theme={theme}>
-        <Stack spacing="2">
-          <Option isSelected={false}>Unselected</Option>
-          <Option isSelected={true}>Selected</Option>
-          <Option isEliminated={true}>Eliminated</Option>
-        </Stack>
-      </ThemeProvider>
-    </Global>
-  );
-});
-
 storiesOf('Styled System', module).add('MultipleChoice', () => {
   function handleEliminate(value) {
     setEliminated(value);
@@ -122,7 +108,7 @@ storiesOf('Styled System', module).add('Stack', () => {
 
 storiesOf('Styled System', module).add('Toolbar', () => {
   const [helpActive, setHelpActive] = useState(false);
-  const [timerActive, setTimerActive] = useState(true);
+  const [timerActive, setTimerActive] = useState(false);
   const [ttsActive, setTTSActive] = useState(false);
   const [scratchActive, setSratchActive] = useState(false);
   const [calcActive, setCalcActive] = useState(false);
@@ -175,14 +161,14 @@ storiesOf('Styled System', module).add('Buttons', () => {
           </Stack>
 
           <Stack direction="row" bg="gray.100" p={1}>
-            <Button id="prev-btn" variant="prev">
+            <Button variant="prev">
               <IoMdArrowRoundBack size={30} />
             </Button>
-            <Button id="prev-btn" variant="prev" disabled={true}>
+            <Button variant="prev" disabled={true}>
               <IoMdArrowRoundBack size={30} />
             </Button>
             <Flex alignItems="center">
-              <Button id="next-btn" variant="next" flexShrink={0}>
+              <Button variant="next" flexShrink={0}>
                 <Text
                   sx={{
                     '::before': {
@@ -199,7 +185,7 @@ storiesOf('Styled System', module).add('Buttons', () => {
               </Button>
             </Flex>
             <Flex alignItems="center">
-              <Button id="next-btn" variant="next" flexShrink={0} disabled>
+              <Button variant="next" flexShrink={0} disabled>
                 <Text
                   sx={{
                     '::before': {
