@@ -53,7 +53,7 @@ function Choice({
           </Button>
         </Flex>
         <Flex px="3" py="3" flexGrow="1" alignItems="center">
-          <Text>{children}</Text>
+          <Text fontSize={3}>{children}</Text>
         </Flex>
       </Flex>
       {/* ELIMINATE BUTTON */}
