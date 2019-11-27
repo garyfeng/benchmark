@@ -53,7 +53,9 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            limit: 50000
+            // todo: to be reinstated later
+            // disabled temporality for convenience
+            // limit: 50000
           }
         }
       },
