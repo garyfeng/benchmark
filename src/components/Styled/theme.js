@@ -10,6 +10,7 @@ const theme = {
     full: '9999px'
   },
   shadows: {
+    sm: '0 1px 2px rgba(0,0,0,.20)',
     md: '0 2px 3px rgba(0,0,0,.25)',
     none: 'none'
   },
@@ -280,13 +281,34 @@ const theme = {
       padding: 1,
       ':hover': {
         bg: 'white',
+        boxShadow: 'sm',
         border: 1,
         borderColor: 'gray.400'
+      },
+      ':active': {
+        bg: 'gray.200',
+        border: 'gray.700',
+        boxShadow: 'none'
       },
       ':focus': {
         outline: '1px dotted',
         outlineColor: 'black',
         outlineOffset: 0
+      }
+    },
+    toolbarActive: {
+      variant: 'buttons.toolbar',
+      bg: 'blue.100',
+      borderColor: 'blue.400',
+      transition: 'background .2s, border-color .2s, color .2s',
+      borderWidth: 1,
+      ':hover': {
+        bg: 'blue.50',
+        borderColor: 'blue.300'
+      },
+      ':active': {
+        bg: 'blue.200',
+        borderColor: 'blue.700'
       }
     }
   }

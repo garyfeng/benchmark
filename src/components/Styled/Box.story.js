@@ -3,11 +3,20 @@ import { storiesOf } from '@storybook/react';
 import Global from './Global';
 
 import { ThemeProvider } from './Box';
-import { IoMdArrowRoundBack } from 'react-icons/io';
+import {
+  IoMdArrowRoundBack,
+  IoIosApps,
+  IoMdArrowRoundForward
+} from 'react-icons/io';
 import Stack from './Stack.js';
 import Button from './Button';
 import MultipleChoice from './MultipleChoice';
-import { Box, Text } from './Box';
+import { Box, Text, Flex } from './Box';
+import ToolbarToggleButton from './ToolbarToggleButton';
+import ToolbarButton from './ToolbarButton';
+import ToolbarGroup from './ToolbarGroup';
+import ToolbarScratchButton from './ToolbarScratchButton';
+import ToolbarTimerButton from './ToolbarTimerButton';
 import theme from './theme.js';
 import Option from './Option.js';
 import Toolbar from './Toolbar';
@@ -113,7 +122,7 @@ storiesOf('Styled System', module).add('Stack', () => {
 
 storiesOf('Styled System', module).add('Toolbar', () => {
   const [helpActive, setHelpActive] = useState(false);
-  const [timerActive, setTimerActive] = useState(true);
+  const [timerActive, setTimerActive] = useState(false);
   const [ttsActive, setTTSActive] = useState(false);
   const [scratchActive, setSratchActive] = useState(false);
   const [calcActive, setCalcActive] = useState(false);
@@ -147,7 +156,7 @@ storiesOf('Styled System', module).add('Buttons', () => {
   return (
     <Global>
       <ThemeProvider theme={theme}>
-        <Stack>
+        <Stack spacing={3}>
           <Stack spacing="2" direction="row">
             <Button>Primary</Button>
             <Button disabled>Primary</Button>
@@ -161,12 +170,58 @@ storiesOf('Styled System', module).add('Buttons', () => {
               <Button variant="secondary">Clear Answer</Button>
             </Box>
           </Stack>
-          <Stack>
-            <Box>
-              <Button id="prev-btn" variant="prev">
-                <IoMdArrowRoundBack size={32} />
+
+          <Stack direction="row" bg="gray.100" p={1}>
+            <Button id="prev-btn" variant="prev">
+              <IoMdArrowRoundBack size={30} />
+            </Button>
+            <Flex alignItems="center">
+              <Button id="next-btn" variant="next" flexShrink={0}>
+                <Text
+                  sx={{
+                    '::before': {
+                      content: "''",
+                      height: 0,
+                      display: 'block',
+                      mt: '-5px'
+                    }
+                  }}
+                >
+                  Next
+                </Text>
+                <IoMdArrowRoundForward size={32} />
               </Button>
-            </Box>
+            </Flex>
+          </Stack>
+
+          <Flex bg="gray.100" p={1}>
+            <ToolbarButton icon={IoIosApps} />
+          </Flex>
+          <Flex bg="gray.100">
+            <ToolbarGroup>
+              <ToolbarButton icon={IoIosApps} />
+              <ToolbarButton icon={IoIosApps} />
+              <ToolbarButton icon={IoIosApps} />
+            </ToolbarGroup>
+            <ToolbarGroup>
+              <ToolbarButton icon={IoIosApps} />
+              <ToolbarButton icon={IoIosApps} />
+            </ToolbarGroup>
+            <ToolbarGroup>
+              <ToolbarButton icon={IoIosApps} />
+            </ToolbarGroup>
+          </Flex>
+          <Stack direction="row" bg="gray.100" p={1}>
+            <ToolbarToggleButton icon={IoIosApps} isActive={false} />
+            <ToolbarToggleButton icon={IoIosApps} isActive={true} />
+          </Stack>
+          <Stack direction="row" bg="gray.100" p={1}>
+            <ToolbarScratchButton isScratchActive={false} />
+            <ToolbarScratchButton isScratchActive={true} />
+          </Stack>
+          <Stack direction="row" bg="gray.100" p={1}>
+            <ToolbarTimerButton isTimerActive={false} />
+            <ToolbarTimerButton isTimerActive={true} />
           </Stack>
         </Stack>
       </ThemeProvider>

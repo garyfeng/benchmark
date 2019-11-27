@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex } from './Box';
+import Stack from './Stack';
 import ToolbarButton from './ToolbarButton';
 import Button from './Button';
 
@@ -11,23 +12,15 @@ const ToolbarScratchButton = ({
   ...rest
 }) => {
   const toggleButtonActive = {
-    borderRight: '1',
-    bg: 'blue.100',
-    borderColor: 'blue.400',
-    borderRadius: 'default',
     borderTopRightRadius: 'none',
     borderBottomRightRadius: 'none',
-    zIndex: '1',
-    ':hover': {
-      bg: 'blue.50',
-      borderColor: 'blue.400'
-    }
+    zIndex: '1'
   };
 
   return (
     <Flex {...rest}>
       <Button
-        variant="toolbar"
+        variant={isScratchActive ? 'toolbarActive' : 'toolbar'}
         onClick={onToggleScratch}
         sx={isScratchActive ? toggleButtonActive : null}
       >
@@ -46,10 +39,12 @@ const ToolbarScratchButton = ({
           borderBottomLeftRadius={0}
           borderLeft={0}
         >
-          <ToolbarButton icon={IoIosApps} variant="tray" />
-          <ToolbarButton icon={IoIosApps} variant="tray" />
-          <ToolbarButton icon={IoIosApps} variant="tray" />
-          <ToolbarButton icon={IoIosApps} variant="tray" />
+          <Stack direction="row" spacing={1}>
+            <ToolbarButton icon={IoIosApps} variant="tray" />
+            <ToolbarButton icon={IoIosApps} variant="tray" />
+            <ToolbarButton icon={IoIosApps} variant="tray" />
+            <ToolbarButton icon={IoIosApps} variant="tray" />
+          </Stack>
         </Flex>
       ) : null}
     </Flex>

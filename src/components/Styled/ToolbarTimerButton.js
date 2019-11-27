@@ -40,8 +40,21 @@ const ToolbarTimerButton = ({ isTimerActive, onToggleTimer, ...rest }) => {
           borderBottomLeftRadius={0}
           borderLeft={0}
         >
-          <Text fontSize={2}>Time Left:</Text>
-          <Text fontSize={2} fontWeight="bold">
+          <Text
+            fontSize={2}
+            sx={{
+              whiteSpace: 'nowrap'
+            }}
+          >
+            Time Left:
+          </Text>
+          <Text
+            fontSize={2}
+            fontWeight="bold"
+            sx={{
+              whiteSpace: 'nowrap'
+            }}
+          >
             30 Minutes
           </Text>
         </Flex>

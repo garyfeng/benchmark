@@ -133,6 +133,7 @@ const Toolbar = ({
         display={['none', 'none', 'none', 'flex']}
         justifyContent="space-evenly"
         direction="column"
+        px="3"
       >
         <Text fontSize={2}>Progress</Text>
         <Box
@@ -150,10 +151,10 @@ const Toolbar = ({
 
       {/* NAVIGATION */}
       <ToolbarGroup borderRight="none">
-        <Button id="prev-btn" variant="prev">
-          <IoMdArrowRoundBack size={32} />
+        <Button id="prev-btn" variant="prev" flexShrink={0}>
+          <IoMdArrowRoundBack size={30} />
         </Button>
-        <Button id="next-btn" variant="next">
+        <Button id="next-btn" variant="next" flexShrink={0}>
           <Text
             // todo: add adjustments into base text component
             sx={{
@@ -167,7 +168,7 @@ const Toolbar = ({
           >
             Next
           </Text>
-          <IoMdArrowRoundForward display={[0, 1]} size={32} />
+          <IoMdArrowRoundForward size={32} />
         </Button>
       </ToolbarGroup>
     </Flex>
