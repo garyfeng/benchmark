@@ -4,7 +4,7 @@ import Button from './Button';
 
 import { IoIosTimer } from 'react-icons/io';
 
-const ToolbarTimerButton = ({ isTimerActive, onToggleTimer, ...rest }) => {
+const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
   const toggleButtonActive = {
     borderRight: '1',
     borderColor: 'gray.400',
@@ -21,7 +21,7 @@ const ToolbarTimerButton = ({ isTimerActive, onToggleTimer, ...rest }) => {
     <Flex {...rest}>
       <Button
         variant="toolbar"
-        onClick={onToggleTimer}
+        onClick={onClickTimer}
         sx={isTimerActive ? toggleButtonActive : null}
       >
         <IoIosTimer size="42" />
@@ -30,9 +30,9 @@ const ToolbarTimerButton = ({ isTimerActive, onToggleTimer, ...rest }) => {
       {isTimerActive ? (
         <Flex
           flexDirection="column"
-          justifyContent="space-around"
+          justifyContent="space-evenly"
           px={3}
-          py={1}
+          py={0}
           border={1}
           borderColor="gray.400"
           borderRadius="default"

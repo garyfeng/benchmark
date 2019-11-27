@@ -209,8 +209,8 @@ const theme = {
       },
       ':disabled': {
         cursor: 'default',
-        bg: 'gray.200',
-        color: 'gray.700',
+        bg: 'gray.300',
+        color: 'gray.600',
         boxShadow: 'none'
       },
       ':active': {
@@ -232,10 +232,10 @@ const theme = {
         color: 'blue.400'
       },
       ':disabled': {
-        cursor: 'default',
-        bg: 'gray.200',
-        color: 'gray.700',
-        borderColor: 'gray.200',
+        pointerEvents: 'none',
+        bg: 'gray.300',
+        color: 'gray.600',
+        borderColor: 'gray.300',
         boxShadow: 'none'
       },
       ':active': {
@@ -254,6 +254,12 @@ const theme = {
       borderColor: 'primary',
       ':focus': {
         outlineOffset: 1
+      },
+      ':disabled': {
+        pointerEvents: 'none',
+        bg: 'gray.300',
+        color: 'gray.600',
+        boxShadow: 'none'
       }
     },
     prev: {
@@ -294,6 +300,12 @@ const theme = {
         outline: '1px dotted',
         outlineColor: 'black',
         outlineOffset: 0
+      },
+      '&[disabled], &[disabled]:hover': {
+        color: 'gray.600',
+        bg: 'transparent',
+        borderColor: 'transparent',
+        pointerEvents: 'none'
       }
     },
     toolbarActive: {

@@ -122,7 +122,7 @@ storiesOf('Styled System', module).add('Stack', () => {
 
 storiesOf('Styled System', module).add('Toolbar', () => {
   const [helpActive, setHelpActive] = useState(false);
-  const [timerActive, setTimerActive] = useState(false);
+  const [timerActive, setTimerActive] = useState(true);
   const [ttsActive, setTTSActive] = useState(false);
   const [scratchActive, setSratchActive] = useState(false);
   const [calcActive, setCalcActive] = useState(false);
@@ -133,19 +133,22 @@ storiesOf('Styled System', module).add('Toolbar', () => {
     <Global>
       <ThemeProvider theme={theme}>
         <Toolbar
+          // data
+          progress={progress}
+          language={language}
+          // toggle button states
           isHelpActive={helpActive}
           isTTSActive={ttsActive}
           isTimerActive={timerActive}
           isScratchActive={scratchActive}
           isCalcActive={calcActive}
-          onToggleHelp={() => setHelpActive(!helpActive)}
-          onToggleTTS={() => setTTSActive(!ttsActive)}
-          onToggleScratch={() => setSratchActive(!scratchActive)}
-          onToggleCalc={() => setCalcActive(!calcActive)}
-          onToggleTimer={() => setTimerActive(!timerActive)}
-          onToggleLang={() => setLanguage(language === 'en' ? 'es' : 'en')}
-          progress={progress}
-          language={language}
+          // event handlers
+          onClickHelp={() => setHelpActive(!helpActive)}
+          onClickTTS={() => setTTSActive(!ttsActive)}
+          onClickScratch={() => setSratchActive(!scratchActive)}
+          onClickCalc={() => setCalcActive(!calcActive)}
+          onClickTimer={() => setTimerActive(!timerActive)}
+          onClickLang={() => setLanguage(language === 'en' ? 'es' : 'en')}
         />
       </ThemeProvider>
     </Global>
@@ -175,8 +178,28 @@ storiesOf('Styled System', module).add('Buttons', () => {
             <Button id="prev-btn" variant="prev">
               <IoMdArrowRoundBack size={30} />
             </Button>
+            <Button id="prev-btn" variant="prev" disabled={true}>
+              <IoMdArrowRoundBack size={30} />
+            </Button>
             <Flex alignItems="center">
               <Button id="next-btn" variant="next" flexShrink={0}>
+                <Text
+                  sx={{
+                    '::before': {
+                      content: "''",
+                      height: 0,
+                      display: 'block',
+                      mt: '-5px'
+                    }
+                  }}
+                >
+                  Next
+                </Text>
+                <IoMdArrowRoundForward size={32} />
+              </Button>
+            </Flex>
+            <Flex alignItems="center">
+              <Button id="next-btn" variant="next" flexShrink={0} disabled>
                 <Text
                   sx={{
                     '::before': {
@@ -196,6 +219,7 @@ storiesOf('Styled System', module).add('Buttons', () => {
 
           <Flex bg="gray.100" p={1}>
             <ToolbarButton icon={IoIosApps} />
+            <ToolbarButton icon={IoIosApps} disabled={true} />
           </Flex>
           <Flex bg="gray.100">
             <ToolbarGroup>
@@ -214,6 +238,8 @@ storiesOf('Styled System', module).add('Buttons', () => {
           <Stack direction="row" bg="gray.100" p={1}>
             <ToolbarToggleButton icon={IoIosApps} isActive={false} />
             <ToolbarToggleButton icon={IoIosApps} isActive={true} />
+            <ToolbarToggleButton icon={IoIosApps} isActive={false} disabled />
+            <ToolbarToggleButton icon={IoIosApps} isActive={true} disabled />
           </Stack>
           <Stack direction="row" bg="gray.100" p={1}>
             <ToolbarScratchButton isScratchActive={false} />

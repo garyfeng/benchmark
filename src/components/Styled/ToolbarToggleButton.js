@@ -2,7 +2,13 @@ import Button from './Button';
 import React from 'react';
 import { IoMdHelpCircle } from 'react-icons/io';
 
-const ToolbarToggleButton = ({ icon, isActive, onClick, ...rest }) => {
+const ToolbarToggleButton = ({
+  icon,
+  isActive,
+  onClick,
+  disabled,
+  ...rest
+}) => {
   const Icon = icon;
 
   return (
@@ -10,6 +16,7 @@ const ToolbarToggleButton = ({ icon, isActive, onClick, ...rest }) => {
       {...rest}
       variant={isActive ? 'toolbarActive' : 'toolbar'}
       onClick={onClick}
+      disabled={disabled}
     >
       <Icon size="42" />
     </Button>

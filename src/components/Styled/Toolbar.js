@@ -14,27 +14,48 @@ import {
   IoMdArrowRoundBack,
   IoMdCalculator,
   IoIosApps,
-  IoIosGlobe,
-  IoIosTimer
+  IoIosGlobe
 } from 'react-icons/io';
 
 const Toolbar = ({
   id,
+
+  // data
   progress = 50,
   accnum = 'VH12345',
   blockTitle = 'Block Title',
   language = 'en',
+
+  // disable buttons
+  isHelpDisabled,
+  isThemeDisabled,
+  isZoomInDisabled,
+  isZoomOutDisabled,
+  isLangDisabled,
+  isTTSDisabled,
+  isScratchDisabled,
+  isMathDisabled,
+  isCalcDisabled,
+  isTimerDisabled,
+  isPrevDisabled,
+  isNextDisabled,
+
+  // toggle button state
   isHelpActive,
   isTTSActive,
   isCalcActive,
   isScratchActive,
   isTimerActive,
-  onToggleHelp,
-  onToggleScratch,
-  onToggleCalc,
-  onToggleLang,
-  onToggleTTS,
-  onToggleTimer
+
+  // events
+  onClickNext,
+  onClickPrev,
+  onClickScratch,
+  onClickTimer,
+  onClickHelp,
+  onClickCalc,
+  onClickLang,
+  onClickTTS
 }) => {
   return (
     <Flex
@@ -50,19 +71,33 @@ const Toolbar = ({
           id="help-btn"
           icon={IoMdHelpCircle}
           isActive={isHelpActive}
-          onClick={onToggleHelp}
+          onClick={onClickHelp}
+          disabled={isHelpDisabled}
         />
       </ToolbarGroup>
 
       {/* VIEW */}
       <ToolbarGroup>
-        <ToolbarButton id="theme-btn" icon={IoIosApps} />
-        <ToolbarButton id="zoomin-btn" icon={MdZoomIn} />
-        <ToolbarButton id="zoomout-btn" icon={MdZoomOut} />
+        <ToolbarButton
+          id="theme-btn"
+          icon={IoIosApps}
+          disabled={isThemeDisabled}
+        />
+        <ToolbarButton
+          id="zoomin-btn"
+          icon={MdZoomIn}
+          disabled={isZoomInDisabled}
+        />
+        <ToolbarButton
+          id="zoomout-btn"
+          icon={MdZoomOut}
+          disabled={isZoomOutDisabled}
+        />
         <ToolbarButton
           id="lang-btn"
           icon={IoIosGlobe}
-          onClick={onToggleLang}
+          onClick={onClickLang}
+          disabled={isLangDisabled}
           sx={{
             transform: language === 'es' ? 'rotateY(180deg);' : null,
             color: language === 'es' ? 'green.500' : 'gray.800',
@@ -77,27 +112,35 @@ const Toolbar = ({
           id="tts-btn"
           icon={IoIosApps}
           isActive={isTTSActive}
-          onClick={onToggleTTS}
+          onClick={onClickTTS}
+          disabled={isTTSDisabled}
         />
         <ToolbarScratchButton
           isScratchActive={isScratchActive}
-          onToggleScratch={onToggleScratch}
+          onClickScratch={onClickScratch}
+          disabled={isScratchDisabled}
         />
-        <ToolbarButton id="math-btn" icon={IoIosApps} />
+        <ToolbarButton
+          id="math-btn"
+          icon={IoIosApps}
+          disabled={isMathDisabled}
+        />
         <ToolbarToggleButton
           id="calc-btn"
           icon={IoMdCalculator}
           isActive={isCalcActive}
-          onClick={onToggleCalc}
+          onClick={onClickCalc}
+          disabled={isCalcDisabled}
         />
       </ToolbarGroup>
 
       {/* TITLE */}
       <ToolbarGroup
         flex={1}
-        justifyContent="center"
+        justifyContent="space-evenly"
         direction="column"
         overflow="hidden"
+        spacing={0}
       >
         <Text
           id="accnum"
@@ -124,7 +167,8 @@ const Toolbar = ({
         <ToolbarTimerButton
           id="timer-btn"
           isTimerActive={isTimerActive}
-          onToggleTimer={onToggleTimer}
+          onClickTimer={onClickTimer}
+          disabled={isTimerDisabled}
         />
       </ToolbarGroup>
 
@@ -151,10 +195,22 @@ const Toolbar = ({
 
       {/* NAVIGATION */}
       <ToolbarGroup borderRight="none">
-        <Button id="prev-btn" variant="prev" flexShrink={0}>
+        <Button
+          id="prev-btn"
+          variant="prev"
+          flexShrink={0}
+          onClick={onClickPrev}
+          disabled={isPrevDisabled}
+        >
           <IoMdArrowRoundBack size={30} />
         </Button>
-        <Button id="next-btn" variant="next" flexShrink={0}>
+        <Button
+          id="next-btn"
+          variant="next"
+          flexShrink={0}
+          onClick={onClickNext}
+          disabled={isNextDisabled}
+        >
           <Text
             // todo: add adjustments into base text component
             sx={{

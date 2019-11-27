@@ -6,11 +6,7 @@ import Button from './Button';
 
 import { IoIosApps, IoIosColorPalette } from 'react-icons/io';
 
-const ToolbarScratchButton = ({
-  isScratchActive,
-  onToggleScratch,
-  ...rest
-}) => {
+const ToolbarScratchButton = ({ isScratchActive, onClickScratch, ...rest }) => {
   const toggleButtonActive = {
     borderTopRightRadius: 'none',
     borderBottomRightRadius: 'none',
@@ -21,7 +17,7 @@ const ToolbarScratchButton = ({
     <Flex {...rest}>
       <Button
         variant={isScratchActive ? 'toolbarActive' : 'toolbar'}
-        onClick={onToggleScratch}
+        onClick={onClickScratch}
         sx={isScratchActive ? toggleButtonActive : null}
       >
         <IoIosColorPalette size="42" />
@@ -31,7 +27,7 @@ const ToolbarScratchButton = ({
         <Flex
           bg="white"
           p={1}
-          flex={1}
+          // flex={1}
           border={1}
           borderColor="blue.400"
           borderRadius="default"
