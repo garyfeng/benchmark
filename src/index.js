@@ -15,6 +15,9 @@ export { default as RadioButton } from './components/RadioButton';
 export { default as Text } from './components/Text';
 export { default as Heading } from './components/Heading';
 export { default as TTS } from './components/TTS';
+
+// styled
 export { default as Toolbar } from './components/Styled/Toolbar';
 export { default as MultipleChoice } from './components/Styled/MultipleChoice';
 export { default as Option } from './components/Styled/Option';
+export { default as Switch } from './components/Styled/Switch';
