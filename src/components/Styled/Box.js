@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import css, { get } from '@styled-system/css';
 import shouldForwardProp from '@styled-system/should-forward-prop';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import {
   compose,
   grid,
@@ -14,8 +13,6 @@ import {
   flexbox,
   width
 } from 'styled-system';
-
-export { EmotionThemeProvider as ThemeProvider };
 
 const sx = props => css(props.sx)(props.theme);
 const base = props => css(props.__css)(props.theme);

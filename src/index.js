@@ -3,8 +3,7 @@
 */
 
 // utility components
-export { ThemeProvider } from './components/Styled/Box';
-export { default as theme } from './components/Styled/theme';
+export { default as ThemeProvider } from './components/Styled/ThemeProvider';
 export { default as Global } from './components/Styled/Global';
 
 // general components

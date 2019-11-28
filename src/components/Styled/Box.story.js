@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Global from './Global';
 
-import { ThemeProvider } from './Box';
+import ThemeProvider from './ThemeProvider.js';
 import {
   IoMdArrowRoundBack,
   IoIosApps,
@@ -17,7 +17,6 @@ import ToolbarButton from './ToolbarButton';
 import ToolbarGroup from './ToolbarGroup';
 import ToolbarScratchButton from './ToolbarScratchButton';
 import ToolbarTimerButton from './ToolbarTimerButton';
-import theme from './theme.js';
 import Option from './Option.js';
 import Toolbar from './Toolbar';
 import { useArrayToggle } from '../../util/hooks.js';
@@ -40,7 +39,7 @@ storiesOf('Styled System', module).add('MultipleChoice', () => {
   const [eliminated, setEliminated] = useArrayToggle();
   return (
     <Global>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <MultipleChoice
           onClear={() => setSelected()}
           onChange={option => handleSelect(option)}
@@ -60,7 +59,7 @@ storiesOf('Styled System', module).add('MultipleChoice', () => {
 storiesOf('Styled System', module).add('Text', () => {
   return (
     <Global>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <Stack>
           <Text fontSize={1}>Size 1</Text>
           <Text fontSize={2}>Size 2</Text>
@@ -78,7 +77,7 @@ storiesOf('Styled System', module).add('Text', () => {
 storiesOf('Styled System', module).add('Stack', () => {
   return (
     <Global>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <Stack spacing="2" border="1" borderColor="gray.500">
           <Box bg="blue.100" p="2">
             Column
@@ -117,7 +116,7 @@ storiesOf('Styled System', module).add('Toolbar', () => {
 
   return (
     <Global>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <Toolbar
           // data
           progress={progress}
@@ -144,7 +143,7 @@ storiesOf('Styled System', module).add('Toolbar', () => {
 storiesOf('Styled System', module).add('Buttons', () => {
   return (
     <Global>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider>
         <Stack spacing={3}>
           <Stack spacing="2" direction="row">
             <Button>Primary</Button>
