@@ -2,7 +2,7 @@
   "name": "benchmark",
   "version": "0.1.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/components/index.js",
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
@@ -15,7 +15,8 @@
     "playroom": "playroom start",
     "build-docs": "gatsby build",
     "build": "webpack -p ./src/index.js",
-    "docs": "gatsby develop"
+    "docs": "gatsby develop",
+    "postinstall": "npm run build"
   },
   "author": "Corey McGeachie",
   "license": "ISC",
