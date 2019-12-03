@@ -10,9 +10,10 @@ import {
 } from 'react-icons/io';
 import Stack from './Stack.js';
 import Button from './Button';
-import MultipleChoice from './MultipleChoice';
-import { Box, Text, Flex } from './Box';
-import ToolbarToggleButton from './ToolbarToggleButton';
+import ScrollButton from './ScrollButton.js';
+import MultipleChoice from './MultipleChoice.js';
+import { Box, Text, Flex } from './Box.js';
+import ToolbarToggleButton from './ToolbarToggleButton.js';
 import ToolbarButton from './ToolbarButton';
 import ToolbarGroup from './ToolbarGroup';
 import ToolbarScratchButton from './ToolbarScratchButton';
@@ -156,6 +157,14 @@ storiesOf('Styled System', module).add('Buttons', () => {
           <Stack>
             <Box>
               <Button variant="secondary">Clear Answer</Button>
+            </Box>
+          </Stack>
+          <Stack direction="row">
+            <Box>
+              <ScrollButton />
+            </Box>
+            <Box>
+              <ScrollButton direction="up" />
             </Box>
           </Stack>
 
