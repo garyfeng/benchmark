@@ -207,12 +207,6 @@ const theme = {
         bg: 'blue.400',
         boxShadow: 'md'
       },
-      ':disabled': {
-        cursor: 'default',
-        bg: 'gray.300',
-        color: 'gray.600',
-        boxShadow: 'none'
-      },
       ':active': {
         bg: 'blue.600',
         boxShadow: 'none'
@@ -231,13 +225,6 @@ const theme = {
         borderColor: 'blue.400',
         color: 'blue.400'
       },
-      ':disabled': {
-        pointerEvents: 'none',
-        bg: 'gray.300',
-        color: 'gray.600',
-        borderColor: 'gray.300',
-        boxShadow: 'none'
-      },
       ':active': {
         bg: 'gray.50',
         border: 'gray.700',
@@ -254,12 +241,6 @@ const theme = {
       borderColor: 'primary',
       ':focus': {
         outlineOffset: 1
-      },
-      ':disabled': {
-        pointerEvents: 'none',
-        bg: 'gray.300',
-        color: 'gray.600',
-        boxShadow: 'none'
       }
     },
     prev: {

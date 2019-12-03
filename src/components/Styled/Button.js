@@ -7,7 +7,6 @@ const Button = forwardRef((props, ref) => (
     as="button"
     tx="buttons"
     variant="primary"
-    {...props}
     __css={{
       px: 3,
       py: 2,
@@ -19,8 +18,15 @@ const Button = forwardRef((props, ref) => (
         outline: '1px dotted',
         outlineColor: 'black',
         outlineOffset: 2
+      },
+      ':disabled': {
+        pointerEvents: 'none',
+        bg: 'gray.300',
+        color: 'gray.600',
+        boxShadow: 'none'
       }
     }}
+    {...props}
   />
 ));
 

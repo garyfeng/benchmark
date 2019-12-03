@@ -164,7 +164,13 @@ storiesOf('Styled System', module).add('Buttons', () => {
               <ScrollButton />
             </Box>
             <Box>
+              <ScrollButton disabled />
+            </Box>
+            <Box>
               <ScrollButton direction="up" />
+            </Box>
+            <Box>
+              <ScrollButton direction="up" disabled />
             </Box>
           </Stack>
 
