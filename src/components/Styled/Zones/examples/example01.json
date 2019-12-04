@@ -1,0 +1,45 @@
+{
+  "background": {
+    "width": "301",
+    "height": "301",
+    "type": "svg"
+  },
+  "zones": [
+    {
+      "optionId": "a",
+      "type": "circle",
+      "attributes": {
+        "cx": 100,
+        "cy": 100,
+        "r": 22
+      }
+    },
+    {
+      "optionId": "b",
+      "type": "circle",
+      "attributes": {
+        "cx": 200,
+        "cy": 100,
+        "r": 22
+      }
+    },
+    {
+      "optionId": "c",
+      "type": "circle",
+      "attributes": {
+        "cx": 100,
+        "cy": 200,
+        "r": 22
+      }
+    },
+    {
+      "optionId": "d",
+      "type": "circle",
+      "attributes": {
+        "cx": 200,
+        "cy": 200,
+        "r": 22
+      }
+    }
+  ]
+}
