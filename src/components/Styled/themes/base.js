@@ -44,7 +44,7 @@ export const colors = {
   },
 
   // http://www.colorbox.io/#steps=10#hue_start=0#hue_end=0#hue_curve=easeInQuad#sat_start=0#sat_end=0#sat_curve=easeOutQuad#sat_rate=130#lum_start=94#lum_end=5#lum_curve=easeOutQuad#minor_steps_map=0
-  gray: {
+  n: {
     '50': '#eeeeee',
     '100': '#ebebeb',
     '200': '#e4e4e4',
@@ -233,15 +233,15 @@ export const theme = {
       bg: 'white',
       borderRadius: 'default',
       border: 2,
-      borderColor: 'gray.400',
+      borderColor: 'n.400',
       ':hover': {
         boxShadow: 'md',
         borderColor: 'p.400',
         color: 'p.400'
       },
       ':active': {
-        bg: 'gray.50',
-        border: 'gray.700',
+        bg: 'n.50',
+        border: 'n.700',
         boxShadow: 'none'
       }
     },
@@ -273,7 +273,7 @@ export const theme = {
     toolbar: {
       fontSize: 2,
       fontWeight: 'bold',
-      color: 'gray.800',
+      color: 'n.800',
       bg: 'transparent',
       border: 1,
       borderColor: 'transparent',
@@ -283,11 +283,11 @@ export const theme = {
         bg: 'white',
         boxShadow: 'sm',
         border: 1,
-        borderColor: 'gray.400'
+        borderColor: 'n.400'
       },
       ':active': {
-        bg: 'gray.200',
-        border: 'gray.700',
+        bg: 'n.200',
+        border: 'n.700',
         boxShadow: 'none'
       },
       ':focus': {
@@ -296,7 +296,7 @@ export const theme = {
         outlineOffset: 0
       },
       '&[disabled], &[disabled]:hover': {
-        color: 'gray.600',
+        color: 'n.600',
         bg: 'transparent',
         borderColor: 'transparent',
         pointerEvents: 'none'

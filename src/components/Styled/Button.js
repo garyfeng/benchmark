@@ -22,8 +22,8 @@ function Button(props) {
         },
         ':disabled': {
           pointerEvents: 'none',
-          bg: 'gray.300',
-          color: 'gray.600',
+          bg: 'n.300',
+          color: 'n.600',
           boxShadow: 'none'
         }
       }}

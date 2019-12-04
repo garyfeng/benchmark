@@ -79,7 +79,7 @@ storiesOf('Styled System', module).add('Stack', () => {
   return (
     <Global>
       <ThemeProvider>
-        <Stack spacing="2" border="1" borderColor="gray.500">
+        <Stack spacing="2" border="1" borderColor="n.500">
           <Box bg="blue.100" p="2">
             Column
           </Box>
@@ -90,7 +90,7 @@ storiesOf('Styled System', module).add('Stack', () => {
             Column
           </Box>
         </Stack>
-        <Stack mt="3" direction="row" border="1" borderColor="gray.500">
+        <Stack mt="3" direction="row" border="1" borderColor="n.500">
           <Box bg="blue.100" p="2">
             Row
           </Box>
@@ -174,7 +174,7 @@ storiesOf('Styled System', module).add('Buttons', () => {
             </Box>
           </Stack>
 
-          <Stack direction="row" bg="gray.100" p={1}>
+          <Stack direction="row" bg="n.100" p={1}>
             <Button variant="prev">
               <IoMdArrowRoundBack size={30} />
             </Button>
@@ -217,11 +217,11 @@ storiesOf('Styled System', module).add('Buttons', () => {
             </Flex>
           </Stack>
 
-          <Flex bg="gray.100" p={1}>
+          <Flex bg="n.100" p={1}>
             <ToolbarButton icon={IoIosApps} />
             <ToolbarButton icon={IoIosApps} disabled={true} />
           </Flex>
-          <Flex bg="gray.100">
+          <Flex bg="n.100">
             <ToolbarGroup>
               <ToolbarButton icon={IoIosApps} />
               <ToolbarButton icon={IoIosApps} />
@@ -235,17 +235,17 @@ storiesOf('Styled System', module).add('Buttons', () => {
               <ToolbarButton icon={IoIosApps} />
             </ToolbarGroup>
           </Flex>
-          <Stack direction="row" bg="gray.100" p={1}>
+          <Stack direction="row" bg="n.100" p={1}>
             <ToolbarToggleButton icon={IoIosApps} isActive={false} />
             <ToolbarToggleButton icon={IoIosApps} isActive={true} />
             <ToolbarToggleButton icon={IoIosApps} isActive={false} disabled />
             <ToolbarToggleButton icon={IoIosApps} isActive={true} disabled />
           </Stack>
-          <Stack direction="row" bg="gray.100" p={1}>
+          <Stack direction="row" bg="n.100" p={1}>
             <ToolbarScratchButton isScratchActive={false} />
             <ToolbarScratchButton isScratchActive={true} />
           </Stack>
-          <Stack direction="row" bg="gray.100" p={1}>
+          <Stack direction="row" bg="n.100" p={1}>
             <ToolbarTimerButton isTimerActive={false} />
             <ToolbarTimerButton isTimerActive={true} />
           </Stack>

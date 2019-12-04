@@ -28,7 +28,7 @@ function Choice({
       border="2"
       cursor="pointer"
       borderRadius="lg"
-      borderColor="gray.300"
+      borderColor="n.300"
       sx={{
         cursor: 'pointer',
         overflow: 'hidden',
@@ -60,7 +60,7 @@ function Choice({
       <Flex px="3" py="3" alignContent="center" alignItems="center">
         <Button
           variant="bare"
-          color="gray.700"
+          color="n.700"
           onClick={e => handleEliminate(e, value)}
         >
           {isEliminated ? (

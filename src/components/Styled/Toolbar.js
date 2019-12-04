@@ -61,9 +61,9 @@ const Toolbar = ({
     <Flex
       id={id}
       width="100vw"
-      bg="gray.100"
+      bg="n.100"
       borderBottom={1}
-      borderBottomColor="gray.400"
+      borderBottomColor="n.400"
     >
       {/* HELP */}
       <ToolbarGroup>
@@ -106,7 +106,7 @@ const Toolbar = ({
           disabled={isLangDisabled}
           sx={{
             transform: language === 'es' ? 'rotateY(180deg);' : null,
-            color: language === 'es' ? 'green.500' : 'gray.800',
+            color: language === 'es' ? 'green.500' : 'n.800',
             transition: 'transform .2s'
           }}
         />
@@ -194,7 +194,7 @@ const Toolbar = ({
           id="progress"
           border={2}
           bg="white"
-          borderColor="gray.400"
+          borderColor="n.400"
           borderRadius={3}
           width="100%"
           height="18px"

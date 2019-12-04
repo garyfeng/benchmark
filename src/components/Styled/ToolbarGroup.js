@@ -8,7 +8,7 @@ const ToolbarGroup = props => (
     px={2}
     py={1}
     borderRight={1}
-    borderRightColor="gray.400"
+    borderRightColor="n.400"
     overflow="hidden"
     {...props}
   />

@@ -7,7 +7,7 @@ import { IoIosTimer } from 'react-icons/io';
 const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
   const toggleButtonActive = {
     borderRight: '1',
-    borderColor: 'gray.400',
+    borderColor: 'n.400',
     borderRadius: 'default',
     borderTopRightRadius: 'none',
     borderBottomRightRadius: 'none',
@@ -36,7 +36,7 @@ const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
           px={3}
           py={0}
           border={1}
-          borderColor="gray.400"
+          borderColor="n.400"
           borderRadius="default"
           borderTopLeftRadius={0}
           borderBottomLeftRadius={0}
