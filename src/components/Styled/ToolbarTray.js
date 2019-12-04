@@ -1,6 +1,6 @@
 import Stack from './Stack';
 import React from 'react';
-import { Box, Flex } from 'rebass';
+import { Box, Flex } from './Box.js';
 
 const defaultProps = {
   isOpen: true

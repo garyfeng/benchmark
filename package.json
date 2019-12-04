@@ -22,9 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "@reach/auto-id": "^0.6.1",
-    "@rebass/forms": "^4.0.6",
-    "@rebass/preset": "^4.0.5",
     "@styled-system/css": "^5.0.23",
+    "@styled-system/should-forward-prop": "^5.1.4",
     "classnames": "^2.2.6",
     "emotion": "^10.0.23",
     "emotion-theming": "^10.0.19",
@@ -36,7 +35,6 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icons": "^3.8.0",
-    "rebass": "^4.0.7",
     "styled-system": "^5.1.2"
   },
   "devDependencies": {
