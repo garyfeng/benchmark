@@ -43,7 +43,8 @@ export const Box = styled('div', {
 );
 
 export const Text = styled(Box)`
-  ${typography}
+  ${typography};
+  display: inline-block;
 `;
 
 export const Flex = styled(Box)({
