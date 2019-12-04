@@ -21,3 +21,4 @@ export { default as Toolbar } from './components/Styled/Toolbar';
 export { default as MultipleChoice } from './components/Styled/MultipleChoice';
 export { default as Option } from './components/Styled/Option';
 export { default as Switch } from './components/Styled/Switch';
+export { default as Dropdown } from './components/Styled/Dropdown';
