@@ -1,7 +1,8 @@
-import base from './base.js';
+import { colors, theme as base } from './base.js';
 
 const theme = {
-  ...base
+  ...base,
+  colors
 };
 
 export default theme;
