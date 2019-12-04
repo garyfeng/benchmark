@@ -1,55 +1,60 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box } from './Box.js';
 
-function Switch({ checked, ...props }) {
+function Switch({ checked = false, onClick, ...props }) {
   return (
     <Box
       as="button"
       type="button"
       role="switch"
       aria-checked={checked}
+      bg="p.500"
+      color="p.500"
+      border="2"
+      borderRadius="full"
+      m="0"
+      p="0"
+      width="64px"
+      height="30px"
+      onClick={onClick}
       {...props}
       sx={{
-        appearance: 'none',
-        m: 0,
-        p: 0,
-        width: 64,
-        height: 32,
-        color: 'primary',
         cursor: 'pointer',
-        bg: 'primary',
-        border: '2',
-        borderColor: 'primary',
-        borderRadius: 'full',
         ':focus': {
           outline: '1px dotted',
           outlineColor: 'black',
           outlineOffset: 2
+        },
+        ':disabled': {
+          pointerEvents: 'none',
+          opacity: '.3'
         }
       }}
     >
       <Box
         aria-hidden
+        width="24px"
+        height="24px"
+        borderRadius="full"
+        ml="2px"
+        boxShadow="md"
+        bg="white"
         style={{
-          transform: checked ? 'translateX(28px)' : 'translateX(0)'
+          transform: checked ? 'translateX(32px)' : 'translateX(0)'
         }}
         sx={{
-          mt: '0px',
-          ml: '4px',
-          width: 24,
-          height: 24,
-          borderRadius: '50%',
-          border: '1px solid',
-          boxShadow: 'sm',
-          borderColor: 'primary',
-          bg: 'white',
           transitionProperty: 'transform',
-          transitionTimingFunction: 'ease-out',
-          transitionDuration: '0.1s'
+          transitionDuration: '0.25s'
         }}
       />
     </Box>
   );
 }
+
+Switch.propTypes = {
+  checked: PropTypes.bool,
+  onClick: PropTypes.func
+};
 
 export default Switch;
