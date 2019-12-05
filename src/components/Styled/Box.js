@@ -29,7 +29,6 @@ export const Box = styled('div', {
   },
   base,
   variant,
-  sx,
   props => props.css,
   compose(
     space,
@@ -39,7 +38,8 @@ export const Box = styled('div', {
     width,
     color,
     flexbox
-  )
+  ),
+  sx
 );
 
 export const Text = styled(Box)`
