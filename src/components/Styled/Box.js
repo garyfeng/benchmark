@@ -30,21 +30,13 @@ export const Box = styled('div', {
   base,
   variant,
   props => props.css,
-  compose(
-    space,
-    layout,
-    shadow,
-    border,
-    width,
-    color,
-    flexbox
-  ),
+  compose(space, layout, shadow, border, width, color, flexbox),
   sx
 );
 
 export const Text = styled(Box)`
   ${typography};
-  display: inline-block;
+  display: inline;
 `;
 
 export const Flex = styled(Box)({
