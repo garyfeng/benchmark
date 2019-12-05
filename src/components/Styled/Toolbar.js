@@ -21,10 +21,10 @@ const Toolbar = ({
   id,
 
   // data
-  progress = 50,
-  itemTitle = 'VH12345',
-  blockTitle = 'Block Title',
+  blockTitle,
+  itemTitle,
   language = 'en',
+  progress = 50,
 
   // disable buttons
   isHelpDisabled,

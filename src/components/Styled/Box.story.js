@@ -114,6 +114,8 @@ storiesOf('Styled System', module).add('Toolbar', () => {
   const [calcActive, setCalcActive] = useState(false);
   const [language, setLanguage] = useState('en');
   const progress = 50;
+  const itemTitle = 'VH12345';
+  const blockTitle = 'Block Title';
 
   return (
     <Global>
@@ -122,6 +124,8 @@ storiesOf('Styled System', module).add('Toolbar', () => {
           // data
           progress={progress}
           language={language}
+          itemTitle={itemTitle}
+          blockTitle={blockTitle}
           // toggle button states
           isHelpActive={helpActive}
           isTTSActive={ttsActive}
