@@ -1,23 +1,23 @@
-import React from "react";
-import { Text, Flex, Box } from "./Box.js";
+import React from 'react';
+import { Text, Flex, Box } from './Box.js';
 
-function Tag({ variant = "default", children }) {
+function Tag({ variant = 'default', children }) {
   const variants = {
     success: {
-      bg: "green.300",
-      color: "black"
+      bg: 'green.300',
+      color: 'black'
     },
     warning: {
-      bg: "yellow.300",
-      color: "white"
+      bg: 'yellow.300',
+      color: 'white'
     },
     danger: {
-      bg: "red.400",
-      color: "white"
+      bg: 'red.400',
+      color: 'white'
     },
     default: {
-      bg: "primary",
-      color: "white"
+      bg: 'primary',
+      color: 'white'
     }
   };
 

@@ -1,7 +1,7 @@
-import { Flex } from './Box';
+import { Flex, Box, Text } from './Box';
 import Button from './Button';
 import React from 'react';
-import { Box, Text } from './Box';
+
 import ToolbarGroup from './ToolbarGroup';
 import ToolbarButton from './ToolbarButton';
 import ToolbarToggleButton from './ToolbarToggleButton';

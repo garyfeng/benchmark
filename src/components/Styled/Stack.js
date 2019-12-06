@@ -1,5 +1,5 @@
-import React from 'react';
-import { Children, cloneElement } from 'react';
+import React, { Children, cloneElement } from 'react';
+
 import { Flex } from './Box';
 
 const Stack = ({

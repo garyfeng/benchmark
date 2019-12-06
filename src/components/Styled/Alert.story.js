@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
-import Global from "./Global";
-import ThemeProvider from "./ThemeProvider.js";
-import { Box, Text } from "./Box.js";
-import Stack from "./Stack.js";
-import Alert from "./Alert.js";
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Global from './Global.js';
+import ThemeProvider from './ThemeProvider.js';
+import { Text } from './Box.js';
+import Stack from './Stack.js';
+import Alert from './Alert.js';
 
-storiesOf("Styled System", module).add("Alert", () => {
+storiesOf('Styled System', module).add('Alert', () => {
   return (
     <Global>
       <ThemeProvider>
