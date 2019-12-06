@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box } from './Box.js';
+import { useRovingTabIndex, useFocusEffect } from 'react-roving-tabindex';
 
-function Button(props) {
+function Button({ disabled, roving = false, ...props }) {
+  const ref = React.useRef(null);
+  const [tabIndex, focused, handleKeyDown, handleClick] = useRovingTabIndex(
+    ref,
+    disabled
+  );
+  useFocusEffect(focused, ref);
   return (
     <Box
       as="button"
@@ -27,6 +34,11 @@ function Button(props) {
           boxShadow: 'none'
         }
       }}
+      ref={ref}
+      tabIndex={roving ? tabIndex : undefined}
+      disabled={disabled}
+      onKeyDown={handleKeyDown}
+      onClick={handleClick}
       {...props}
     />
   );

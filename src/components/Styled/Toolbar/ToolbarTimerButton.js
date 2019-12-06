@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex, Text } from './Box';
-import Button from './Button';
+import { Flex, Text } from '../Box';
+import Button from '../Button';
 
 import { IoIosTimer } from 'react-icons/io';
 
@@ -23,6 +23,7 @@ const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
       <Button
         title="Timer. Shows the time remaining."
         variant="toolbar"
+        roving={true}
         onClick={onClickTimer}
         sx={isTimerActive ? toggleButtonActive : null}
       >
@@ -51,6 +52,7 @@ const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
             Time Left:
           </Text>
           <Text
+            role="timer"
             fontSize={2}
             fontWeight="bold"
             sx={{

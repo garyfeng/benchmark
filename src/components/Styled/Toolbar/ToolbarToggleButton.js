@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from '../Button';
 import React from 'react';
 import { IoMdHelpCircle } from 'react-icons/io';
 
@@ -15,6 +15,7 @@ const ToolbarToggleButton = ({
     <Button
       {...rest}
       variant={isActive ? 'toolbarActive' : 'toolbar'}
+      roving={true}
       onClick={onClick}
       disabled={disabled}
     >

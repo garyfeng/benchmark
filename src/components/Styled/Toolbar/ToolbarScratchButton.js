@@ -1,8 +1,8 @@
 import React from 'react';
-import { Flex } from './Box';
-import Stack from './Stack';
+import { Flex } from '../Box';
+import Stack from '../Stack';
+import Button from '../Button';
 import ToolbarButton from './ToolbarButton';
-import Button from './Button';
 
 import { IoIosApps, IoIosColorPalette } from 'react-icons/io';
 
@@ -19,6 +19,7 @@ const ToolbarScratchButton = ({ isScratchActive, onClickScratch, ...rest }) => {
         id="scratchwork-btn"
         title="Scratchwork. Turns on scratchwork mode. This lets you write on the screen. You must turn scratchwork off to answer questions."
         variant={isScratchActive ? 'toolbarActive' : 'toolbar'}
+        roving={true}
         onClick={onClickScratch}
         sx={isScratchActive ? toggleButtonActive : null}
       >

@@ -13,13 +13,12 @@ import Button from './Button';
 import ScrollButton from './ScrollButton.js';
 import MultipleChoice from './MultipleChoice.js';
 import { Box, Text, Flex } from './Box.js';
-import ToolbarToggleButton from './ToolbarToggleButton.js';
-import ToolbarButton from './ToolbarButton';
-import ToolbarGroup from './ToolbarGroup';
-import ToolbarScratchButton from './ToolbarScratchButton';
-import ToolbarTimerButton from './ToolbarTimerButton';
+import ToolbarToggleButton from './Toolbar/ToolbarToggleButton.js';
+import ToolbarButton from './Toolbar/ToolbarButton.js';
+import ToolbarGroup from './Toolbar/ToolbarGroup.js';
+import ToolbarScratchButton from './Toolbar/ToolbarScratchButton.js';
+import ToolbarTimerButton from './Toolbar/ToolbarTimerButton.js';
 import Option from './Option.js';
-import Toolbar from './Toolbar';
 import { useArrayToggle } from '../../util/hooks.js';
 
 storiesOf('Styled System', module).add('MultipleChoice', () => {
@@ -101,45 +100,6 @@ storiesOf('Styled System', module).add('Stack', () => {
             Row
           </Box>
         </Stack>
-      </ThemeProvider>
-    </Global>
-  );
-});
-
-storiesOf('Styled System', module).add('Toolbar', () => {
-  const [helpActive, setHelpActive] = useState(false);
-  const [timerActive, setTimerActive] = useState(false);
-  const [ttsActive, setTTSActive] = useState(false);
-  const [scratchActive, setSratchActive] = useState(false);
-  const [calcActive, setCalcActive] = useState(false);
-  const [language, setLanguage] = useState('en');
-  const progress = 50;
-  const itemTitle = 'VH12345';
-  const blockTitle = 'Block Title';
-
-  return (
-    <Global>
-      <ThemeProvider>
-        <Toolbar
-          // data
-          progress={progress}
-          language={language}
-          itemTitle={itemTitle}
-          blockTitle={blockTitle}
-          // toggle button states
-          isHelpActive={helpActive}
-          isTTSActive={ttsActive}
-          isTimerActive={timerActive}
-          isScratchActive={scratchActive}
-          isCalcActive={calcActive}
-          // event handlers
-          onClickHelp={() => setHelpActive(!helpActive)}
-          onClickTTS={() => setTTSActive(!ttsActive)}
-          onClickScratch={() => setSratchActive(!scratchActive)}
-          onClickCalc={() => setCalcActive(!calcActive)}
-          onClickTimer={() => setTimerActive(!timerActive)}
-          onClickLang={() => setLanguage(language === 'en' ? 'es' : 'en')}
-        />
       </ThemeProvider>
     </Global>
   );
