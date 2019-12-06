@@ -7,7 +7,7 @@ import css from './wrapper.css';
 
 addParameters({
   options: {
-    name: 'Benchmark Component Library',
+    name: 'Benchmark',
     isFullscreen: false,
     showPanel: true,
     panelPosition: 'bottom'
@@ -29,10 +29,15 @@ const withStoryStyles = storyFn => {
   return <div className={css.wrapper}>{storyFn()}</div>;
 };
 
+const withStrictMode = storyFn => {
+  return <React.StrictMode>{storyFn()}</React.StrictMode>;
+};
+
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /\.story\.js$/);
 
 function loadStories() {
+  addDecorator(withStrictMode);
   addDecorator(withA11y);
   addDecorator(withKnobs);
   addDecorator(withStoryStyles);
