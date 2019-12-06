@@ -1,12 +1,4 @@
-import { Flex, Box, Text } from './Box';
-import Button from './Button';
 import React from 'react';
-
-import ToolbarGroup from './ToolbarGroup';
-import ToolbarButton from './ToolbarButton';
-import ToolbarToggleButton from './ToolbarToggleButton';
-import ToolbarScratchButton from './ToolbarScratchButton';
-import ToolbarTimerButton from './ToolbarTimerButton';
 import { MdZoomIn, MdZoomOut } from 'react-icons/md';
 import {
   IoMdHelpCircle,
@@ -16,6 +8,14 @@ import {
   IoIosApps,
   IoIosGlobe
 } from 'react-icons/io';
+import { Flex, Box, Text } from './Box';
+import Button from './Button';
+
+import ToolbarGroup from './ToolbarGroup';
+import ToolbarButton from './ToolbarButton';
+import ToolbarToggleButton from './ToolbarToggleButton';
+import ToolbarScratchButton from './ToolbarScratchButton';
+import ToolbarTimerButton from './ToolbarTimerButton';
 
 const Toolbar = ({
   id,

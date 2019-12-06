@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import styles from './ThemeProvider.module.css';
 import themes from '../../themes';
 
 // global
@@ -10,6 +9,7 @@ import '../../styles/fonts.css';
 import '../../themes/Default.module.css';
 
 import typography from '../../styles/typography.module.css';
+import styles from './ThemeProvider.module.css';
 
 function ThemeProvider({ theme = 'Default', children }) {
   const selectedTheme = themes[theme].theme;

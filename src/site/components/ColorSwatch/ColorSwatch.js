@@ -1,8 +1,8 @@
 import React from 'react';
-import css from './ColorSwatch.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Text from '../../../components/Text';
+import css from './ColorSwatch.module.css';
 
 function ColorSwatch({ children, className, id, color, name, border }) {
   const classes = classnames(className, css.colorSwatch, {

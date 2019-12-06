@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Icon.module.css';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import styles from './Icon.module.css';
 import icons from './Icons.json';
 
 function Icon({ iconName, size, className, color, label }) {

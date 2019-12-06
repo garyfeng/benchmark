@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './ExtendedText.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './ExtendedText.css';
 
 function ExtendedText({
   onChange,

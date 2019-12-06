@@ -1,9 +1,9 @@
 import React from 'react';
 import { useId } from '@reach/auto-id';
-import css from './RadioButton.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Icon from '../Icon/Icon.js';
+import css from './RadioButton.module.css';
 
 function RadioButton({
   checked,

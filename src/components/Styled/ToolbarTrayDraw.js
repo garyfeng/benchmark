@@ -1,5 +1,5 @@
-import Stack from './Stack';
 import React from 'react';
+import Stack from './Stack';
 import { Box } from './Box.js';
 
 const defaultProps = {

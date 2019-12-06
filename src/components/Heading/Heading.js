@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Heading.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './Heading.module.css';
 
 function Heading({ children, className, id, level = 1 }) {
   const classes = classnames(className, css[`level${level}`]);

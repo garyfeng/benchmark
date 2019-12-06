@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import css from './Layout.module.css';
 import Nav from '../Nav';
 import Tag from '../Tag';
 import SourceIcon from '../SourceIcon';
+import css from './Layout.module.css';
 
 function Layout({ frontmatter, children }) {
   return (

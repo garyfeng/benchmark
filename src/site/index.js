@@ -2,12 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
 import '../components/GlobalStyles';
+import { Heading, Paragraph, Button, Icon, Text } from '../index.js';
+import ThemeProvider from '../components/ThemeProvider';
 import Layout from './components/Layout';
 import LiveCodeBlock from './components/LiveCodeBlock';
-import { Heading, Paragraph, Button, Icon, Text } from '../index.js';
 import Tag from './components/Tag';
 import ColorSwatch from './components/ColorSwatch';
-import ThemeProvider from '../components/ThemeProvider';
 
 const components = {
   h1: props => <Heading level={1} {...props} />,

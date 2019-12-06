@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Button.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './Button.module.css';
 
 function Button({
   children,

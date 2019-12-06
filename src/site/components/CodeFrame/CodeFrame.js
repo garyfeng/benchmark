@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import css from './CodeFrame.module.css';
 
 import typography from '../../../styles/typography.module.css';
 import '../../../styles/reset.css';
 import '../../../styles/fonts.css';
 
 import ThemeProvider from '../../../components/ThemeProvider';
+import css from './CodeFrame.module.css';
 
 class CodeFrame extends PureComponent {
   constructor(props, context) {

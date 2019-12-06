@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { mdx } from '@mdx-js/react';
 import * as Components from '../../../index.js';
+import CodeFrame from '../CodeFrame';
 import css from './LiveCodeBlock.module.css';
 import codeTheme from './themes/github.js';
-import CodeFrame from '../CodeFrame';
 
 export default ({ children, render, renderTheme = 'Default' }) => {
   const [showEditor, toggleCode] = useState(false);

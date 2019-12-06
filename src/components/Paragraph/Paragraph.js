@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Paragraph.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './Paragraph.module.css';
 
 function Paragraph({ children, className, id }) {
   const classes = classnames(className, css.paragraph);

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import Global from './Global';
-
-import ThemeProvider from './ThemeProvider.js';
 import {
   IoMdArrowRoundBack,
   IoIosApps,
   IoMdArrowRoundForward
 } from 'react-icons/io';
+import { useArrayToggle } from '../../util/hooks.js';
+import Global from './Global';
+
+import ThemeProvider from './ThemeProvider.js';
 import Stack from './Stack.js';
 import Button from './Button';
 import ScrollButton from './ScrollButton.js';
@@ -20,7 +21,6 @@ import ToolbarScratchButton from './ToolbarScratchButton';
 import ToolbarTimerButton from './ToolbarTimerButton';
 import Option from './Option.js';
 import Toolbar from './Toolbar';
-import { useArrayToggle } from '../../util/hooks.js';
 
 storiesOf('Styled System', module).add('MultipleChoice', () => {
   function handleEliminate(value) {

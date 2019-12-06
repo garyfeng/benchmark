@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './TTS.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './TTS.css';
 
 function TTS({ children, voice = 'native', enabled = false }) {
   const classes = classnames({ [css.enabled]: enabled });

@@ -1,10 +1,9 @@
 import React from 'react';
+import { IoIosApps, IoIosColorPalette } from 'react-icons/io';
 import { Flex } from './Box';
 import Stack from './Stack';
 import ToolbarButton from './ToolbarButton';
 import Button from './Button';
-
-import { IoIosApps, IoIosColorPalette } from 'react-icons/io';
 
 const ToolbarScratchButton = ({ isScratchActive, onClickScratch, ...rest }) => {
   const toggleButtonActive = {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { useToggle } from '../../util/hooks.js';
 import Global from './Global';
 import ThemeProvider from './ThemeProvider.js';
 import Switch from './Switch.js';
 import Stack from './Stack.js';
-import { useToggle } from '../../util/hooks.js';
 
 storiesOf('Styled System', module).add('Switch', () => {
   const [checked, setChecked] = useToggle();

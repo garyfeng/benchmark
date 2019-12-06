@@ -1,11 +1,11 @@
 import React from 'react';
-import { Flex, Box } from './Box.js';
 import {
   IoIosWarning,
   IoIosCheckmarkCircleOutline,
   IoIosCloseCircleOutline,
   IoIosGlobe
 } from 'react-icons/io';
+import { Flex, Box } from './Box.js';
 
 function Alert({ variant = 'default', border = true, children }) {
   const variants = {

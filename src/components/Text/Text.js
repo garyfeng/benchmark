@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Text.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './Text.module.css';
 
 function Text({ children, className, id, strong, type, underline, italic }) {
   const classes = classnames(className, {

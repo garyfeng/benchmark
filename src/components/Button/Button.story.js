@@ -2,10 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { radios, select, boolean, text } from '@storybook/addon-knobs';
 
-import Button from './Button';
 import Box from '../private/Box';
 import Icon from '../Icon';
 import Text from '../Text';
+import Button from './Button';
 
 storiesOf('Button', module).add('Examples', () => {
   return (

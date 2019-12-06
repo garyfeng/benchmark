@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean, text } from '@storybook/addon-knobs';
 
-import TTS from './TTS';
 import Text from '../Text';
+import TTS from './TTS';
 
 storiesOf('Elements', module).add('TTS', () => {
   const txt = text('Text', `Hello AJ`);

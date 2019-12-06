@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ExtendedText from './ExtendedText';
 import { axe, toHaveNoViolations } from 'jest-axe';
+import ExtendedText from './ExtendedText';
 expect.extend(toHaveNoViolations);
 
 describe('ExtendedText', () => {

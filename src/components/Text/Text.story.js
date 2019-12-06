@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { radios, boolean, text } from '@storybook/addon-knobs';
 
-import Text from './Text';
 import Box from '../private/Box';
+import Text from './Text';
 
 storiesOf('Typography', module).add('Text', () => {
   const txt = text('Text', 'Sandbox Text');

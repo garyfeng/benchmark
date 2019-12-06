@@ -1,12 +1,12 @@
 import React from 'react';
-import { Flex, Text } from './Box.js';
-import Button from './Button.js';
 import {
   MdRadioButtonUnchecked,
   MdRadioButtonChecked,
   MdRemoveCircleOutline,
   MdAddCircleOutline
 } from 'react-icons/md';
+import { Flex, Text } from './Box.js';
+import Button from './Button.js';
 
 function Choice({
   children,

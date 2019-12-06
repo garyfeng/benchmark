@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Tag.module.css';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import css from './Tag.module.css';
 
 function Tag({ children, className, id, type }) {
   const classes = classnames(className, css.tag, {

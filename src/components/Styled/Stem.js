@@ -1,5 +1,5 @@
-import { Text } from './Box.js';
 import React from 'react';
+import { Text } from './Box.js';
 
 const Stem = <Text mb="2" />;
 

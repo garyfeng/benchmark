@@ -1,6 +1,6 @@
-import Button from './Button';
 import React from 'react';
 import { IoMdHelpCircle } from 'react-icons/io';
+import Button from './Button';
 
 const ToolbarButton = ({ icon, variant, ...rest }) => {
   const Icon = icon;
