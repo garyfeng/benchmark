@@ -36,6 +36,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-icons": "^3.8.0",
+    "react-roving-tabindex": "^0.7.1",
     "styled-system": "^5.1.2"
   },
   "devDependencies": {

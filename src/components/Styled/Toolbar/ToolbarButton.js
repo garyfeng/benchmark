@@ -1,12 +1,12 @@
+import Button from '../Button';
 import React from 'react';
 import { IoMdHelpCircle } from 'react-icons/io';
-import Button from './Button';
 
 const ToolbarButton = ({ icon, variant, ...rest }) => {
   const Icon = icon;
   const iconSize = variant === 'toolbar' ? 42 : 32;
   return (
-    <Button {...rest} variant="toolbar">
+    <Button variant="toolbar" roving={true} {...rest}>
       <Icon size={iconSize} />
     </Button>
   );
