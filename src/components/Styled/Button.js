@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Box } from './Box.js';
 import { useRovingTabIndex, useFocusEffect } from 'react-roving-tabindex';
+import { Box } from './Box.js';
 
 function Button({ disabled, roving = false, ...props }) {
   const ref = React.useRef(null);

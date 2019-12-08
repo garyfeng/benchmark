@@ -1,11 +1,4 @@
 import React from 'react';
-import Button from '../Button';
-import { Box, Text, Flex } from '../Box';
-import ToolbarGroup from './ToolbarGroup';
-import ToolbarButton from './ToolbarButton';
-import ToolbarToggleButton from './ToolbarToggleButton';
-import ToolbarScratchButton from './ToolbarScratchButton';
-import ToolbarTimerButton from './ToolbarTimerButton';
 import { MdZoomIn, MdZoomOut } from 'react-icons/md';
 import {
   IoMdHelpCircle,
@@ -16,6 +9,13 @@ import {
   IoIosGlobe
 } from 'react-icons/io';
 import { RovingTabIndexProvider } from 'react-roving-tabindex';
+import Button from '../Button';
+import { Box, Text, Flex } from '../Box';
+import ToolbarGroup from './ToolbarGroup';
+import ToolbarButton from './ToolbarButton';
+import ToolbarToggleButton from './ToolbarToggleButton';
+import ToolbarScratchButton from './ToolbarScratchButton';
+import ToolbarTimerButton from './ToolbarTimerButton';
 
 const Toolbar = ({
   id,

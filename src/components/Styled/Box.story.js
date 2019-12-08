@@ -20,8 +20,6 @@ import ToolbarGroup from './Toolbar/ToolbarGroup.js';
 import ToolbarScratchButton from './Toolbar/ToolbarScratchButton.js';
 import ToolbarTimerButton from './Toolbar/ToolbarTimerButton.js';
 import Option from './Option.js';
-import Toolbar from './Toolbar';
-import { useArrayToggle } from '../../util/hooks.js';
 
 storiesOf('Styled System', module).add('MultipleChoice', () => {
   function handleEliminate(value) {

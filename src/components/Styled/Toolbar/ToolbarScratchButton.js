@@ -1,4 +1,5 @@
 import React from 'react';
+import { IoIosColorPalette, IoIosApps } from 'react-icons/io';
 import { Flex } from '../Box';
 import Stack from '../Stack';
 import Button from '../Button';

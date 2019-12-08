@@ -16,8 +16,7 @@
     "playroom": "playroom start",
     "build-docs": "gatsby build",
     "build": "webpack -p ./src/index.js",
-    "docs": "gatsby develop",
-    "postinstall": "npm run build"
+    "docs": "gatsby develop"
   },
   "author": "Corey McGeachie",
   "license": "ISC",
