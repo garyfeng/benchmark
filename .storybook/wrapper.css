@@ -1,19 +1,21 @@
 .wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
+  overflow: auto;
+  height: calc(100% - 30px);
+  padding-top: 30px;
 }
 
 html {
   height: 100%;
 }
+
 body {
   height: calc(100% - 30px);
+  overflow: auto;
   margin: 0;
 }
 
 :global(#root) {
   height: 100%;
-  padding: 15px;
 }

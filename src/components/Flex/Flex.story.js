@@ -4,7 +4,7 @@ import { debug } from '../../styles/mixins.module.css';
 
 import Flex from './Flex';
 
-storiesOf('Flex', module).add('Website Layout', () => {
+storiesOf('Classic', module).add('Flex: Website Layout', () => {
   return (
     <Flex className={debug} grow={1} fill>
       <Flex grow={1} justify="center">
@@ -28,7 +28,7 @@ storiesOf('Flex', module).add('Website Layout', () => {
   );
 });
 
-storiesOf('Flex', module).add('One Column', () => {
+storiesOf('Classic', module).add('Flex: One Column', () => {
   return (
     <Flex className={debug} grow={1} direction="column" fill>
       <Flex justify="center" p={2}>
@@ -41,7 +41,7 @@ storiesOf('Flex', module).add('One Column', () => {
   );
 });
 
-storiesOf('Flex', module).add('Two Column 50/50', () => {
+storiesOf('Classic', module).add('Flex: Two Column 50/50', () => {
   return (
     <Flex className={debug} grow={1} direction="column" fill>
       <Flex justify="center" p={2}>
@@ -59,7 +59,7 @@ storiesOf('Flex', module).add('Two Column 50/50', () => {
   );
 });
 
-storiesOf('Flex', module).add('Two Column 40/60', () => {
+storiesOf('Classic', module).add('Flex: Two Column 40/60', () => {
   return (
     <Flex className={debug} grow={1} direction="column" fill>
       <Flex justify="center" p={2}>

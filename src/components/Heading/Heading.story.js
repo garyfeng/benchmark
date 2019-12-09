@@ -1,9 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import Heading from './Heading';
 
-storiesOf('Typography', module).add('Heading', () => {
+storiesOf('Classic', module).add('Typography: Heading', () => {
   return (
     <div>
       <Heading>Heading 1</Heading>

@@ -5,8 +5,8 @@ import {
   MdRemoveCircleOutline,
   MdAddCircleOutline
 } from 'react-icons/md';
+import Button from './Button';
 import { Flex, Text } from './Box.js';
-import Button from './Button.js';
 
 function Choice({
   children,

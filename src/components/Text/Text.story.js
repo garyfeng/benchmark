@@ -5,7 +5,7 @@ import { radios, boolean, text } from '@storybook/addon-knobs';
 import Box from '../private/Box';
 import Text from './Text';
 
-storiesOf('Typography', module).add('Text', () => {
+storiesOf('Classic', module).add('Typography: Text', () => {
   const txt = text('Text', 'Sandbox Text');
   const type = radios('Type', ['muted', 'success', 'warning', 'danger'], '');
   const underline = boolean('Underline', false);

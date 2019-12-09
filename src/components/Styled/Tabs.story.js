@@ -10,8 +10,7 @@ storiesOf('Styled System', module).add('Tabs ', () => {
   let [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <>
-      <Global />
+    <Global>
       <ThemeProvider>
         <Flex flexDirection="column" width="100%">
           <Box>
@@ -28,6 +27,6 @@ storiesOf('Styled System', module).add('Tabs ', () => {
           </Box>
         </Flex>
       </ThemeProvider>
-    </>
+    </Global>
   );
 });

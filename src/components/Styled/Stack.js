@@ -1,6 +1,5 @@
-import React, { Children, cloneElement } from 'react';
-
-import { Flex } from './Box';
+import React, { Children } from 'react';
+import { Flex, Box } from './Box.js';
 
 const Stack = ({
   direction = 'column',
@@ -23,7 +22,7 @@ const Stack = ({
           direction === 'row'
             ? { mr: isLastChild ? null : spacing }
             : { mb: isLastChild ? null : spacing };
-        return cloneElement(child, spacingProps);
+        return <Box {...spacingProps}>{child}</Box>;
       })}
     </Flex>
   );

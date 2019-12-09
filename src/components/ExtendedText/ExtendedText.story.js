@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import ExtendedText from './ExtendedText';
 
-storiesOf('Elements', module).add('Extended Text', () => {
+storiesOf('Classic', module).add('Elements: Extended Text', () => {
   const maxLength = number('Maximum Length', 3000);
   const rows = number('Rows', 5);
   const label = text('Label', 'Item response text input');

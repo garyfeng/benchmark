@@ -4,13 +4,15 @@ import { withKnobs, radios } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 import ThemeProvider from '../src/components/ThemeProvider/';
 import css from './wrapper.css';
+import { Box, Flex } from '../src/components/Styled/Box.js';
 
 addParameters({
   options: {
     name: 'Benchmark',
     isFullscreen: false,
     showPanel: true,
-    panelPosition: 'bottom'
+    panelPosition: 'bottom',
+    storySort: (a, b) => a[1].id.localeCompare(b[1].id)
   }
 });
 
@@ -26,7 +28,18 @@ const withThemeProvider = storyFn => {
 };
 
 const withStoryStyles = storyFn => {
-  return <div className={css.wrapper}>{storyFn()}</div>;
+  return (
+    <Box
+      id="wrapper"
+      sx={{
+        overflow: 'auto',
+        width: '100%',
+        height: '100%'
+      }}
+    >
+      <Flex>{storyFn()}</Flex>
+    </Box>
+  );
 };
 
 const withStrictMode = storyFn => {
@@ -47,7 +60,6 @@ function loadStories() {
   // without the need for a parent wrapper in the story
   // https://github.com/storybookjs/storybook/issues/5721#issuecomment-473869398
   addDecorator(Story => <Story />);
-
   req.keys().forEach(filename => req(filename));
 }
 

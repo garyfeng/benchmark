@@ -63,7 +63,6 @@ const Toolbar = ({
       id={id}
       role="toolbar"
       aria-label={label}
-      width="100vw"
       bg="n.100"
       borderBottom={1}
       borderBottomColor="n.400"
@@ -188,8 +187,9 @@ const Toolbar = ({
 
         {/* PROGRESS */}
         <ToolbarGroup
-          display={['none', 'none', 'none', 'flex']}
+          // display={['none', 'none', 'none', 'flex']}
           justifyContent="space-evenly"
+          alignItems="stretch"
           direction="column"
           px="3"
         >
@@ -207,6 +207,9 @@ const Toolbar = ({
             aria-valuenow={progress}
             aria-valuemin="0"
             aria-valuemax="100"
+            sx={{
+              width: '100%'
+            }}
           >
             <Box width={progress + '%'} height="100%" bg="green.500"></Box>
           </Box>

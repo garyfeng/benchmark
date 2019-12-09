@@ -3,6 +3,7 @@ export const colors = {
   current: 'currentColor',
   black: '#000',
   white: '#fff',
+  bg: 'n.0',
 
   // https://gka.github.io/palettes/#/9|s|2478cc|ffffe0,ff005e,93003a|0|0
   p: {
@@ -15,6 +16,21 @@ export const colors = {
     700: '#004693',
     800: '#003077',
     900: '#001b5d'
+  },
+
+  // http://www.colorbox.io/#steps=10#hue_start=0#hue_end=0#hue_curve=easeInQuad#sat_start=0#sat_end=0#sat_curve=easeOutQuad#sat_rate=130#lum_start=94#lum_end=5#lum_curve=easeOutQuad#minor_steps_map=0
+  n: {
+    '0': '#fff',
+    '50': '#eeeeee',
+    '100': '#ebebeb',
+    '200': '#e4e4e4',
+    '300': '#d8d8d8',
+    '400': '#c7c7c7',
+    '500': '#afafaf',
+    '600': '#909090',
+    '700': '#696969',
+    '800': '#3c3c3c',
+    '900': '#0d0d0d'
   },
 
   whiteAlpha: {
@@ -41,20 +57,6 @@ export const colors = {
     700: 'rgba(0, 0, 0, 0.64)',
     800: 'rgba(0, 0, 0, 0.80)',
     900: 'rgba(0, 0, 0, 0.92)'
-  },
-
-  // http://www.colorbox.io/#steps=10#hue_start=0#hue_end=0#hue_curve=easeInQuad#sat_start=0#sat_end=0#sat_curve=easeOutQuad#sat_rate=130#lum_start=94#lum_end=5#lum_curve=easeOutQuad#minor_steps_map=0
-  n: {
-    '50': '#eeeeee',
-    '100': '#ebebeb',
-    '200': '#e4e4e4',
-    '300': '#d8d8d8',
-    '400': '#c7c7c7',
-    '500': '#afafaf',
-    '600': '#909090',
-    '700': '#696969',
-    '800': '#3c3c3c',
-    '900': '#0d0d0d'
   },
 
   red: {

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Button from '../Button';
 import ThemeProvider from '../ThemeProvider';
 
-storiesOf('ThemeProvider', module).add('Scoped Theming', () => {
+storiesOf('Classic', module).add('Theming: Scoped', () => {
   const style = {
     padding: '60px',
     width: '100%'

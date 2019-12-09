@@ -1,10 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { radios } from '@storybook/addon-knobs';
-
 import Icon from './Icon';
 
-storiesOf('Elements', module).add('Icon', () => {
+storiesOf('Classic', module).add('Elements: Icon', () => {
   const sizes = {
     Small: 'small',
     Medium: 'medium',

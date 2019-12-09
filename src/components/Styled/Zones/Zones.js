@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button.js';
+import Button from '../Button';
 import { Box } from '../Box.js';
 
 function Zones({ id, background, zones, selected, onClear, onSelect }) {

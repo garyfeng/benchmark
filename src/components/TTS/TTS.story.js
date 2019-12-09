@@ -5,7 +5,7 @@ import { select, boolean, text } from '@storybook/addon-knobs';
 import Text from '../Text';
 import TTS from './TTS';
 
-storiesOf('Elements', module).add('TTS', () => {
+storiesOf('Lab', module).add('TTS', () => {
   const txt = text('Text', `Hello AJ`);
   const enabled = boolean('Enabled', true);
 

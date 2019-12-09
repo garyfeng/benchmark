@@ -9,9 +9,10 @@ import { useArrayToggle } from '../../util/hooks.js';
 import Global from './Global';
 
 import ThemeProvider from './ThemeProvider.js';
+import themes from './themes';
 import Stack from './Stack.js';
 import Button from './Button';
-import ScrollButton from './ScrollButton.js';
+import ScrollButton from './ScrollButton';
 import MultipleChoice from './MultipleChoice.js';
 import { Box, Text, Flex } from './Box.js';
 import ToolbarToggleButton from './Toolbar/ToolbarToggleButton.js';
@@ -109,7 +110,7 @@ storiesOf('Styled System', module).add('Buttons', () => {
   return (
     <Global>
       <ThemeProvider>
-        <Stack spacing={3}>
+        <Stack spacing={3} p="3">
           <Stack spacing="2" direction="row">
             <Button>Primary</Button>
             <Button disabled>Primary</Button>

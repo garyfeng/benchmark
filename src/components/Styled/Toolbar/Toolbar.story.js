@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Global from '../Global.js';
 import ThemeProvider from '../ThemeProvider.js';
+import { Box } from '../Box.js';
 import Toolbar from './Toolbar';
 
 storiesOf('Styled System', module).add('Toolbar', () => {
@@ -18,26 +19,33 @@ storiesOf('Styled System', module).add('Toolbar', () => {
   return (
     <Global>
       <ThemeProvider>
-        <Toolbar
-          // data
-          progress={progress}
-          language={language}
-          itemTitle={itemTitle}
-          blockTitle={blockTitle}
-          // toggle button states
-          isHelpActive={helpActive}
-          isTTSActive={ttsActive}
-          isTimerActive={timerActive}
-          isScratchActive={scratchActive}
-          isCalcActive={calcActive}
-          // event handlers
-          onClickHelp={() => setHelpActive(!helpActive)}
-          onClickTTS={() => setTTSActive(!ttsActive)}
-          onClickScratch={() => setSratchActive(!scratchActive)}
-          onClickCalc={() => setCalcActive(!calcActive)}
-          onClickTimer={() => setTimerActive(!timerActive)}
-          onClickLang={() => setLanguage(language === 'en' ? 'es' : 'en')}
-        />
+        <Box
+          width="100%"
+          sx={{
+            position: 'absolute'
+          }}
+        >
+          <Toolbar
+            // data
+            progress={progress}
+            language={language}
+            itemTitle={itemTitle}
+            blockTitle={blockTitle}
+            // toggle button states
+            isHelpActive={helpActive}
+            isTTSActive={ttsActive}
+            isTimerActive={timerActive}
+            isScratchActive={scratchActive}
+            isCalcActive={calcActive}
+            // event handlers
+            onClickHelp={() => setHelpActive(!helpActive)}
+            onClickTTS={() => setTTSActive(!ttsActive)}
+            onClickScratch={() => setSratchActive(!scratchActive)}
+            onClickCalc={() => setCalcActive(!calcActive)}
+            onClickTimer={() => setTimerActive(!timerActive)}
+            onClickLang={() => setLanguage(language === 'en' ? 'es' : 'en')}
+          />
+        </Box>
       </ThemeProvider>
     </Global>
   );

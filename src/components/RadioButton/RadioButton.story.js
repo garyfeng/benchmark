@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import RadioButton from './RadioButton';
 
-storiesOf('Elements', module).add('Radio Button', () => {
+storiesOf('Classic', module).add('Elements: Radio Button', () => {
   const [selected, setSelected] = useState();
 
   function handleChange(e) {

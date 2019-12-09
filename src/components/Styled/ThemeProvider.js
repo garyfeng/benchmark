@@ -1,9 +1,12 @@
 import React from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import theme from './themes/default.js';
+import { Box } from './Box.js';
 
 const ThemeProvider = ({ theme, children }) => (
-  <EmotionThemeProvider theme={theme}>{children}</EmotionThemeProvider>
+  <EmotionThemeProvider theme={theme}>
+    <Box bg="n.0">{children}</Box>
+  </EmotionThemeProvider>
 );
 
 ThemeProvider.defaultProps = {

@@ -7,7 +7,7 @@ import Icon from '../Icon';
 import Text from '../Text';
 import Button from './Button';
 
-storiesOf('Button', module).add('Examples', () => {
+storiesOf('Classic', module).add('Button: Examples', () => {
   return (
     <Box>
       <div>
@@ -97,7 +97,7 @@ storiesOf('Button', module).add('Examples', () => {
   );
 });
 
-storiesOf('Button', module).add('Sandbox', () => {
+storiesOf('Classic', module).add('Button: Sandbox', () => {
   const txt = text('Text', 'Button');
   const small = boolean('Small', false);
   const disabled = boolean('Disabled', false);
