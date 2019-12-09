@@ -5,18 +5,18 @@ function Tag({ variant = 'default', children }) {
   const variants = {
     success: {
       bg: 'green.300',
-      color: 'black'
+      color: 'n.900'
     },
     warning: {
       bg: 'yellow.300',
-      color: 'white'
+      color: 'n.900'
     },
     danger: {
-      bg: 'red.400',
-      color: 'white'
+      bg: 'red.300',
+      color: 'n.900'
     },
     default: {
-      bg: 'primary',
+      bg: 'p.500',
       color: 'white'
     }
   };

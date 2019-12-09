@@ -10,7 +10,10 @@ storiesOf('Styled System', module).add('Tag', () => {
   return (
     <Global>
       <ThemeProvider>
-        <Stack>
+        <Stack direction="row" p="3">
+          <Box>
+            <Tag>Primary</Tag>
+          </Box>
           <Box>
             <Tag variant="success">Success</Tag>
           </Box>
@@ -19,9 +22,6 @@ storiesOf('Styled System', module).add('Tag', () => {
           </Box>
           <Box>
             <Tag variant="danger">Danger</Tag>
-          </Box>
-          <Box>
-            <Tag>Priamry</Tag>
           </Box>
         </Stack>
       </ThemeProvider>
