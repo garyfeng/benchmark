@@ -2,11 +2,7 @@ import React from 'react';
 import Stack from '../Stack';
 import { Box } from '../Base';
 
-const defaultProps = {
-  isOpen: true
-};
-
-const ToolbarTray = ({ isOpen, children }) => {
+const ToolbarTray = ({ isOpen = true, children }) => {
   return (
     <Box display={isOpen ? 'block' : 'none'}>
       <Stack
@@ -22,7 +18,5 @@ const ToolbarTray = ({ isOpen, children }) => {
     </Box>
   );
 };
-
-ToolbarTray.defaultProps = defaultProps;
 
 export default ToolbarTray;

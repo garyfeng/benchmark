@@ -2,18 +2,19 @@ import React from 'react';
 import { MdZoomIn, MdZoomOut } from 'react-icons/md';
 import {
   IoMdHelpCircle,
-  IoMdArrowRoundForward,
-  IoMdArrowRoundBack,
   IoMdCalculator,
   IoIosApps,
   IoIosGlobe
 } from 'react-icons/io';
 import { RovingTabIndexProvider } from 'react-roving-tabindex';
-import Button from '../Button';
 import { Box, Text, Flex } from '../Base';
 import ToolbarGroup from './ToolbarGroup';
-import ToolbarButton from './ToolbarButton';
-import ToolbarToggleButton from './ToolbarToggleButton';
+import {
+  ToolbarButton,
+  ToolbarToggleButton,
+  PrevButton,
+  NextButton
+} from './ToolbarButtons.js';
 import ToolbarScratchButton from './ToolbarScratchButton';
 import ToolbarTimerButton from './ToolbarTimerButton';
 
@@ -35,6 +36,10 @@ const Toolbar = ({
   isLangDisabled,
   isTTSDisabled = true,
   isScratchDisabled,
+  isPencilDisabled,
+  isHighlighterDisabled,
+  isEraserDisabled,
+  isClearDisabled,
   isMathDisabled,
   isCalcDisabled,
   isTimerDisabled,
@@ -46,12 +51,19 @@ const Toolbar = ({
   isTTSActive,
   isCalcActive,
   isScratchActive,
+  isPencilActive,
+  isHighlighterActive,
+  isEraserActive,
   isTimerActive,
 
   // events
   onClickNext,
   onClickPrev,
   onClickScratch,
+  onClickPencil,
+  onClickHighlighter,
+  onClickEraser,
+  onClickClear,
   onClickTimer,
   onClickHelp,
   onClickCalc,
@@ -103,8 +115,10 @@ const Toolbar = ({
           <ToolbarButton
             id="lang-btn"
             icon={IoIosGlobe}
-            // todo: update label for english
-            title="Change to Spanish."
+            title={
+              // todo: should the I be capitalized in inglés?
+              language === 'es' ? 'Cambiar a inglés.' : 'Change to Spanish.'
+            }
             onClick={onClickLang}
             disabled={isLangDisabled}
             sx={{
@@ -130,7 +144,39 @@ const Toolbar = ({
             isScratchActive={isScratchActive}
             onClickScratch={onClickScratch}
             disabled={isScratchDisabled}
-          />
+          >
+            <ToolbarToggleButton
+              id="pencil-btn"
+              title="Pencil. Turns on write mode. This lets you write on the screen."
+              onClick={onClickPencil}
+              isActive={isPencilActive}
+              disabled={isPencilDisabled}
+              size="sm"
+            />
+            <ToolbarToggleButton
+              id="highlighter-btn"
+              title="Highlighter. Turns on highlight mode. This lets you highlight parts of the screen."
+              onClick={onClickHighlighter}
+              isActive={isHighlighterActive}
+              disabled={isHighlighterDisabled}
+              size="sm"
+            />
+            <ToolbarToggleButton
+              id="eraser-btn"
+              title="Eraser. Turns on erase mode. This lets you erase any of your drawings and highlights."
+              onClick={onClickEraser}
+              isActive={isEraserActive}
+              disabled={isEraserDisabled}
+              size="sm"
+            />
+            <ToolbarButton
+              id="clear-scratch-btn"
+              title="Clear Scratchwork. Clears all scratchwork on the screen."
+              onClick={onClickClear}
+              disabled={isClearDisabled}
+              size="sm"
+            />
+          </ToolbarScratchButton>
           <ToolbarButton
             title="Math Keyboard. Shows the on-screen math keyboard."
             id="math-btn"
@@ -217,41 +263,18 @@ const Toolbar = ({
 
         {/* NAVIGATION */}
         <ToolbarGroup borderRight="none">
-          <Button
+          <PrevButton
             id="prev-btn"
             title="Back. Returns to the previous screen."
-            variant="prev"
-            flexShrink={0}
             onClick={onClickPrev}
             disabled={isPrevDisabled}
-            roving={true}
-          >
-            <IoMdArrowRoundBack size={30} />
-          </Button>
-          <Button
+          />
+          <NextButton
             id="next-btn"
             title="Next. Moves to the next screen."
-            variant="next"
-            flexShrink={0}
             onClick={onClickNext}
             disabled={isNextDisabled}
-            roving={true}
-          >
-            <Text
-              // todo: add adjustments into base text component
-              sx={{
-                '::before': {
-                  content: "''",
-                  height: 0,
-                  display: 'block',
-                  mt: '-5px'
-                }
-              }}
-            >
-              Next
-            </Text>
-            <IoMdArrowRoundForward size={32} />
-          </Button>
+          />
         </ToolbarGroup>
       </RovingTabIndexProvider>
     </Flex>

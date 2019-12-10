@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-  IoMdArrowRoundBack,
-  IoIosApps,
-  IoMdArrowRoundForward
-} from 'react-icons/io';
+import { IoIosApps } from 'react-icons/io';
 import { useArrayToggle } from '../../../util/hooks.js';
 import Global from '../Global';
-
 import ThemeProvider from '../ThemeProvider.js';
 import Stack from '../Stack.js';
 import Button from '../Button';
 import ScrollButton from '../ScrollButton';
 import MultipleChoice from '../MultipleChoice.js';
-import ToolbarToggleButton from '../Toolbar/ToolbarToggleButton.js';
-import ToolbarButton from '../Toolbar/ToolbarButton.js';
+import {
+  ToolbarButton,
+  ToolbarToggleButton,
+  NextButton,
+  PrevButton
+} from '../Toolbar/ToolbarButtons.js';
 import ToolbarGroup from '../Toolbar/ToolbarGroup.js';
 import ToolbarScratchButton from '../Toolbar/ToolbarScratchButton.js';
 import ToolbarTimerButton from '../Toolbar/ToolbarTimerButton.js';
@@ -139,46 +138,10 @@ storiesOf('Styled System', module).add('Buttons', () => {
           </Stack>
 
           <Stack direction="row" bg="n.100" p={1}>
-            <Button variant="prev">
-              <IoMdArrowRoundBack size={30} />
-            </Button>
-            <Button variant="prev" disabled={true}>
-              <IoMdArrowRoundBack size={30} />
-            </Button>
-            <Flex alignItems="center">
-              <Button variant="next" flexShrink={0}>
-                <Text
-                  sx={{
-                    '::before': {
-                      content: "''",
-                      height: 0,
-                      display: 'block',
-                      mt: '-5px'
-                    }
-                  }}
-                >
-                  Next
-                </Text>
-                <IoMdArrowRoundForward size={32} />
-              </Button>
-            </Flex>
-            <Flex alignItems="center">
-              <Button variant="next" flexShrink={0} disabled>
-                <Text
-                  sx={{
-                    '::before': {
-                      content: "''",
-                      height: 0,
-                      display: 'block',
-                      mt: '-5px'
-                    }
-                  }}
-                >
-                  Next
-                </Text>
-                <IoMdArrowRoundForward size={32} />
-              </Button>
-            </Flex>
+            <PrevButton />
+            <PrevButton disabled />
+            <NextButton />
+            <NextButton disabled />
           </Stack>
 
           <Flex bg="n.100" p={1}>
@@ -207,7 +170,31 @@ storiesOf('Styled System', module).add('Buttons', () => {
           </Stack>
           <Stack direction="row" bg="n.100" p={1}>
             <ToolbarScratchButton isScratchActive={false} />
-            <ToolbarScratchButton isScratchActive={true} />
+            <ToolbarScratchButton
+              title="Scratchwork. Turns on scratchwork mode. This lets you write on the screen. You must turn scratchwork off to answer questions."
+              isScratchActive={true}
+            >
+              <ToolbarToggleButton
+                id="pencil-btn"
+                title="Pencil. Turns on write mode. This lets you write on the screen."
+                size="sm"
+              />
+              <ToolbarToggleButton
+                id="highlighter-btn"
+                title="Highlighter. Turns on highlight mode. This lets you highlight parts of the screen."
+                size="sm"
+              />
+              <ToolbarToggleButton
+                id="eraser-btn"
+                title="Eraser. Turns on erase mode. This lets you erase any of your drawings and highlights."
+                size="sm"
+              />
+              <ToolbarButton
+                id="clear-scratch-btn"
+                title="Clear Scratchwork. Clears all scratchwork on the screen."
+                size="sm"
+              />
+            </ToolbarScratchButton>
           </Stack>
           <Stack direction="row" bg="n.100" p={1}>
             <ToolbarTimerButton isTimerActive={false} />

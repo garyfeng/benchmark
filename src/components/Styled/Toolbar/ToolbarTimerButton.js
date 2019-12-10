@@ -1,33 +1,30 @@
 import React from 'react';
 import { IoIosTimer } from 'react-icons/io';
 import { Flex, Text } from '../Base';
-import Button from '../Button';
+import { ToolbarToggleButton } from './ToolbarButtons.js';
 
 const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
-  const toggleButtonActive = {
-    borderRight: '1',
-    borderColor: 'n.400',
-    borderRadius: 'default',
-    borderTopRightRadius: 'none',
-    borderBottomRightRadius: 'none',
-    zIndex: '1',
-    ':hover': {
-      bg: 'white'
-    }
-  };
-
   return (
     <Flex {...rest}>
-      {/* todo: compose from another button */}
-      <Button
+      <ToolbarToggleButton
         title="Timer. Shows the time remaining."
-        variant="toolbar"
-        roving={true}
         onClick={onClickTimer}
-        sx={isTimerActive ? toggleButtonActive : null}
+        isActive={isTimerActive}
+        sx={
+          isTimerActive && {
+            bg: 'transparent',
+            borderTopRightRadius: 'none',
+            borderBottomRightRadius: 'none',
+            borderColor: 'n.400',
+            zIndex: '1',
+            ':hover': {
+              bg: 'white'
+            }
+          }
+        }
       >
         <IoIosTimer size="42" />
-      </Button>
+      </ToolbarToggleButton>
 
       {isTimerActive ? (
         <Flex
