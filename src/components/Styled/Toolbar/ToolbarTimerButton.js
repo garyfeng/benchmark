@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoIosTimer } from 'react-icons/io';
-import { Flex, Text } from '../Box';
+import { Flex, Text } from '../Base';
 import Button from '../Button';
 
 const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {

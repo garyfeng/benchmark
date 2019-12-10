@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '../Box.js';
+import { Box } from '../Base';
 import Stack from '../Stack.js';
 import ScrollButton from './ScrollButton.js';
 

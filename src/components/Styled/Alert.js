@@ -5,7 +5,7 @@ import {
   IoIosCloseCircleOutline,
   IoIosGlobe
 } from 'react-icons/io';
-import { Flex, Box } from './Box.js';
+import { Flex, Box } from './Base';
 
 function Alert({ variant = 'default', border = true, children }) {
   const variants = {

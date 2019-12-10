@@ -1,6 +1,6 @@
 import React from 'react';
 import Stack from '../Stack';
-import { Box, Flex } from '../Box.js';
+import { Box, Flex } from '../Base';
 
 const defaultProps = {
   isOpen: true

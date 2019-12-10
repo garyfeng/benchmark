@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import { Box } from '../Box.js';
+import { Box } from '../Base';
 
 function Zones({ id, background, zones, selected, onClear, onSelect }) {
   const { width, height, label, src } = background;

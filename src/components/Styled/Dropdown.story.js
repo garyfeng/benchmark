@@ -4,7 +4,7 @@ import Global from './Global';
 import ThemeProvider from './ThemeProvider.js';
 import Dropdown from './Dropdown.js';
 import Stack from './Stack.js';
-import { Text, Box } from './Box.js';
+import { Text, Box } from './Base';
 
 storiesOf('Styled System', module).add('Dropdown', () => {
   const [selected, setSelected] = useState('a');

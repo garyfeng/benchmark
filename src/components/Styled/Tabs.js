@@ -1,5 +1,5 @@
 import React, { Children, cloneElement } from 'react';
-import { Box, Flex, Text } from './Box.js';
+import { Box, Flex, Text } from './Base';
 
 const states = {
   normal: {

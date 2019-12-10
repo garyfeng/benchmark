@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Flex, Box } from './Box.js';
+import { Text, Flex, Box } from './Base';
 
 function Tag({ variant = 'default', children }) {
   const variants = {

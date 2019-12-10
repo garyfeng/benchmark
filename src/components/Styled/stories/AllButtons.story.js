@@ -1,10 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import {
-  IoMdArrowRoundBack,
-  IoIosApps,
-  IoMdArrowRoundForward
-} from 'react-icons/io';
+import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 import ButtonExamples from '../Button/examples.js';
 import ScrollButtonExamples from '../ScrollButton/examples.js';
 import Global from '../Global.js';
@@ -12,7 +8,7 @@ import ThemeProvider from '../ThemeProvider.js';
 import themes from '../themes';
 import Stack from '../Stack.js';
 import Button from '../Button';
-import { Box, Text, Flex } from '../Box.js';
+import { Box, Text, Flex } from '../Base';
 
 function Buttons() {
   return (

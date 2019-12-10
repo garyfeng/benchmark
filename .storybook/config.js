@@ -4,7 +4,7 @@ import { withKnobs, radios } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
 import ThemeProvider from '../src/components/ThemeProvider/';
 import css from './wrapper.css';
-import { Box, Flex } from '../src/components/Styled/Box.js';
+import { Box, Flex } from '../src/components/Styled/Base';
 
 addParameters({
   options: {

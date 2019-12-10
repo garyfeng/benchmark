@@ -6,7 +6,7 @@ import {
   MdAddCircleOutline
 } from 'react-icons/md';
 import Button from './Button';
-import { Flex, Text } from './Box.js';
+import { Flex, Text } from './Base';
 
 function Choice({
   children,

@@ -1,4 +1,4 @@
-import { Box, Flex } from './Box';
+import { Box, Flex } from './Base';
 import Toolbar from './Toolbar';
 import ThemeProvider from './ThemeProvider';
 import MultipleChoice from './MultipleChoice';

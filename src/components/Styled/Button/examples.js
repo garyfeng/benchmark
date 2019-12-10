@@ -1,6 +1,6 @@
 import React from 'react';
 import Stack from '../Stack';
-import { Box } from '../Box.js';
+import { Box } from '../Base';
 import Button from './Button.js';
 
 export function Variants() {

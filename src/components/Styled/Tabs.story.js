@@ -4,7 +4,7 @@ import Global from './Global.js';
 import ThemeProvider from './ThemeProvider.js';
 
 import { Tabs, Tab, TabsList } from './Tabs.js';
-import { Box, Flex } from './Box.js';
+import { Box, Flex } from './Base';
 
 storiesOf('Styled System', module).add('Tabs ', () => {
   let [selectedTab, setSelectedTab] = useState(0);

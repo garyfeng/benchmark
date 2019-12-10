@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Global from './Global.js';
 import ThemeProvider from './ThemeProvider.js';
-import { Text, Box, Flex } from './Box.js';
+import { Text, Box } from './Base';
 import Stack from './Stack.js';
 import Alert from './Alert.js';
 

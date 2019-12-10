@@ -5,22 +5,21 @@ import {
   IoIosApps,
   IoMdArrowRoundForward
 } from 'react-icons/io';
-import { useArrayToggle } from '../../util/hooks.js';
-import Global from './Global';
+import { useArrayToggle } from '../../../util/hooks.js';
+import Global from '../Global';
 
-import ThemeProvider from './ThemeProvider.js';
-import themes from './themes';
-import Stack from './Stack.js';
-import Button from './Button';
-import ScrollButton from './ScrollButton';
-import MultipleChoice from './MultipleChoice.js';
-import { Box, Text, Flex } from './Box.js';
-import ToolbarToggleButton from './Toolbar/ToolbarToggleButton.js';
-import ToolbarButton from './Toolbar/ToolbarButton.js';
-import ToolbarGroup from './Toolbar/ToolbarGroup.js';
-import ToolbarScratchButton from './Toolbar/ToolbarScratchButton.js';
-import ToolbarTimerButton from './Toolbar/ToolbarTimerButton.js';
-import Option from './Option.js';
+import ThemeProvider from '../ThemeProvider.js';
+import Stack from '../Stack.js';
+import Button from '../Button';
+import ScrollButton from '../ScrollButton';
+import MultipleChoice from '../MultipleChoice.js';
+import ToolbarToggleButton from '../Toolbar/ToolbarToggleButton.js';
+import ToolbarButton from '../Toolbar/ToolbarButton.js';
+import ToolbarGroup from '../Toolbar/ToolbarGroup.js';
+import ToolbarScratchButton from '../Toolbar/ToolbarScratchButton.js';
+import ToolbarTimerButton from '../Toolbar/ToolbarTimerButton.js';
+import Option from '../Option.js';
+import { Box, Text, Flex } from './Base.js';
 
 storiesOf('Styled System', module).add('MultipleChoice', () => {
   function handleEliminate(value) {

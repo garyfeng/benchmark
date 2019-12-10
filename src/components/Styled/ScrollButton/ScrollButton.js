@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Button from '../Button';
-import { Text } from '../Box.js';
+import { Text } from '../Base';
 
 function ScrollButton({ direction = 'down', ...props }) {
   const Label = direction === 'down' ? 'More' : 'Top';

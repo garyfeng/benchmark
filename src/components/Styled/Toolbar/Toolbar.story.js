@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Global from '../Global.js';
 import ThemeProvider from '../ThemeProvider.js';
-import { Box } from '../Box.js';
+import { Box } from '../Base';
 import Toolbar from './Toolbar';
 
 storiesOf('Styled System', module).add('Toolbar', () => {

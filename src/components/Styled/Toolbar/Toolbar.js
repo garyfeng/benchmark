@@ -10,7 +10,7 @@ import {
 } from 'react-icons/io';
 import { RovingTabIndexProvider } from 'react-roving-tabindex';
 import Button from '../Button';
-import { Box, Text, Flex } from '../Box';
+import { Box, Text, Flex } from '../Base';
 import ToolbarGroup from './ToolbarGroup';
 import ToolbarButton from './ToolbarButton';
 import ToolbarToggleButton from './ToolbarToggleButton';

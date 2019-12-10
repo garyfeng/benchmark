@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoIosColorPalette, IoIosApps } from 'react-icons/io';
-import { Flex } from '../Box';
+import { Flex } from '../Base';
 import Stack from '../Stack';
 import Button from '../Button';
 import ToolbarButton from './ToolbarButton';
