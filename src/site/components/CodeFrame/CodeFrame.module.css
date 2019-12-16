@@ -13,6 +13,7 @@
   padding: 6px;
   font-family: Menlo, monospace;
   font-size: 12px;
+  display: flex;
 }
 
 .util {
@@ -22,9 +23,11 @@
   user-select: none;
   color: var(--color-neutral-3);
   display: inline-block;
+  border: 0;
+  background: none;
 }
 
-.code-utils span:hover {
+.util:hover {
   text-decoration: underline;
 }
 
