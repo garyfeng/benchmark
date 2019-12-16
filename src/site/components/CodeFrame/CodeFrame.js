@@ -28,14 +28,18 @@ class CodeFrame extends PureComponent {
         <ThemeProvider theme={this.props.themes[this.state.theme]}>
           <div className={css.toolbar}>
             <div className={css.codeUtils}>
-              <div className={css.util}>
-                <span onClick={() => this.props.onToggleCode()}>Code</span>
+              <div>
+                <button
+                  className={css.util}
+                  onClick={() => this.props.onToggleCode()}
+                >
+                  Code
+                </button>
               </div>
-              <div className={css.util}>
-                <span>Playroom</span>
-              </div>
-              <div className={css.util}>
-                <span onClick={this.toggleTheme}>Theme</span>
+              <div>
+                <button className={css.util} onClick={this.toggleTheme}>
+                  Theme
+                </button>
               </div>
             </div>
           </div>

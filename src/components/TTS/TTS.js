@@ -19,9 +19,9 @@ function TTS({ children, voice = 'native', enabled = false }) {
   }
 
   return (
-    <span className={classes} onClick={speak}>
+    <button className={classes} onClick={speak}>
       {children}
-    </span>
+    </button>
   );
 }
 

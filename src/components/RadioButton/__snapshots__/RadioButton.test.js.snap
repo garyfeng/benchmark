@@ -1,34 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RadioButton should show a radio-selected icon when checked 1`] = `
-<label
-  class="radio"
+<div
+  aria-checked="true"
+  role="radio"
 >
-  <span
-    class="icon icon radio-selected medium"
-    data-icon=""
-  />
-  <input
-    checked=""
-    class="input"
-    type="radio"
-    value=""
-  />
-</label>
+  <label
+    class="radio"
+    for="radio-3"
+  >
+    <input
+      checked=""
+      class="input"
+      id="radio-3"
+      tabindex="0"
+      type="radio"
+      value=""
+    />
+    <span
+      class="icon icon radio-selected medium"
+      data-icon=""
+    />
+  </label>
+</div>
 `;
 
 exports[`RadioButton should show a radio-unselected icon when not checked 1`] = `
-<label
-  class="radio"
+<div
+  aria-checked="false"
+  role="radio"
 >
-  <span
-    class="icon icon radio-unselected medium"
-    data-icon=""
-  />
-  <input
-    class="input"
-    type="radio"
-    value=""
-  />
-</label>
+  <label
+    class="radio"
+    for="radio-5"
+  >
+    <input
+      class="input"
+      id="radio-5"
+      tabindex="0"
+      type="radio"
+      value=""
+    />
+    <span
+      class="icon icon radio-unselected medium"
+      data-icon=""
+    />
+  </label>
+</div>
 `;
