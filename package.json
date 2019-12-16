@@ -15,6 +15,7 @@
     "build-playroom": "playroom build",
     "playroom": "playroom start",
     "build-docs": "gatsby build",
+    "postinstall": "npm run build",
     "build": "webpack -p ./src/index.js",
     "docs": "gatsby develop"
   },
