@@ -1,8 +1,13 @@
 {
-  "name": "benchmark",
+  "name": "@coreym/benchmark",
   "version": "0.1.0",
+  "private": true,
   "description": "",
   "main": "dist/components/index.js",
+  "prepublish": "npm run release",
+  "files": [
+    "dist/components/index.js"
+  ],
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
@@ -17,6 +22,7 @@
     "build-docs": "gatsby build",
     "postinstall": "npm run build",
     "build": "webpack -p ./src/index.js",
+    "release": "npm run lint && npm run test && npm run build",
     "docs": "gatsby develop"
   },
   "author": "Corey McGeachie",
