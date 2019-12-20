@@ -1,17 +1,21 @@
 const path = require('path');
+const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
 
 module.exports = {
   entry: {
     main: './src/index.js'
   },
+  plugins: [new PeerDepsExternalsPlugin()],
+  devtool: 'eval-source-map',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist/components'),
-    libraryTarget: 'commonjs2'
+    library: 'benchmark',
+    libraryTarget: 'umd'
   },
-  externals: {
-    // don't inlucde react in bundle
-    react: 'react'
+  optimization: {
+    concatenateModules: false,
+    minimize: false
   },
   module: {
     rules: [
@@ -55,7 +59,7 @@ module.exports = {
           options: {
             // todo: to be reinstated later
             // disabled temporality for convenience
-            // limit: 50000
+            // limit: 10000
           }
         }
       },

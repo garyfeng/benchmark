@@ -4,6 +4,7 @@ module.exports = {
       '@babel/preset-env',
       {
         targets: {
+          // this is needed to for async tests in jest
           node: 'current'
         }
       }

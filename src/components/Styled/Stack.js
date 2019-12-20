@@ -22,7 +22,11 @@ const Stack = ({
           direction === 'row'
             ? { mr: isLastChild ? null : spacing }
             : { mb: isLastChild ? null : spacing };
-        return <Box {...spacingProps}>{child}</Box>;
+        return (
+          <Box key={index} {...spacingProps}>
+            {child}
+          </Box>
+        );
       })}
     </Flex>
   );
