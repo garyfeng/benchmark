@@ -16,7 +16,6 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint ./src; exit 0",
     "lint:fix": "eslint --fix ./src; exit 0",
-    "styleguidist": "styleguidist server",
     "storybook": "start-storybook -p 5000",
     "docs": "gatsby develop",
     "playroom": "playroom start",
