@@ -15,7 +15,7 @@ function MultipleChoice({
   eliminated
 }) {
   return (
-    <Box id={id}>
+    <Box id={id} display="inline-block">
       <Stack spacing="4">
         <Stack spacing="2">
           {React.Children.map(children, child => {
