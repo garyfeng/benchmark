@@ -6,7 +6,7 @@ module.exports = {
     main: './src/index.js'
   },
   plugins: [new PeerDepsExternalsPlugin()],
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist/components'),
