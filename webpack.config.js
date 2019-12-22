@@ -52,7 +52,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.woff$/,
+        test: /\.(woff|woff2)$/,
         exclude: /node_modules/,
         use: {
           loader: 'url-loader',
