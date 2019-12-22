@@ -1,10 +1,13 @@
-# Design System Prototype
-(we need better name!)
+# Benchmark Design System
+
+Design system prototype.
 
 ## Here be dragons
+
 This is not production code. It's a playground for prototyping the technologies and architectural details for the Benchmark component library / design system.
 
 ## Getting Started
+
 ```bash
  npm install
 
@@ -19,6 +22,7 @@ This is not production code. It's a playground for prototyping the technologies 
 ```
 
 ## New Component
+
 To create a new component run the following:
 
 ```bash
@@ -26,7 +30,6 @@ $ node ./scripts/create-component.js ComponentNameHere
 ```
 
 This will create a component in the `src/components` directory based on the template in the `scripts/template` directory.
-
 
 ## License
 
