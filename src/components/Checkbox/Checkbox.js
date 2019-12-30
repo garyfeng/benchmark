@@ -5,17 +5,17 @@ import classnames from 'classnames';
 import { Box } from '../Styled/Base';
 import VisuallyHidden from '../Styled/VisuallyHidden';
 import Icon from '../Icon/Icon.js';
-import css from './RadioButton.module.css';
+import css from './Checkbox.module.css';
 
-function RadioButton({
-  checked,
-  children,
-  disabled,
+function Checkbox({
+  id,
+  checked = false,
+  disabled = false,
+  value,
   onBlur,
   onClick,
   onChange,
-  onFocus,
-  value
+  onFocus
 }) {
   const inputProps = {
     checked,
@@ -27,19 +27,19 @@ function RadioButton({
     value
   };
 
-  const classes = classnames(css.radio, {
+  const classes = classnames(css.checkbox, {
     [css.disabled]: disabled
   });
-  const inputId = `radio-${useId()}`;
-  const icon = checked ? 'radio-selected' : 'radio-unselected';
+  const inputId = `checkbox-${useId()}`;
+  const icon = checked ? 'checkbox-selected' : 'checkbox-unselected';
 
   return (
-    <Box role="radio" className={classes} aria-checked={checked}>
+    <Box id={id} role="checkbox" className={classes} aria-checked={checked}>
       <VisuallyHidden>
         <input
           tabIndex="0"
           id={inputId}
-          type="radio"
+          type="checkbox"
           className={css.input}
           {...inputProps}
         />
@@ -49,20 +49,18 @@ function RadioButton({
   );
 }
 
-RadioButton.propTypes = {
-  checked: PropTypes.bool,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
+Checkbox.propTypes = {
+  // dom
   id: PropTypes.string,
+  disabled: PropTypes.bool,
+  // data
+  checked: PropTypes.bool,
+  value: PropTypes.string,
+  // events
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string
+  onChange: PropTypes.func.isRequired
 };
 
-RadioButton.defaultProps = {
-  checked: false
-};
-
-export default RadioButton;
+export default Checkbox;

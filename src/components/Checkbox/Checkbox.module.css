@@ -3,11 +3,11 @@
   opacity: 0;
 }
 
-.radio:focus-within {
+.checkbox:focus-within {
   outline: 1px dotted;
 }
 
-.radio {
+.checkbox {
   display: flex;
   align-items: center;
 }

@@ -7,7 +7,6 @@ import ThemeProvider from '../ThemeProvider.js';
 import Stack from '../Stack.js';
 import Button from '../Button';
 import ScrollButton from '../ScrollButton';
-import MultipleChoice from '../MultipleChoice.js';
 import {
   ToolbarButton,
   ToolbarToggleButton,
@@ -17,43 +16,7 @@ import {
 import ToolbarGroup from '../Toolbar/ToolbarGroup.js';
 import ToolbarScratchButton from '../Toolbar/ToolbarScratchButton.js';
 import ToolbarTimerButton from '../Toolbar/ToolbarTimerButton.js';
-import Option from '../Option.js';
 import { Box, Text, Flex } from './Base.js';
-
-storiesOf('Styled System', module).add('MultipleChoice', () => {
-  function handleEliminate(value) {
-    setEliminated(value);
-    if (value === selected) {
-      setSelected(null);
-    }
-  }
-
-  function handleSelect(value) {
-    setSelected(value);
-    if (eliminated.includes(value)) {
-      setEliminated(value);
-    }
-  }
-  const [selected, setSelected] = useState();
-  const [eliminated, setEliminated] = useArrayToggle();
-  return (
-    <Global>
-      <ThemeProvider>
-        <MultipleChoice
-          onClear={() => setSelected()}
-          onChange={option => handleSelect(option)}
-          onEliminate={option => handleEliminate(option)}
-          selected={selected}
-          eliminated={eliminated}
-        >
-          <Option value="a">Unselected</Option>
-          <Option value="b">Selected</Option>
-          <Option value="c">Eliminated</Option>
-        </MultipleChoice>
-      </ThemeProvider>
-    </Global>
-  );
-});
 
 storiesOf('Styled System', module).add('Text', () => {
   return (

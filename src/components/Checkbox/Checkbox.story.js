@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import RadioButton from './RadioButton';
+import Checkbox from './Checkbox';
 
-storiesOf('Classic', module).add('Elements: Radio Button', () => {
+storiesOf('Classic', module).add('Elements: Checkbox', () => {
   const [selected, setSelected] = useState('a');
 
   function handleChange(e) {
@@ -11,24 +11,24 @@ storiesOf('Classic', module).add('Elements: Radio Button', () => {
   }
 
   return (
-    <div role="radiogroup">
-      <RadioButton
+    <div role="group">
+      <Checkbox
         value="a"
         name="radio"
         checked={selected === 'a'}
         onChange={handleChange}
       >
         Option A
-      </RadioButton>
-      <RadioButton
+      </Checkbox>
+      <Checkbox
         value="b"
         name="radio"
         checked={selected === 'b'}
         onChange={handleChange}
       >
         Option B
-      </RadioButton>
-      <RadioButton
+      </Checkbox>
+      <Checkbox
         disabled
         value="c"
         name="radio"
@@ -36,7 +36,7 @@ storiesOf('Classic', module).add('Elements: Radio Button', () => {
         onChange={handleChange}
       >
         Disabled
-      </RadioButton>
+      </Checkbox>
     </div>
   );
 });

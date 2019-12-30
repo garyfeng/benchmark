@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioButton should show a radio-selected icon when checked 1`] = `
+exports[`Checkbox should show a radio-selected icon when checked 1`] = `
 <div
   aria-checked="true"
-  class="radio css-vurnku"
-  role="radio"
+  class="checkbox css-vurnku"
+  role="checkbox"
 >
   <span
     style="position: absolute; height: 1px; width: 1px; clip-path: polygon(0px 0px, 0px 0px, 0px 0px); overflow: hidden !important; white-space: nowrap;"
@@ -12,39 +12,39 @@ exports[`RadioButton should show a radio-selected icon when checked 1`] = `
     <input
       checked=""
       class="input"
-      id="radio-3"
+      id="checkbox-3"
       tabindex="0"
-      type="radio"
+      type="checkbox"
       value=""
     />
   </span>
   <span
-    class="icon icon radio-selected medium"
-    data-icon=""
+    class="icon icon checkbox-selected medium"
+    data-icon=""
   />
 </div>
 `;
 
-exports[`RadioButton should show a radio-unselected icon when not checked 1`] = `
+exports[`Checkbox should show a radio-unselected icon when not checked 1`] = `
 <div
   aria-checked="false"
-  class="radio css-vurnku"
-  role="radio"
+  class="checkbox css-vurnku"
+  role="checkbox"
 >
   <span
     style="position: absolute; height: 1px; width: 1px; clip-path: polygon(0px 0px, 0px 0px, 0px 0px); overflow: hidden !important; white-space: nowrap;"
   >
     <input
       class="input"
-      id="radio-5"
+      id="checkbox-5"
       tabindex="0"
-      type="radio"
+      type="checkbox"
       value=""
     />
   </span>
   <span
-    class="icon icon radio-unselected medium"
-    data-icon=""
+    class="icon icon checkbox-unselected medium"
+    data-icon=""
   />
 </div>
 `;

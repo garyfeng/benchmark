@@ -46,6 +46,7 @@ function Button({ disabled, roving = false, ...props }) {
 
 Button.propTypes = {
   variant: PropTypes.oneOf([
+    'bare',
     'primary',
     'secondary',
     'prev',

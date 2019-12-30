@@ -12,6 +12,8 @@
   "question-circle": "\ue92a",
   "radio-selected": "\ue901",
   "radio-unselected": "\ue900",
+  "checkbox-selected": "\ue903",
+  "checkbox-unselected": "\ue902",
   "zoom-in": "\ue92d",
   "zoom-out": "\ue92c"
 }

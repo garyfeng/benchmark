@@ -1,20 +1,19 @@
 import React from 'react';
-import {
-  MdRadioButtonUnchecked,
-  MdRadioButtonChecked,
-  MdRemoveCircleOutline,
-  MdAddCircleOutline
-} from 'react-icons/md';
-import Button from './Button';
-import { Flex, Text } from './Base';
+import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
+import Button from '../Button';
+import RadioButton from '../../RadioButton';
+import Checkbox from '../../Checkbox';
+import VisuallyHidden from '../VisuallyHidden';
+import { Flex, Text } from '../Base';
 
 function Choice({
   children,
   isSelected = false,
   isEliminated = false,
   isDisabled = false,
-  onEliminate,
+  type = 'radio',
   value,
+  onEliminate,
   onChange,
   ...props
 }) {
@@ -22,13 +21,24 @@ function Choice({
     onEliminate(value);
     e.stopPropagation();
   }
+
+  function handleClick(e, value) {
+    if (!isDisabled) {
+      onChange(value);
+      e.stopPropagation();
+    }
+  }
+
+  const Input = type === 'radio' ? RadioButton : Checkbox;
+
   return (
     <Flex
       {...props}
+      data-testid="option-element"
       border="2"
-      cursor="pointer"
       borderRadius="lg"
       borderColor="n.300"
+      disabled={isEliminated}
       sx={{
         cursor: 'pointer',
         overflow: 'hidden',
@@ -40,17 +50,15 @@ function Choice({
     >
       <Flex
         flexGrow="1"
-        onClick={() => onChange(value)}
+        onClick={e => handleClick(e, value)}
         opacity={isEliminated ? '50%' : '100%'}
       >
         <Flex bg="blue.100" px="3" py="3" alignItems="center">
-          <Button variant="bare">
-            {isSelected ? (
-              <MdRadioButtonChecked size="28" />
-            ) : (
-              <MdRadioButtonUnchecked size="28" />
-            )}
-          </Button>
+          <Input
+            checked={isSelected}
+            disabled={isDisabled}
+            onChange={onChange}
+          />
         </Flex>
         <Flex px="3" py="3" flexGrow="1" alignItems="center">
           <Text fontSize={3}>{children}</Text>
@@ -64,9 +72,15 @@ function Choice({
           onClick={e => handleEliminate(e, value)}
         >
           {isEliminated ? (
-            <MdAddCircleOutline size="28" />
+            <>
+              <VisuallyHidden>Enable Option</VisuallyHidden>
+              <MdAddCircleOutline size="28" />
+            </>
           ) : (
-            <MdRemoveCircleOutline size="28" />
+            <>
+              <VisuallyHidden>Eliminate Option</VisuallyHidden>
+              <MdRemoveCircleOutline size="28" />
+            </>
           )}
         </Button>
       </Flex>

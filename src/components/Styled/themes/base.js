@@ -270,7 +270,10 @@ export const theme = {
     bare: {
       p: 0,
       bg: 'transparent',
-      border: 0
+      border: 0,
+      ':disabled': {
+        bg: 'transparent'
+      }
     },
     toolbar: {
       fontSize: 2,
