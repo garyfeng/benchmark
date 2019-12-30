@@ -17,19 +17,24 @@ function Choice({
   onChange,
   ...props
 }) {
-  function handleEliminate(e, value) {
+  function handleEliminate(event, value) {
     onEliminate(value);
-    e.stopPropagation();
+    // prevent onChange event from firing on the
+    // parent container component
+    event.stopPropagation();
   }
 
-  function handleClick(e, value) {
+  function handleClick(event, value) {
     if (!isDisabled) {
       onChange(value);
-      e.stopPropagation();
+      event.stopPropagation();
     }
   }
 
-  const Input = type === 'radio' ? RadioButton : Checkbox;
+  const EliminateIcon = isEliminated
+    ? MdAddCircleOutline
+    : MdRemoveCircleOutline;
+  const InputControl = type === 'radio' ? RadioButton : Checkbox;
 
   return (
     <Flex
@@ -39,6 +44,7 @@ function Choice({
       borderRadius="lg"
       borderColor="n.300"
       disabled={isEliminated}
+      onClick={e => handleClick(e, value)}
       sx={{
         cursor: 'pointer',
         overflow: 'hidden',
@@ -48,13 +54,9 @@ function Choice({
         }
       }}
     >
-      <Flex
-        flexGrow="1"
-        onClick={e => handleClick(e, value)}
-        opacity={isEliminated ? '50%' : '100%'}
-      >
+      <Flex flexGrow="1" opacity={isEliminated ? '50%' : '100%'}>
         <Flex bg="blue.100" px="3" py="3" alignItems="center">
-          <Input
+          <InputControl
             checked={isSelected}
             disabled={isDisabled}
             onChange={onChange}
@@ -64,6 +66,7 @@ function Choice({
           <Text fontSize={3}>{children}</Text>
         </Flex>
       </Flex>
+
       {/* ELIMINATE BUTTON */}
       <Flex px="3" py="3" alignContent="center" alignItems="center">
         <Button
@@ -71,17 +74,10 @@ function Choice({
           color="n.700"
           onClick={e => handleEliminate(e, value)}
         >
-          {isEliminated ? (
-            <>
-              <VisuallyHidden>Enable Option</VisuallyHidden>
-              <MdAddCircleOutline size="28" />
-            </>
-          ) : (
-            <>
-              <VisuallyHidden>Eliminate Option</VisuallyHidden>
-              <MdRemoveCircleOutline size="28" />
-            </>
-          )}
+          <VisuallyHidden>
+            {isEliminated ? 'Enable' : 'Eliminate'} Option
+          </VisuallyHidden>
+          <EliminateIcon size="28" />
         </Button>
       </Flex>
     </Flex>
