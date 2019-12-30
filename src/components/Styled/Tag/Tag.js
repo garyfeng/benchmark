@@ -1,23 +1,23 @@
 import React from 'react';
-import { Text, Flex, Box } from './Base';
+import { Text, Flex, Box } from '../Base';
 
 function Tag({ variant = 'default', children }) {
   const variants = {
+    default: {
+      bg: 'primary',
+      color: 'primaryAlt'
+    },
     success: {
-      bg: 'green.300',
-      color: 'n.900'
+      bg: 'success',
+      color: 'successAlt'
     },
     warning: {
-      bg: 'yellow.300',
-      color: 'n.900'
+      bg: 'warning',
+      color: 'warningAlt'
     },
     danger: {
-      bg: 'red.300',
-      color: 'n.900'
-    },
-    default: {
-      bg: 'p.500',
-      color: 'white'
+      bg: 'danger',
+      color: 'dangerAlt'
     }
   };
 

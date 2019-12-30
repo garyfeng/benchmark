@@ -5,25 +5,25 @@ import {
   IoIosCloseCircleOutline,
   IoIosGlobe
 } from 'react-icons/io';
-import { Flex, Box } from './Base';
+import { Flex, Box } from '../Base';
 
 function Alert({ variant = 'default', border = true, children }) {
   const variants = {
-    success: {
-      bg: 'green.300',
-      color: 'black'
-    },
-    warning: {
-      bg: 'orange.200',
-      color: 'white'
-    },
-    danger: {
-      bg: 'red.400',
-      color: 'white'
-    },
     default: {
       bg: 'primary',
-      color: 'white'
+      color: 'primaryAlt'
+    },
+    success: {
+      bg: 'success',
+      color: 'successAlt'
+    },
+    warning: {
+      bg: 'warning',
+      color: 'warningAlt'
+    },
+    danger: {
+      bg: 'danger',
+      color: 'dangerAlt'
     }
   };
   const color = variants[variant];
