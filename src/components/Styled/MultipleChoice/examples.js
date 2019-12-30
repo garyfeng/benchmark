@@ -69,3 +69,37 @@ export const MultiSelect = () => {
     </MultipleChoice>
   );
 };
+
+export const DifferentLengths = () => {
+  const [selected, setSelected] = useState([]);
+  const [eliminated, setEliminated] = useState([]);
+
+  function handleEliminate(value) {
+    if (!eliminated.includes(value)) {
+      setEliminated([...eliminated, value]);
+    } else {
+      setEliminated(eliminated.filter(i => i !== value));
+    }
+    setSelected(selected.filter(i => i !== value));
+  }
+
+  function handleChange(value) {
+    setSelected(value);
+    setEliminated(eliminated.filter(i => !value.includes(i)));
+  }
+
+  return (
+    <MultipleChoice
+      onClear={() => setSelected()}
+      onEliminate={option => handleEliminate(option)}
+      onChange={option => handleChange(option)}
+      selected={selected}
+      eliminated={eliminated}
+      maxChoices={2}
+    >
+      <Option value="a">Short</Option>
+      <Option value="b">Medium Option</Option>
+      <Option value="c">A Very, Very Long Option</Option>
+    </MultipleChoice>
+  );
+};
