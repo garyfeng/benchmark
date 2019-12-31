@@ -10,10 +10,11 @@
 .radio {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .disabled {
-  /* cursor: default; */
+  cursor: default;
 }
 
 .disabled .icon {

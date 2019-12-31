@@ -11,6 +11,7 @@ function Checkbox({
   id,
   checked = false,
   disabled = false,
+  itemId,
   value,
   onBlur,
   onClick,
@@ -34,7 +35,13 @@ function Checkbox({
   const icon = checked ? 'checkbox-selected' : 'checkbox-unselected';
 
   return (
-    <Box id={id} role="checkbox" className={classes} aria-checked={checked}>
+    <Box
+      id={id}
+      role="checkbox"
+      className={classes}
+      aria-checked={checked}
+      onClick={onClick}
+    >
       <VisuallyHidden>
         <input
           tabIndex="0"
@@ -60,7 +67,7 @@ Checkbox.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func
 };
 
 export default Checkbox;

@@ -34,7 +34,12 @@ function RadioButton({
   const icon = checked ? 'radio-selected' : 'radio-unselected';
 
   return (
-    <Box role="radio" className={classes} aria-checked={checked}>
+    <Box
+      role="radio"
+      className={classes}
+      aria-checked={checked}
+      onClick={onClick}
+    >
       <VisuallyHidden>
         <input
           tabIndex="0"
