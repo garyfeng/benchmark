@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { IoIosApps } from 'react-icons/io';
-import { useArrayToggle } from '../../../util/hooks.js';
 import Global from '../Global';
 import ThemeProvider from '../ThemeProvider.js';
 import Stack from '../Stack.js';

@@ -38,7 +38,6 @@ describe('MultipleChoice', () => {
   });
 
   xit('should show a radio when maxChoices is 1', () => {
-    const { container } = render(<MultipleChoice onChange={handleChange} />);
     throw new Error();
   });
 

@@ -20,7 +20,7 @@ function useResponseContext() {
   return context;
 }
 
-export function Grid({ children }) {
+function Grid({ children }) {
   const [response, setResponse] = React.useState({});
 
   function updateResponse(value) {
@@ -37,6 +37,7 @@ export function Grid({ children }) {
     </GridContext.Provider>
   );
 }
+
 function GridClearButton({ children }) {
   const { clearResponse } = useResponseContext();
 

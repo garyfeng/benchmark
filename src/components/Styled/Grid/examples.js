@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from '../Base';
+import { Text } from '../Base';
 import Stack from '../Stack';
 import Grid from './Grid';
 
