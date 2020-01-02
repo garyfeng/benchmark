@@ -1,8 +1,13 @@
 import React from 'react';
-import ThemeProvider from '../ThemeProvider';
+import ThemeProvider from '../Styled/ThemeProvider';
+import Global from '../Styled/Global';
 
 export default class FrameComponent extends React.Component {
   render() {
-    return <ThemeProvider>{this.props.children}</ThemeProvider>;
+    return (
+      <Global>
+        <ThemeProvider>{this.props.children}</ThemeProvider>
+      </Global>
+    );
   }
 }
