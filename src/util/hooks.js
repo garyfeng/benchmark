@@ -11,7 +11,11 @@ export function useArrayToggle() {
     }
   }
 
-  return [state, toggle];
+  function reset() {
+    setState([]);
+  }
+
+  return [state, toggle, reset];
 }
 
 export function useToggle(initialState = false) {
