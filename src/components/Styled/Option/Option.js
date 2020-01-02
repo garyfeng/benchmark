@@ -11,7 +11,7 @@ function Choice({
   isSelected = false,
   isEliminated = false,
   isDisabled = false,
-  type = 'radio',
+  variant = 'radio',
   value,
   onEliminate,
   onChange,
@@ -34,7 +34,7 @@ function Choice({
   const EliminateIcon = isEliminated
     ? MdAddCircleOutline
     : MdRemoveCircleOutline;
-  const InputControl = type === 'radio' ? RadioButton : Checkbox;
+  const InputControl = variant === 'radio' ? RadioButton : Checkbox;
 
   return (
     <Flex

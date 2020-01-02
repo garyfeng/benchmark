@@ -31,3 +31,27 @@ storiesOf('Styled System', module).add('Zones', () => {
     </Global>
   );
 });
+
+storiesOf('Styled System', module).add('Zones Composite', () => {
+  const [selected, setSelected] = useState();
+
+  return (
+    <Global>
+      <ThemeProvider>
+        <Zones
+          background={background}
+          selected={selected}
+          onSelect={optionId => {
+            setSelected(optionId);
+          }}
+          onClear={() => setSelected(null)}
+        >
+          <Zones.Circle />
+          <Zones.Circle />
+          <Zones.Circle />
+          <Zones.Circle />
+        </Zones>
+      </ThemeProvider>
+    </Global>
+  );
+});
