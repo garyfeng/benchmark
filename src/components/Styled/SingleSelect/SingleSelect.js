@@ -62,7 +62,7 @@ export function Choice({ value, children }) {
     <Box>
       <Option
         variant="radio"
-        isSelected={selected.includes(value)}
+        isSelected={selected === value}
         isEliminated={eliminated.includes(value)}
         onChange={onChange}
         onEliminate={onEliminate}
