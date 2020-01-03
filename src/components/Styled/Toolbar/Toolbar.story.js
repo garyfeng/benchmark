@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import Global from '../Global.js';
-import ThemeProvider from '../ThemeProvider.js';
+import Global from '../Global';
+import ThemeProvider from '../ThemeProvider';
 import { Box, Flex } from '../Base';
 import Stack from '../Stack';
 import { useToggle } from '../../../util/hooks.js';

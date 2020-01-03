@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Box } from './Base';
+import { Box } from '../Base';
 
 export const HeadingBase = styled(Box)`
   display: block;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '../Base';
-import Stack from '../Stack.js';
+import Stack from '../Stack';
 import ScrollButton from './ScrollButton.js';
 
 export default function examples() {

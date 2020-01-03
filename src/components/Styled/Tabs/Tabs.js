@@ -1,5 +1,5 @@
 import React, { Children, cloneElement } from 'react';
-import { Box, Flex, Text } from './Base';
+import { Box, Flex, Text } from '../Base';
 
 const states = {
   normal: {
@@ -87,3 +87,5 @@ export function Tabs({
     </Flex>
   );
 }
+
+export default { Tabs, Tab, TabsList };

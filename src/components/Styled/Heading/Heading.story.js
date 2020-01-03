@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Global from './Global.js';
-import ThemeProvider from './ThemeProvider.js';
+import Global from '../Global';
+import ThemeProvider from '../ThemeProvider';
 import Heading from './Heading';
 
 storiesOf('Styled System', module).add('Heading', () => {

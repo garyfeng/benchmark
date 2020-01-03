@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { Flex, Box } from './Base';
+import { Flex, Box } from '../Base';
 
 function Option({ children, selected = false, onClick }) {
   return (

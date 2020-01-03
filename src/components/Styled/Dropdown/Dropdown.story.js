@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import Global from './Global';
-import ThemeProvider from './ThemeProvider.js';
+import Global from '../Global';
+import ThemeProvider from '../ThemeProvider';
+import Stack from '../Stack';
+import { Text, Box } from '../Base';
 import Dropdown from './Dropdown.js';
-import Stack from './Stack.js';
-import { Text, Box } from './Base';
 
 storiesOf('Styled System', module).add('Dropdown', () => {
   const [selected, setSelected] = useState('a');

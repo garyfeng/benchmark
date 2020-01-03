@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { IoIosApps } from 'react-icons/io';
 import Global from '../Global';
-import ThemeProvider from '../ThemeProvider.js';
-import Stack from '../Stack.js';
+import ThemeProvider from '../ThemeProvider';
+import Stack from '../Stack';
 import Button from '../Button';
 import ScrollButton from '../ScrollButton';
 import {
@@ -29,37 +29,6 @@ storiesOf('Styled System', module).add('Text', () => {
           <Text fontSize={5}>Size 5</Text>
           <Text fontSize={6}>Size 6</Text>
           <Text fontSize={7}>Size 7</Text>
-        </Stack>
-      </ThemeProvider>
-    </Global>
-  );
-});
-
-storiesOf('Styled System', module).add('Stack', () => {
-  return (
-    <Global>
-      <ThemeProvider>
-        <Stack spacing="2" border="1" borderColor="n.500">
-          <Box bg="blue.100" p="2">
-            Column
-          </Box>
-          <Box bg="green.100" p="2">
-            Column
-          </Box>
-          <Box bg="orange.100" p="2">
-            Column
-          </Box>
-        </Stack>
-        <Stack mt="3" direction="row" border="1" borderColor="n.500">
-          <Box bg="blue.100" p="2">
-            Row
-          </Box>
-          <Box bg="green.100" p="2">
-            Row
-          </Box>
-          <Box bg="orange.100" p="2">
-            Row
-          </Box>
         </Stack>
       </ThemeProvider>
     </Global>

@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 import ButtonExamples from '../Button/examples.js';
 import ScrollButtonExamples from '../ScrollButton/examples.js';
-import Global from '../Global.js';
-import ThemeProvider from '../ThemeProvider.js';
+import Global from '../Global';
+import ThemeProvider from '../ThemeProvider';
 import themes from '../themes';
-import Stack from '../Stack.js';
+import Stack from '../Stack';
 import Button from '../Button';
 import { Box, Text, Flex } from '../Base';
 
@@ -66,7 +66,7 @@ function Buttons() {
   );
 }
 
-storiesOf('Styled System', module).add('All Buttons', () => {
+storiesOf('Collections', module).add('All Buttons', () => {
   return (
     <Global>
       <Stack direction="row">

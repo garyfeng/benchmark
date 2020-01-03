@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import Global from './Global.js';
-import ThemeProvider from './ThemeProvider.js';
+import Global from '../Global';
+import { Box, Flex } from '../Base';
+import ThemeProvider from '../ThemeProvider';
 
 import { Tabs, Tab, TabsList } from './Tabs.js';
-import { Box, Flex } from './Base';
 
 storiesOf('Styled System', module).add('Tabs ', () => {
   let [selectedTab, setSelectedTab] = useState(0);

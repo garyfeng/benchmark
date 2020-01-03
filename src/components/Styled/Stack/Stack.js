@@ -1,5 +1,5 @@
 import React, { Children } from 'react';
-import { Flex, Box } from './Base';
+import { Flex, Box } from '../Base';
 
 const Stack = ({
   direction = 'column',
