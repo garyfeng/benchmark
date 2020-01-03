@@ -16,6 +16,7 @@ export { default as Heading } from './components/Styled/Heading';
 export { default as Icon } from './components/Styled/Icon';
 export { default as MultipleSelect } from './components/Styled/MultipleSelect';
 export { default as Option } from './components/Styled/Option';
+export { default as SingleSelect } from './components/Styled/SingleSelect';
 export { default as Stack } from './components/Styled/Stack';
 export { default as Switch } from './components/Styled/Switch';
 export { default as ScrollButton } from './components/Styled/ScrollButton';
