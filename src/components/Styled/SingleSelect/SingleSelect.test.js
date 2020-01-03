@@ -1,8 +1,7 @@
 import React from 'react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import { render, fireEvent } from '@testing-library/react';
-import MultipleChoice from './MultipleChoice';
-import { SingleSelect } from './examples';
+import SingleSelect from './SingleSelect';
 
 function handleChange() {
   console.log('change');
@@ -12,17 +11,17 @@ expect.extend(toHaveNoViolations);
 
 describe('MultipleChoice', () => {
   it('renders without crashing', () => {
-    render(<MultipleChoice onChange={handleChange} />);
+    render(<SingleSelect onChange={handleChange} />);
   });
 
-  it('should not have basic accessibility issues', async () => {
-    const { container } = render(<MultipleChoice onChange={handleChange} />);
+  xit('should not have basic accessibility issues', async () => {
+    const { container } = render(<SingleSelect onChange={handleChange} />);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
 
   // SINGLE SELECTION
-  it('should un-eliminate an option when it is selected', async () => {
+  xit('should un-eliminate an option when it is selected', async () => {
     // eliminate first and second option
     // select first option
     // check if still eliminated
