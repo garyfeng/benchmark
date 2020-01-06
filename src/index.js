@@ -12,6 +12,7 @@ export { Box, Flex, Text } from './components/Styled/Base';
 export { default as Alert } from './components/Styled/Alert';
 export { default as Button } from './components/Styled/Button';
 export { default as Dropdown } from './components/Styled/Dropdown';
+export { default as ExtendedText } from './components/Styled/ExtendedText';
 export { default as Heading } from './components/Styled/Heading';
 export { default as Icon } from './components/Styled/Icon';
 export { default as MultipleSelect } from './components/Styled/MultipleSelect';
@@ -26,7 +27,6 @@ export { default as Zones } from './components/Styled/Zones';
 
 // classic
 export { default as Checkbox } from './components/Checkbox';
-export { default as ExtendedText } from './components/ExtendedText';
 export { default as Paragraph } from './components/Paragraph';
 export { default as RadioButton } from './components/RadioButton';
 export { default as TTS } from './components/TTS';
