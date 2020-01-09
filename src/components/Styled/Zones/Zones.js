@@ -1,11 +1,76 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import { Box } from '../Base';
 
-function Zones({ id, background, zones, selected, onClear, onSelect }) {
-  const { width, height, label, src } = background;
+const ZonesContext = createContext({
+  selected: [],
+  onClear: () => {},
+  onChange: () => {}
+});
 
+function useZonesContext() {
+  const context = useContext(ZonesContext);
+  if (!context) {
+    throw new Error(
+      `Choice compound components cannot be rendered outside the Zones component`
+    );
+  }
+  return context;
+}
+
+function Zones({ id, children, onChange, onClear, selected }) {
+  return (
+    <ZonesContext.Provider value={{ selected, onClear, onChange }}>
+      <Box id={id}>{children}</Box>
+    </ZonesContext.Provider>
+  );
+}
+
+export function ClearButton() {
+  const { onClear } = useZonesContext();
+  return (
+    <Box pt="2">
+      <Button variant="secondary" onClick={onClear}>
+        Clear Answer
+      </Button>
+    </Box>
+  );
+}
+
+export function Background({ width, height, label, src, children }) {
+  const { onClear } = useZonesContext();
+  return (
+    <Box sx={{ display: 'block', position: 'relative' }}>
+      <Box
+        as="img"
+        src={src}
+        alt={label}
+        style={{
+          position: 'relative',
+          width: width + 'px',
+          height: height + 'px'
+        }}
+      />
+      <Box
+        as="svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        sx={{
+          position: 'absolute',
+          left: 0,
+          top: 0
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
+  );
+}
+
+export function Choice({ value, type, ...props }) {
   const normalStyle = {
     fill: 'p.500',
     fillOpacity: 0.4,
@@ -39,59 +104,28 @@ function Zones({ id, background, zones, selected, onClear, onSelect }) {
     }
   };
 
+  const { selected, onChange } = useZonesContext();
+  const isSelected = value === selected;
+
   return (
-    <Box id={id} sx={{ display: 'block', position: 'relative' }}>
-      <Box
-        as="img"
-        src={src}
-        alt={label}
-        style={{
-          position: 'relative',
-          width: width + 'px',
-          height: height + 'px'
-        }}
-      />
-      <Box
-        as="svg"
-        xmlns="http://www.w3.org/2000/svg"
-        width={width}
-        height={height}
-        viewBox={`0 0 ${width} ${height}`}
-        sx={{
-          position: 'absolute',
-          left: 0,
-          top: 0
-        }}
-      >
-        {zones.map(zone => {
-          let { optionId } = zone;
-          let isSelected = optionId === selected;
-          return (
-            <Box
-              as={zone.type}
-              key={optionId}
-              zone={zone}
-              tabIndex="0"
-              onClick={() => onSelect(optionId)}
-              sx={isSelected ? selectedStyle : normalStyle}
-              {...zone.attributes}
-            />
-          );
-        })}
-      </Box>
-      <Box pt="2">
-        <Button variant="secondary" onClick={onClear}>
-          Clear Answer
-        </Button>
-      </Box>
-    </Box>
+    <Box
+      as={type}
+      key={value}
+      tabIndex="0"
+      onClick={() => onChange(value)}
+      sx={isSelected ? selectedStyle : normalStyle}
+      {...props}
+    />
   );
 }
+
+Zones.Choice = Choice;
+Zones.ClearButton = ClearButton;
+Zones.Background = Background;
 
 Zones.propTypes = {
   id: PropTypes.string,
   background: PropTypes.object,
-  zones: PropTypes.array,
   onSelect: PropTypes.func,
   selected: PropTypes.string
 };

@@ -2,15 +2,8 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import Global from '../Global';
 import ThemeProvider from '../ThemeProvider';
-
 import Zones from './Zones';
-
-import example01 from './examples/example01.json';
 import imageFile from './examples/example01.svg';
-
-example01.background.src = imageFile;
-
-const { background, zones } = example01;
 
 storiesOf('Styled System', module).add('Zones', () => {
   const [selected, setSelected] = useState();
@@ -19,37 +12,17 @@ storiesOf('Styled System', module).add('Zones', () => {
     <Global>
       <ThemeProvider>
         <Zones
-          background={background}
-          zones={zones}
           selected={selected}
-          onSelect={optionId => {
-            setSelected(optionId);
-          }}
-          onClear={() => setSelected(null)}
-        />
-      </ThemeProvider>
-    </Global>
-  );
-});
-
-storiesOf('Styled System', module).add('Zones Composite', () => {
-  const [selected, setSelected] = useState();
-
-  return (
-    <Global>
-      <ThemeProvider>
-        <Zones
-          background={background}
-          selected={selected}
-          onSelect={optionId => {
-            setSelected(optionId);
-          }}
-          onClear={() => setSelected(null)}
+          onChange={setSelected}
+          onClear={() => setSelected()}
         >
-          <Zones.Circle />
-          <Zones.Circle />
-          <Zones.Circle />
-          <Zones.Circle />
+          <Zones.Background width="301" height="301" src={imageFile}>
+            <Zones.Choice type="circle" value="a" cx="100" cy="100" r="22" />
+            <Zones.Choice type="circle" value="b" cx="200" cy="100" r="22" />
+            <Zones.Choice type="circle" value="c" cx="100" cy="200" r="22" />
+            <Zones.Choice type="circle" value="d" cx="200" cy="200" r="22" />
+          </Zones.Background>
+          <Zones.ClearButton />
         </Zones>
       </ThemeProvider>
     </Global>
