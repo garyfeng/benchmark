@@ -2,22 +2,23 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { radios, select, boolean, text } from '@storybook/addon-knobs';
 
-import Box from '../private/Box';
+import { Box } from '../Styled/Base';
+import Stack from '../Styled/Stack';
 import Icon from '../Icon';
 import Text from '../Text';
 import Button from './Button';
 
 storiesOf('Classic', module).add('Button: Examples', () => {
   return (
-    <Box>
-      <div>
+    <Stack spacing="4" p="4">
+      <Box>
         <Button>Bare</Button>
         <Button color="primary">Primary</Button>
         <Button color="secondary">Secondary</Button>
         <Button disabled>Disabled</Button>
-      </div>
+      </Box>
 
-      <div>
+      <Box>
         <Button small>Bare</Button>
         <Button small color="primary">
           Primary
@@ -28,9 +29,9 @@ storiesOf('Classic', module).add('Button: Examples', () => {
         <Button small disabled>
           Disabled
         </Button>
-      </div>
+      </Box>
 
-      <div>
+      <Box>
         <Button type="rounded">Bare</Button>
         <Button type="rounded" color="primary">
           Primary
@@ -38,9 +39,9 @@ storiesOf('Classic', module).add('Button: Examples', () => {
         <Button type="rounded" color="secondary">
           Secondary
         </Button>
-      </div>
+      </Box>
 
-      <div>
+      <Box>
         <Button type="circle" color="primary">
           <Icon iconName="pause" />
         </Button>
@@ -87,13 +88,13 @@ storiesOf('Classic', module).add('Button: Examples', () => {
         <Button small type="square">
           <Icon iconName="pause" />
         </Button>
-      </div>
-      <div>
+      </Box>
+      <Box>
         <Button color="primary">Review my answer</Button>
         <Button color="primary">Submit</Button>
         <Button color="secondary">Clear</Button>
-      </div>
-    </Box>
+      </Box>
+    </Stack>
   );
 });
 

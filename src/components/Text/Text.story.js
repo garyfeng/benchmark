@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { radios, boolean, text } from '@storybook/addon-knobs';
 
-import Box from '../private/Box';
+import { Box } from '../Styled/Base';
+import Stack from '../Styled/Stack';
 import Text from './Text';
 
 storiesOf('Classic', module).add('Typography: Text', () => {
@@ -13,7 +14,7 @@ storiesOf('Classic', module).add('Typography: Text', () => {
   const italic = boolean('Italic', false);
 
   return (
-    <div>
+    <Stack p="4">
       <Box>
         <Text>Normal Text</Text>
       </Box>
@@ -43,6 +44,6 @@ storiesOf('Classic', module).add('Typography: Text', () => {
           {txt}
         </Text>
       </Box>
-    </div>
+    </Stack>
   );
 });
