@@ -1,7 +1,8 @@
 import React, { createContext, useContext } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import { Box } from '../Base';
+import Stack from '../Stack';
+import { Box, Flex, Bare } from '../Base';
 
 const ZonesContext = createContext({
   selected: [],
@@ -22,7 +23,14 @@ function useZonesContext() {
 function Zones({ id, children, onChange, onClear, selected }) {
   return (
     <ZonesContext.Provider value={{ selected, onClear, onChange }}>
-      <Box id={id}>{children}</Box>
+      <Flex id={id}>
+        <Stack spacing="4">{children}</Stack>
+      </Flex>
+      <Box pt="4">
+        <Button variant="secondary" onClick={onClear}>
+          Clear Answer
+        </Button>
+      </Box>
     </ZonesContext.Provider>
   );
 }
@@ -38,19 +46,38 @@ export function ClearButton() {
   );
 }
 
-export function Background({ width, height, label, src, children }) {
+function Fallback({ width, height }) {
+  return (
+    <Box
+      sx={{
+        bg: 'n.50',
+        width: width + 'px',
+        height: height + 'px'
+      }}
+      style={{
+        position: 'relative'
+      }}
+    />
+  );
+}
+
+export function ZonesBackground({ width, height, label, src, children }) {
   return (
     <Box sx={{ display: 'block', position: 'relative' }}>
-      <Box
-        as="img"
-        src={src}
-        alt={label}
-        style={{
-          position: 'relative',
-          width: width + 'px',
-          height: height + 'px'
-        }}
-      />
+      {src ? (
+        <Box
+          as="img"
+          src={src}
+          alt={label}
+          style={{
+            position: 'relative',
+            width: width + 'px',
+            height: height + 'px'
+          }}
+        />
+      ) : (
+        <Fallback width={width} height={height} />
+      )}
       <Box
         as="svg"
         xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +96,7 @@ export function Background({ width, height, label, src, children }) {
   );
 }
 
-export function Choice({ value, type, ...props }) {
+export function Zone({ value, type, ...props }) {
   const normalStyle = {
     fill: 'p.500',
     fillOpacity: 0.4,
@@ -107,7 +134,7 @@ export function Choice({ value, type, ...props }) {
   const isSelected = value === selected;
 
   return (
-    <Box
+    <Bare
       as={type}
       key={value}
       tabIndex="0"
@@ -118,9 +145,9 @@ export function Choice({ value, type, ...props }) {
   );
 }
 
-Zones.Choice = Choice;
+Zones.Choice = Zone;
 Zones.ClearButton = ClearButton;
-Zones.Background = Background;
+Zones.Background = ZonesBackground;
 
 Zones.propTypes = {
   id: PropTypes.string,

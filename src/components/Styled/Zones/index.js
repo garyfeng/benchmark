@@ -1,2 +1,1 @@
-import Zones from './Zones.js';
-export default Zones;
+export { default, Zone, ZonesBackground } from './Zones.js';

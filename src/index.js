@@ -15,6 +15,7 @@ export { default as Dropdown } from './components/Styled/Dropdown';
 export { default as ExtendedText } from './components/Styled/ExtendedText';
 export { default as Heading } from './components/Styled/Heading';
 export { default as Icon } from './components/Styled/Icon';
+export { default as Image } from './components/Styled/Image';
 export {
   default as MultipleSelect,
   MultipleSelectChoice
@@ -30,7 +31,11 @@ export { default as Switch } from './components/Styled/Switch';
 export { default as ScrollButton } from './components/Styled/ScrollButton';
 export { default as Tag } from './components/Styled/Tag';
 export { default as Toolbar } from './components/Styled/Toolbar';
-export { default as Zones } from './components/Styled/Zones';
+export {
+  default as Zones,
+  Zone,
+  ZonesBackground
+} from './components/Styled/Zones';
 
 // classic
 export { default as Checkbox } from './components/Checkbox';
