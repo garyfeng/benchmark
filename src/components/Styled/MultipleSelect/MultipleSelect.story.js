@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { useArrayToggle } from '../../../util/hooks';
 import ThemeProvider from '../ThemeProvider';
 import Global from '../Global';
-import Stack from '../Stack';
-import MultipleSelect from './MultipleSelect';
+import MultipleSelect, { MultipleSelectChoice } from './MultipleSelect';
 
 storiesOf('MultipleSelect', module).add('MultipleSelect', () => {
   const [selected, toggleSelected, resetSelected] = useArrayToggle();
@@ -35,16 +34,9 @@ storiesOf('MultipleSelect', module).add('MultipleSelect', () => {
           eliminated={eliminated}
           maxChoices={2}
         >
-          <Stack spacing={4}>
-            <Stack>
-              <MultipleSelect.Choice value="a">Option A</MultipleSelect.Choice>
-              <MultipleSelect.Choice value="b">Option B</MultipleSelect.Choice>
-              <MultipleSelect.Choice value="c">Option C</MultipleSelect.Choice>
-            </Stack>
-            <MultipleSelect.ClearButton>
-              Clean Answer
-            </MultipleSelect.ClearButton>
-          </Stack>
+          <MultipleSelectChoice value="a">Option A</MultipleSelectChoice>
+          <MultipleSelectChoice value="b">Option B</MultipleSelectChoice>
+          <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
         </MultipleSelect>
       </ThemeProvider>
     </Global>

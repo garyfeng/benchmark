@@ -1,7 +1,8 @@
 import React, { useContext, createContext } from 'react';
 import Button from '../Button';
-import { Box } from '../Base';
+import { Box, Flex } from '../Base';
 import Option from '../Option';
+import Stack from '../Stack';
 
 const MultipleSelectContext = createContext({
   selected: [],
@@ -21,24 +22,6 @@ function useMultipleSelectContext() {
   return context;
 }
 
-function MultipleSelect({
-  id,
-  children,
-  selected = [],
-  eliminated = [],
-  onChange,
-  onClear,
-  onEliminate
-}) {
-  return (
-    <MultipleSelectContext.Provider
-      value={{ selected, onClear, onChange, onEliminate, eliminated }}
-    >
-      <Box id={id}>{children}</Box>
-    </MultipleSelectContext.Provider>
-  );
-}
-
 export function ClearButton({ children }) {
   const { onClear } = useMultipleSelectContext();
   return (
@@ -50,7 +33,7 @@ export function ClearButton({ children }) {
   );
 }
 
-export function Choice({ value, children }) {
+export function MultipleSelectChoice({ value, children }) {
   const {
     selected,
     eliminated,
@@ -74,7 +57,29 @@ export function Choice({ value, children }) {
   );
 }
 
-MultipleSelect.Choice = Choice;
-MultipleSelect.ClearButton = ClearButton;
+function MultipleSelect({
+  id,
+  children,
+  selected = [],
+  eliminated = [],
+  onChange,
+  onClear,
+  onEliminate
+}) {
+  return (
+    <MultipleSelectContext.Provider
+      value={{ selected, onClear, onChange, onEliminate, eliminated }}
+    >
+      <Flex id={id}>
+        <Stack spacing={4}>
+          <Stack>{children}</Stack>
+          <ClearButton>Clean Answer</ClearButton>
+        </Stack>
+      </Flex>
+    </MultipleSelectContext.Provider>
+  );
+}
+
+MultipleSelect.Choice = MultipleSelectChoice;
 
 export default MultipleSelect;

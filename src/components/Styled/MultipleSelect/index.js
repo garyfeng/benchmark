@@ -1,3 +1,1 @@
-import MultipleSelect from './MultipleSelect.js';
-
-export default MultipleSelect;
+export { default, MultipleSelectChoice } from './MultipleSelect';
