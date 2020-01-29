@@ -15,7 +15,10 @@ export { default as Dropdown } from './components/Styled/Dropdown';
 export { default as ExtendedText } from './components/Styled/ExtendedText';
 export { default as Heading } from './components/Styled/Heading';
 export { default as Icon } from './components/Styled/Icon';
-export { default as MultipleSelect } from './components/Styled/MultipleSelect';
+export {
+  default as MultipleSelect,
+  MultipleSelectChoice
+} from './components/Styled/MultipleSelect';
 export { default as Option } from './components/Styled/Option';
 export { default as Paragraph } from './components/Styled/Paragraph';
 export { default as SingleSelect } from './components/Styled/SingleSelect';
