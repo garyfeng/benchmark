@@ -35,8 +35,9 @@ export const Box = styled('div', {
 );
 
 export const Text = styled(Box)`
-  ${typography};
   display: inline;
+  ${typography};
+  ${layout};
 `;
 
 export const Flex = styled(Box)({
