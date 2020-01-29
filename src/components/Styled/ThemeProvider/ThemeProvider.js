@@ -5,7 +5,14 @@ import { Box } from '../Base';
 
 const ThemeProvider = ({ theme, children }) => (
   <EmotionThemeProvider theme={theme}>
-    <Box bg="n.0">{children}</Box>
+    <Box
+      bg="n.0"
+      sx={{
+        fontSize: 3
+      }}
+    >
+      {children}
+    </Box>
   </EmotionThemeProvider>
 );
 
