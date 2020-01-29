@@ -12,10 +12,10 @@ function ExtendedText({
   value = ''
 }) {
   function checkLimit(event) {
-    if (onChange) {
-      onChange(event);
-    }
     const value = event.target.value;
+    if (onChange) {
+      onChange(value);
+    }
     const numChars = value.length || 0;
     if (numChars > maxLength) {
       if (onMaxLength) {

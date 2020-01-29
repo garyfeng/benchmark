@@ -1,3 +1,1 @@
-import SingleSelect from './SingleSelect.js';
-
-export default SingleSelect;
+export { default, SingleSelectChoice } from './SingleSelect';

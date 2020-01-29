@@ -1,6 +1,7 @@
 import React, { useContext, createContext } from 'react';
 import Button from '../Button';
-import { Box } from '../Base';
+import Stack from '../Stack';
+import { Box, Flex } from '../Base';
 import Option from '../Option';
 
 const SingleSelectContext = createContext({
@@ -21,6 +22,17 @@ function useSingleSelectContext() {
   return context;
 }
 
+export function SingleSelectClear({ children }) {
+  const { onClear } = useSingleSelectContext();
+  return (
+    <Box>
+      <Button variant="secondary" onClick={onClear}>
+        {children === null ? 'Clear Answer' : children}
+      </Button>
+    </Box>
+  );
+}
+
 function SingleSelect({
   id,
   children,
@@ -34,23 +46,17 @@ function SingleSelect({
     <SingleSelectContext.Provider
       value={{ selected, onClear, onChange, onEliminate, eliminated }}
     >
-      <Box id={id}>{children}</Box>
+      <Flex id={id}>
+        <Stack spacing={4}>
+          <Stack>{children}</Stack>
+          <SingleSelectClear>Clean Answer</SingleSelectClear>
+        </Stack>
+      </Flex>
     </SingleSelectContext.Provider>
   );
 }
 
-export function ClearButton({ children }) {
-  const { onClear } = useSingleSelectContext();
-  return (
-    <Box>
-      <Button variant="secondary" onClick={onClear}>
-        {children === null ? 'Clear Answer' : children}
-      </Button>
-    </Box>
-  );
-}
-
-export function Choice({ value, children }) {
+export function SingleSelectChoice({ value, children }) {
   const {
     selected,
     eliminated,
@@ -74,7 +80,6 @@ export function Choice({ value, children }) {
   );
 }
 
-SingleSelect.Choice = Choice;
-SingleSelect.ClearButton = ClearButton;
+SingleSelect.Choice = SingleSelectChoice;
 
 export default SingleSelect;

@@ -21,7 +21,10 @@ export {
 } from './components/Styled/MultipleSelect';
 export { default as Option } from './components/Styled/Option';
 export { default as Paragraph } from './components/Styled/Paragraph';
-export { default as SingleSelect } from './components/Styled/SingleSelect';
+export {
+  default as SingleSelect,
+  SingleSelectChoice
+} from './components/Styled/SingleSelect';
 export { default as Stack } from './components/Styled/Stack';
 export { default as Switch } from './components/Styled/Switch';
 export { default as ScrollButton } from './components/Styled/ScrollButton';

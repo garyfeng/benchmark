@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { useArrayToggle } from '../../../util/hooks';
 import ThemeProvider from '../ThemeProvider';
 import Global from '../Global';
-import Stack from '../Stack';
-import SingleSelect from './SingleSelect';
+import SingleSelect, { SingleSelectChoice } from './SingleSelect';
 
 storiesOf('SingleSelect', module).add('SingleSelect', () => {
   const [selected, setSelected] = useState();
@@ -35,14 +34,9 @@ storiesOf('SingleSelect', module).add('SingleSelect', () => {
           eliminated={eliminated}
           maxChoices={2}
         >
-          <Stack spacing={4}>
-            <Stack>
-              <SingleSelect.Choice value="a">Option A</SingleSelect.Choice>
-              <SingleSelect.Choice value="b">Option B</SingleSelect.Choice>
-              <SingleSelect.Choice value="c">Option C</SingleSelect.Choice>
-            </Stack>
-            <SingleSelect.ClearButton>Clean Answer</SingleSelect.ClearButton>
-          </Stack>
+          <SingleSelectChoice value="a">Option A</SingleSelectChoice>
+          <SingleSelectChoice value="b">Option B</SingleSelectChoice>
+          <SingleSelectChoice value="c">Option C</SingleSelectChoice>
         </SingleSelect>
       </ThemeProvider>
     </Global>
