@@ -39,7 +39,6 @@ export function ClearButton() {
 }
 
 export function Background({ width, height, label, src, children }) {
-  const { onClear } = useZonesContext();
   return (
     <Box sx={{ display: 'block', position: 'relative' }}>
       <Box
