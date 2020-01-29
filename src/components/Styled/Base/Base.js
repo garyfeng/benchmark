@@ -40,6 +40,8 @@ export const Text = styled(Box)`
   ${layout};
 `;
 
+export const Bare = styled('div')(sx);
+
 export const Flex = styled(Box)({
   display: 'flex'
 });

@@ -1,1 +1,1 @@
-export { Box, Text, Flex } from './Base.js';
+export { Bare, Box, Text, Flex } from './Base.js';
