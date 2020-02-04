@@ -4,7 +4,7 @@ import { Text } from '../Base';
 
 function Paragraph({ children, id }) {
   return (
-    <Text as="p" mb="4" id={id} display="block">
+    <Text mb="4" id={id} display="block">
       {children}
     </Text>
   );
