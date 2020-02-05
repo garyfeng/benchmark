@@ -1,4 +1,5 @@
 import React from 'react';
+import { useId } from '@reach/auto-id';
 import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 import Button from '../Button';
 import RadioButton from '../../RadioButton';
@@ -12,11 +13,18 @@ function Choice({
   isEliminated = false,
   isDisabled = false,
   variant = 'radio',
+  label,
   value,
   onEliminate,
   onChange,
   ...props
 }) {
+  if (typeof children === 'string' && !label) {
+    label = children;
+  }
+
+  const optionId = `option-${useId()}`;
+
   function handleEliminate(event, value) {
     onEliminate(value);
     // prevent onChange event from firing on the
@@ -25,6 +33,13 @@ function Choice({
   }
 
   function handleClick(event, value) {
+    if (!isDisabled) {
+      onChange(value);
+      event.stopPropagation();
+    }
+  }
+
+  function handleChange(event) {
     if (!isDisabled) {
       onChange(value);
       event.stopPropagation();
@@ -50,7 +65,7 @@ function Choice({
         overflow: 'hidden',
         transition: 'opacity .2s, border .2s, color .2s',
         ':hover': {
-          borderColor: isEliminated ? null : 'blue.300'
+          borderColor: isEliminated || isDisabled ? null : 'blue.300'
         }
       }}
     >
@@ -59,11 +74,21 @@ function Choice({
           <InputControl
             checked={isSelected}
             disabled={isDisabled}
-            onChange={onChange}
+            onChange={handleChange}
+            label={label}
+            aria-labelledby={optionId}
           />
         </Flex>
-        <Flex px="3" py="3" flexGrow="1" alignItems="center">
-          <Text fontSize={3}>{children}</Text>
+        <Flex
+          px="3"
+          py="3"
+          flexGrow="1"
+          alignItems="center"
+          sx={{ opacity: isDisabled ? '.5' : null }}
+        >
+          <Text id={optionId} fontSize={3}>
+            {children}
+          </Text>
         </Flex>
       </Flex>
 
@@ -71,8 +96,9 @@ function Choice({
       <Flex px="3" py="3" alignContent="center" alignItems="center">
         <Button
           variant="bare"
-          color="n.700"
           onClick={e => handleEliminate(e, value)}
+          disabled={isDisabled}
+          color="n.600"
         >
           <VisuallyHidden>
             {isEliminated ? 'Enable' : 'Eliminate'} Option

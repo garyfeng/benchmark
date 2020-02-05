@@ -7,6 +7,7 @@ import Option from '../Option';
 const SingleSelectContext = createContext({
   selected: [],
   eliminated: [],
+  isGroupDisabled: false,
   onClear: () => {},
   onChange: () => {},
   onEliminate: () => {}
@@ -23,10 +24,10 @@ function useSingleSelectContext() {
 }
 
 export function SingleSelectClear({ children }) {
-  const { onClear } = useSingleSelectContext();
+  const { onClear, isGroupDisabled } = useSingleSelectContext();
   return (
     <Box>
-      <Button variant="secondary" onClick={onClear}>
+      <Button variant="secondary" disabled={isGroupDisabled} onClick={onClear}>
         {children === null ? 'Clear Answer' : children}
       </Button>
     </Box>
@@ -38,13 +39,21 @@ function SingleSelect({
   children,
   selected = [],
   eliminated = [],
+  isDisabled = false,
   onChange,
   onClear,
   onEliminate
 }) {
   return (
     <SingleSelectContext.Provider
-      value={{ selected, onClear, onChange, onEliminate, eliminated }}
+      value={{
+        selected,
+        isGroupDisabled: isDisabled,
+        onClear,
+        onChange,
+        onEliminate,
+        eliminated
+      }}
     >
       <Flex id={id}>
         <Stack spacing={4}>
@@ -56,8 +65,9 @@ function SingleSelect({
   );
 }
 
-export function SingleSelectChoice({ value, children }) {
+export function SingleSelectChoice({ value, children, isDisabled }) {
   const {
+    isGroupDisabled,
     selected,
     eliminated,
     onChange,
@@ -73,6 +83,7 @@ export function SingleSelectChoice({ value, children }) {
         onChange={onChange}
         onEliminate={onEliminate}
         value={value}
+        isDisabled={isDisabled || isGroupDisabled}
       >
         {children}
       </Option>
