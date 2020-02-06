@@ -4,7 +4,7 @@ import { MDXProvider } from '@mdx-js/react';
 import '../components/GlobalStyles';
 import { Button, Text } from '../index.js';
 import Heading from '../components/Heading';
-import Paragraph from '../components/Paragraph';
+import Paragraph from '../components/Styled/Paragraph';
 import Icon from '../components/Icon';
 import ThemeProvider from '../components/ThemeProvider';
 import Layout from './components/Layout';
