@@ -7,8 +7,8 @@ import { Text, Box } from '../Base';
 import Dropdown from './Dropdown.js';
 
 storiesOf('Styled System', module).add('Dropdown', () => {
-  const [selected, setSelected] = useState('a');
-  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState();
+  const [open, setOpen] = useState(true);
 
   function handleClick() {
     setOpen(!open);
@@ -33,7 +33,7 @@ storiesOf('Styled System', module).add('Dropdown', () => {
               <Text> Fish</Text>
             </Box>
             <Box value="c">
-              <Text fontWeight="bold">Red</Text>
+              <Text fontWeight="bold">Little Red</Text>
               <Text> Fish</Text>
             </Box>
             <Box value="d">
