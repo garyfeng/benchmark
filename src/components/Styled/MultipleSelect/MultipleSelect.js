@@ -7,6 +7,7 @@ import Stack from '../Stack';
 const MultipleSelectContext = createContext({
   selected: [],
   eliminated: [],
+  isGroupDisabled: false,
   onClear: () => {},
   onChange: () => {},
   onEliminate: () => {}
@@ -22,29 +23,62 @@ function useMultipleSelectContext() {
   return context;
 }
 
+function MultipleSelect({
+  id,
+  children,
+  selected = [],
+  eliminated = [],
+  isDisabled = false,
+  onChange,
+  onClear,
+  onEliminate
+}) {
+  return (
+    <MultipleSelectContext.Provider
+      value={{
+        selected,
+        isGroupDisabled: isDisabled,
+        onClear,
+        onChange,
+        onEliminate,
+        eliminated
+      }}
+    >
+      <Flex id={id}>
+        <Stack spacing={4}>
+          <Stack>{children}</Stack>
+          <ClearButton>Clean Answer</ClearButton>
+        </Stack>
+      </Flex>
+    </MultipleSelectContext.Provider>
+  );
+}
+
 export function ClearButton({ children }) {
-  const { onClear } = useMultipleSelectContext();
+  const { onClear, isGroupDisabled } = useMultipleSelectContext();
   return (
     <Box>
-      <Button variant="secondary" onClick={onClear}>
+      <Button variant="secondary" onClick={onClear} disabled={isGroupDisabled}>
         {children === null ? 'Clear Answer' : children}
       </Button>
     </Box>
   );
 }
 
-export function MultipleSelectChoice({ value, children }) {
+export function MultipleSelectChoice({ value, children, isDisabled }) {
   const {
     selected,
     eliminated,
     onChange,
-    onEliminate
+    onEliminate,
+    isGroupDisabled
   } = useMultipleSelectContext();
 
   return (
     <Box>
       <Option
         variant="checkbox"
+        isDisabled={isDisabled || isGroupDisabled}
         isSelected={selected.includes(value)}
         isEliminated={eliminated.includes(value)}
         onChange={onChange}
@@ -54,29 +88,6 @@ export function MultipleSelectChoice({ value, children }) {
         {children}
       </Option>
     </Box>
-  );
-}
-
-function MultipleSelect({
-  id,
-  children,
-  selected = [],
-  eliminated = [],
-  onChange,
-  onClear,
-  onEliminate
-}) {
-  return (
-    <MultipleSelectContext.Provider
-      value={{ selected, onClear, onChange, onEliminate, eliminated }}
-    >
-      <Flex id={id}>
-        <Stack spacing={4}>
-          <Stack>{children}</Stack>
-          <ClearButton>Clean Answer</ClearButton>
-        </Stack>
-      </Flex>
-    </MultipleSelectContext.Provider>
   );
 }
 
