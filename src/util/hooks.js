@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export function useArrayToggle() {
   const [state, setState] = useState([]);
@@ -23,3 +23,19 @@ export function useToggle(initialState = false) {
   const toggle = () => setState(!state);
   return [state, toggle];
 }
+
+export const useOutsideClick = (ref, callback) => {
+  const handleClick = e => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  });
+};

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import { useOutsideClick } from '../../../util/hooks';
 
 import { Flex, Box } from '../Base';
 
@@ -42,7 +43,7 @@ function Selected({ selected }) {
       }}
     >
       <Flex flex="1">
-        <Box flex="1">{selected}</Box>
+        <Box flex="1">{selected ? selected : <div>&nbsp;</div>}</Box>
         <Flex pl="2" alignItems="center">
           <IoMdArrowDropdown />
         </Flex>
@@ -51,8 +52,15 @@ function Selected({ selected }) {
   );
 }
 
-function Dropdown({ isOpen, children, onClick, onSelect, selected }) {
-  const selectedEl = children.filter(child => {
+function Dropdown({
+  isOpen,
+  children,
+  onClick,
+  onSelect,
+  onClickOutside,
+  selected
+}) {
+  const selectedEl = children.find(child => {
     return child.props.value === selected;
   });
 
@@ -65,9 +73,19 @@ function Dropdown({ isOpen, children, onClick, onSelect, selected }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref.current]);
 
+  // detect clicking outside of dropdown
+  const clickRef = useRef();
+  useOutsideClick(clickRef, () => {
+    if (isOpen === true) {
+      onClickOutside();
+    }
+  });
+
   return (
     <Box
       display="inline-block"
+      tabIndex="0"
+      ref={clickRef}
       sx={{
         width: width + 4,
         verticalAlign: 'middle',
@@ -91,7 +109,10 @@ function Dropdown({ isOpen, children, onClick, onSelect, selected }) {
           }}
           style={{ maxHeight: isOpen ? '300px' : '0px' }}
         >
-          <Option selected={selected === null} onClick={() => onSelect(null)}>
+          <Option
+            selected={selected === undefined}
+            onClick={() => onSelect(undefined)}
+          >
             &nbsp;
           </Option>
           {children.map(child => {

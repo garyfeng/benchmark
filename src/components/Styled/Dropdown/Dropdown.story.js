@@ -14,6 +14,10 @@ storiesOf('Styled System', module).add('Dropdown', () => {
     setOpen(!open);
   }
 
+  function handleClickOutside() {
+    setOpen(false);
+  }
+
   return (
     <Global>
       <ThemeProvider>
@@ -24,6 +28,7 @@ storiesOf('Styled System', module).add('Dropdown', () => {
             selected={selected}
             onSelect={setSelected}
             onClick={handleClick}
+            onClickOutside={handleClickOutside}
           >
             <Box value="a">
               <Text>One Fish</Text>
