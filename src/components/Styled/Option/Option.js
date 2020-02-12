@@ -99,6 +99,12 @@ function Choice({
           onClick={e => handleEliminate(e, value)}
           disabled={isDisabled}
           color="n.600"
+          sx={{
+            transition: 'color .2s',
+            ':hover': {
+              color: 'n.800'
+            }
+          }}
         >
           <VisuallyHidden>
             {isEliminated ? 'Enable' : 'Eliminate'} Option
