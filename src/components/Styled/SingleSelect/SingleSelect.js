@@ -1,6 +1,5 @@
-import React, { useContext, createContext } from 'react';
+import React, { useContext, createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { useImmerReducer } from 'use-immer';
 import { Option, Box, Flex, Stack, Button } from '../../../index.js';
 import { reducer, initialState } from './SingleSelect.reducer';
 
@@ -27,15 +26,15 @@ function SingleSelect({
   onClear,
   onEliminate
 }) {
-  const [state, dispatch] = useImmerReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   // fallback event handlers for when they are not
   // provided through props
   function handleChange(optionId) {
-    dispatch({ type: 'MCSS_SELECT', payload: optionId });
+    dispatch({ type: 'MCSS_SELECT', optionId });
   }
   function handleEliminate(optionId) {
-    dispatch({ type: 'MCSS_ELIMINATE', payload: optionId });
+    dispatch({ type: 'MCSS_ELIMINATE', optionId });
   }
   function handleClear() {
     dispatch({ type: 'MCSS_CLEAR' });
@@ -129,6 +128,9 @@ SingleSelect.propTypes = {
   onEliminate: PropTypes.func
 };
 
+// alternative exports
+SingleSelect.initialState = initialState;
+SingleSelect.reducer = reducer;
 SingleSelect.Choice = SingleSelectChoice;
 SingleSelect.ClearButton = SingleSelectClear;
 

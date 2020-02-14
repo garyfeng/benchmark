@@ -1,26 +1,24 @@
-import { arrayToggle, remove } from '../../../util/state-helpers';
-
 export const initialState = {
-  selected: undefined,
+  selected: null,
   eliminated: []
 };
 
-export function reducer(draft, action = {}) {
-  let { type, payload } = action;
-
-  switch (type) {
+export function reducer(state, action = {}) {
+  switch (action.type) {
     case 'MCSS_SELECT':
-      draft.selected = payload;
-      remove(draft.eliminated, payload);
-      return;
+      return {
+        selected: action.optionId,
+        eliminated: state.eliminated.filter(i => i !== action.optionId)
+      };
     case 'MCSS_ELIMINATE':
-      if (payload === draft.selected) {
-        draft.selected = undefined;
-      }
-      arrayToggle(draft.eliminated, payload);
-      return;
+      let eliminated = state.eliminated.includes(action.optionId)
+        ? state.eliminated.filter(i => i !== action.optionId)
+        : [...state.eliminated, action.optionId];
+      let selected = action.optionId === state.selected ? null : state.selected;
+      return { selected, eliminated };
     case 'MCSS_CLEAR':
       return initialState;
-    // no default
+    default:
+      throw new Error();
   }
 }
