@@ -1,15 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
-import '../components/GlobalStyles';
-import { Button, Text } from '../index.js';
-import Heading from '../components/Heading';
-import Paragraph from '../components/Styled/Paragraph';
+import { Heading, Paragraph, ThemeProvider, Tag, Global } from '../index.js';
 import Icon from '../components/Icon';
-import ThemeProvider from '../components/ThemeProvider';
+import docsTheme from './theme';
 import Layout from './components/Layout';
 import LiveCodeBlock from './components/LiveCodeBlock';
-import Tag from './components/Tag';
 import ColorSwatch from './components/ColorSwatch';
 
 const components = {
@@ -21,11 +17,9 @@ const components = {
   p: Paragraph,
   pre: props => <div {...props} />,
   code: LiveCodeBlock,
-  Tag: Tag,
-  Button: Button,
+  Tag,
   ColorSwatch,
-  Icon,
-  Text
+  Icon
 };
 
 export default function Root(props) {
@@ -35,11 +29,13 @@ export default function Root(props) {
         <html lang="en" />
       </Helmet>
       <MDXProvider components={components}>
-        <ThemeProvider theme="Docs">
-          <Layout frontmatter={props.pageContext.frontmatter}>
-            {props.children}
-          </Layout>
-        </ThemeProvider>
+        <Global>
+          <ThemeProvider theme={docsTheme}>
+            <Layout frontmatter={props.pageContext.frontmatter}>
+              {props.children}
+            </Layout>
+          </ThemeProvider>
+        </Global>
       </MDXProvider>
     </div>
   );

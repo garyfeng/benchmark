@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import { mdx } from '@mdx-js/react';
 import * as Components from '../../../index.js';
 import CodeFrame from '../CodeFrame';
 import css from './LiveCodeBlock.module.css';
-import codeTheme from './themes/github.js';
+import codeTheme from './themes/default.js';
 
 export default ({ children, render, renderTheme = 'Default' }) => {
   const [showEditor, toggleCode] = useState(false);
@@ -22,21 +21,20 @@ export default ({ children, render, renderTheme = 'Default' }) => {
 
   if (render) {
     return (
-      <div className={css.example}>
+      <Components.Box border="1" borderColor="n.300">
         <LiveProvider code={children}>
           <CodeFrame onToggleCode={() => toggleCode(!showEditor)}>
             <LivePreview className={css.preview} />
           </CodeFrame>
         </LiveProvider>
-      </div>
+      </Components.Box>
     );
   }
   return (
-    <div className={css.example}>
+    <Components.Box border="1" borderColor="n.300" mb="4" mt="2">
       <LiveProvider
         code={children.trim()}
-        transformCode={code => '/** @jsx mdx */' + code}
-        scope={{ mdx, ...Components }}
+        scope={{ ...Components }}
         theme={codeTheme}
       >
         <CodeFrame
@@ -50,6 +48,6 @@ export default ({ children, render, renderTheme = 'Default' }) => {
         {showEditor ? <Editor /> : null}
         <LiveError className={css.pre} />
       </LiveProvider>
-    </div>
+    </Components.Box>
   );
 };

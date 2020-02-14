@@ -6,7 +6,7 @@ import typography from '../../../styles/typography.module.css';
 import '../../../styles/reset.css';
 import '../../../styles/fonts.css';
 
-import ThemeProvider from '../../../components/ThemeProvider';
+import { ThemeProvider } from '../../../index.js';
 import css from './CodeFrame.module.css';
 
 class CodeFrame extends PureComponent {
@@ -25,7 +25,7 @@ class CodeFrame extends PureComponent {
   render() {
     return (
       <div className={classnames(css.codeframe, global.base, typography.base)}>
-        <ThemeProvider theme={this.props.themes[this.state.theme]}>
+        <ThemeProvider>
           <div className={css.toolbar}>
             <div className={css.codeUtils}>
               <div>

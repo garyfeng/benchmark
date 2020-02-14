@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Nav from '../Nav';
-import Tag from '../Tag';
+import { Tag, Heading } from '../../../index.js';
 import SourceIcon from '../SourceIcon';
 import css from './Layout.module.css';
 
@@ -19,8 +19,8 @@ function Layout({ frontmatter, children }) {
       <main className={css.main}>
         <div className={css.content}>
           <div className={css.heading}>
-            <h1>{frontmatter.title}</h1>
-            <Tag type="warning">{frontmatter.status}</Tag>
+            <Heading level={1}>{frontmatter.title}</Heading>
+            <Tag variant="warning">{frontmatter.status}</Tag>
             <div className={css.codeLink}>
               {frontmatter.source !== undefined && (
                 <SourceIcon url={frontmatter.source} />
