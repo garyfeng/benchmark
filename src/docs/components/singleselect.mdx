@@ -1,0 +1,107 @@
+---
+title: Single Select
+path: /components/singleselect
+group: Components
+status: In Progress
+updated: '2020-02-13'
+---
+
+## Overview
+
+The single select response type allows test takers to respond to an item by selecting from an array of options. These options can be any arbitary element such as text, images and MathML.
+
+## Considerations
+
+Current Considerations:
+
+- Uses a light blue background color to distinguish the input (radio/checkbox) from the option content.
+
+## Behaviour
+
+- When an eliminated option is selected it clears the eliminated state.
+- When a selected option is eliminated it will no longer be selected.
+- Clearing the answer clears both the selected option and eliminations.
+
+## Usage
+
+```javascript
+function ExampleA() {
+  const [selected, setSelected] = React.useState();
+  const [eliminated, setEliminated] = React.useState([]);
+
+  function handleClear() {
+    setSelected();
+    setEliminated([]);
+  }
+
+  function handleChange(optionId) {
+    setSelected(optionId);
+    if (eliminated.includes(optionId)) {
+      setEliminated(eliminated.filter(i => i !== optionId));
+    }
+  }
+
+  function handleEliminate(optionId) {
+    if (eliminated.includes(optionId)) {
+      setEliminated(eliminated.filter(i => i !== optionId));
+    } else {
+      setEliminated([...eliminated, optionId]);
+    }
+
+    if (optionId === selected) {
+      setSelected();
+    }
+  }
+
+  return (
+    <SingleSelect
+      selected={selected}
+      eliminated={eliminated}
+      onChange={handleChange}
+      onEliminate={handleEliminate}
+      onClear={handleClear}
+    >
+      <SingleSelectChoice value="a">Option A</SingleSelectChoice>
+      <SingleSelectChoice value="b">Option B</SingleSelectChoice>
+      <SingleSelectChoice value="c">Option C</SingleSelectChoice>
+    </SingleSelect>
+  );
+}
+```
+
+## Component Props
+
+<!-- ```javascript
+function ExampleB() {
+  const [state, dispatch] = React.useReducer(
+    SingleSelect.reducer,
+    SingleSelect.initialState
+  );
+
+  return (
+    <SingleSelect
+      selected={state.selected}
+      eliminated={state.eliminated}
+      onChange={optionId => dispatch({ type: 'MCSS_SELECT', optionId })}
+      onEliminate={optionId => dispatch({ type: 'MCSS_ELIMINATE', optionId })}
+      onClear={() => dispatch({ type: 'MCSS_CLEAR' })}
+    >
+      <SingleSelectChoice value="a">Option A</SingleSelectChoice>
+      <SingleSelectChoice value="b">Option B</SingleSelectChoice>
+      <SingleSelectChoice value="c">Option C</SingleSelectChoice>
+    </SingleSelect>
+  );
+}
+``` -->
+
+<!-- ```javascript
+function Example() {
+  return (
+    <SingleSelect>
+      <SingleSelectChoice value="a">Option A</SingleSelectChoice>
+      <SingleSelectChoice value="b">Option B</SingleSelectChoice>
+      <SingleSelectChoice value="c">Option C</SingleSelectChoice>
+    </SingleSelect>
+  );
+}
+``` -->
