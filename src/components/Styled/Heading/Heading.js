@@ -1,19 +1,14 @@
 import React from 'react';
-import styled from '@emotion/styled';
-import { Box } from '../Base';
-
-export const HeadingBase = styled(Box)`
-  display: block;
-`;
+import { Text } from '../Base';
 
 function Heading({ children, level = 1 }) {
   const H = 'h' + level;
-  const size = 8 - level;
+  const size = 7 - level;
 
   return (
-    <HeadingBase as={H} fontSize={size}>
+    <Text as={H} display="block" fontSize={size} fontWeight="light">
       {children}
-    </HeadingBase>
+    </Text>
   );
 }
 
