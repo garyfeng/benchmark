@@ -3,7 +3,7 @@
   "description": "Benchmark Design System",
   "author": "Corey McGeachie",
   "license": "MIT",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "main": "dist/components/index.js",
   "prepublish": "npm run release",
