@@ -9,6 +9,7 @@ export { default as theme } from './components/Styled/themes/default.js';
 
 // main
 export { Box, Flex, Text } from './components/Styled/Base';
+export { Tab, Tabs, TabsList } from './components/Styled/Tabs';
 export { default as Alert } from './components/Styled/Alert';
 export { default as Button } from './components/Styled/Button';
 export { default as Dropdown } from './components/Styled/Dropdown';
