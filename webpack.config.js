@@ -11,7 +11,9 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist/components'),
     library: 'benchmark',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    // fix: https://github.com/webpack/webpack/issues/6522
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
   optimization: {
     concatenateModules: false,
