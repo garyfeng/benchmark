@@ -247,7 +247,7 @@ export const base = {
       fontWeight: 'bold',
       color: 'white',
       bg: 'p.500',
-      borderRadius: 'default',
+      borderRadius: 'md',
       borderWidth: 0,
       ':hover': {
         bg: 'p.400',
@@ -263,7 +263,7 @@ export const base = {
       color: 'p.500',
       fontWeight: 'bold',
       bg: 'white',
-      borderRadius: 'default',
+      borderRadius: 'md',
       border: 2,
       borderColor: 'n.400',
       ':hover': {

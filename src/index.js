@@ -33,6 +33,10 @@ export { default as ScrollButton } from './components/Styled/ScrollButton';
 export { default as Tag } from './components/Styled/Tag';
 export { default as Toolbar } from './components/Styled/Toolbar';
 export {
+  NextButton,
+  PrevButton
+} from './components/Styled/Toolbar/ToolbarButtons';
+export {
   default as Zones,
   Zone,
   ZonesBackground

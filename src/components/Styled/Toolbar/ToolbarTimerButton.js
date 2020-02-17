@@ -34,7 +34,7 @@ const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
           py={0}
           border={1}
           borderColor="n.400"
-          borderRadius="default"
+          borderRadius="md"
           borderTopLeftRadius={0}
           borderBottomLeftRadius={0}
           borderLeft={0}

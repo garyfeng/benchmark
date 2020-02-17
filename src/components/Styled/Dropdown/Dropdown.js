@@ -31,7 +31,7 @@ function Selected({ selected }) {
       border="1"
       px="2"
       py="1"
-      borderRadius="default"
+      borderRadius="md"
       width="100%"
       sx={{
         right: 0,

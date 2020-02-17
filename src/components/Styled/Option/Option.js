@@ -65,7 +65,7 @@ function Choice({
         overflow: 'hidden',
         transition: 'opacity .2s, border .2s, color .2s',
         ':hover': {
-          borderColor: isEliminated || isDisabled ? null : 'blue.300'
+          borderColor: isEliminated || isDisabled ? null : 'p.400'
         }
       }}
     >

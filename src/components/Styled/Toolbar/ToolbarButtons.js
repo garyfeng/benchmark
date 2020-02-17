@@ -61,7 +61,7 @@ export function NextButton({ ...rest }) {
             content: "''",
             height: 0,
             display: 'block',
-            mt: '-5px'
+            mt: '-3px'
           }
         }}
       >

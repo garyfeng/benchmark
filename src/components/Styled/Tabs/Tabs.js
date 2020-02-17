@@ -82,7 +82,7 @@ export function Tabs({
 }) {
   let List = cloneElement(children, { activeTab, onChange });
   return (
-    <Flex bg="blue.100" justifyContent={justifyContent} px="2">
+    <Flex justifyContent={justifyContent} px="2">
       {List}
     </Flex>
   );
