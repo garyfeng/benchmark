@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react';
 import { Box } from '../Base';
 import Button from '../Button';
-import Checkbox from '../../Checkbox';
+import Checkbox from '../Checkbox';
 import RadioButton from '../../RadioButton';
 
 const GridContext = createContext({
