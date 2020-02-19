@@ -5,11 +5,8 @@
   "license": "MIT",
   "version": "0.1.10",
   "private": false,
-  "main": "dist/components/index.js",
+  "main": "index.js",
   "prepublish": "npm run release",
-  "files": [
-    "dist/components/index.js"
-  ],
   "scripts": {
     "lint": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
@@ -28,7 +25,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:update": "jest --updateSnapshot",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "copypackage": "copyfiles LICENSE README.md package.json dist/components",
+    "dist": "npm run release && cd dist/components && npm publish"
   },
   "dependencies": {
     "@reach/auto-id": "^0.6.1",
@@ -67,6 +66,7 @@
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.20",
+    "copyfiles": "^2.2.0",
     "css-loader": "^3.1.0",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.4.0",
