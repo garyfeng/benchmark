@@ -1,13 +1,11 @@
 import React from 'react';
 import { useId } from '@reach/auto-id';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import Button from '../Styled/Button';
-import Icon from '../Icon/Icon.js';
-import css from './RadioButton.module.css';
+import Button from '../Button';
+import Icon from '../../Icon/Icon.js';
 
 function RadioButton({
-  checked,
+  checked = false,
   disabled,
   onBlur,
   onClick,
@@ -20,14 +18,11 @@ function RadioButton({
   const inputProps = {
     checked,
     disabled,
-    onClick,
-    onChange,
     onFocus,
     onBlur,
     value
   };
 
-  const classes = classnames(css.radio, {});
   const inputId = `radio-${useId()}`;
   const icon = checked ? 'radio-selected' : 'radio-unselected';
 
@@ -36,31 +31,31 @@ function RadioButton({
       role="radio"
       id={inputId}
       label={label}
-      className={classes}
       aria-checked={checked}
       variant="bare"
+      onClick={() => onChange(value)}
       {...inputProps}
       {...props}
     >
-      <Icon className={css.icon} iconName={icon} size="medium" />
+      <Icon iconName={icon} size="medium" />
     </Button>
   );
 }
 
 RadioButton.propTypes = {
-  checked: PropTypes.bool,
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
+  // dom
   id: PropTypes.string,
+  disabled: PropTypes.bool,
+
+  // data
+  checked: PropTypes.bool,
+  value: PropTypes.string,
+
+  // events
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
-  onChange: PropTypes.func.isRequired,
-  value: PropTypes.string
-};
-
-RadioButton.defaultProps = {
-  checked: false
+  onChange: PropTypes.func.isRequired
 };
 
 export default RadioButton;

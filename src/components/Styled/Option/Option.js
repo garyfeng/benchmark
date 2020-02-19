@@ -2,7 +2,7 @@ import React from 'react';
 import { useId } from '@reach/auto-id';
 import { MdRemoveCircleOutline, MdAddCircleOutline } from 'react-icons/md';
 import Button from '../Button';
-import RadioButton from '../../RadioButton';
+import RadioButton from '../RadioButton';
 import Checkbox from '../Checkbox';
 import VisuallyHidden from '../VisuallyHidden';
 import { Flex, Text } from '../Base';

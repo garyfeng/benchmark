@@ -28,6 +28,7 @@ export {
   default as SingleSelect,
   SingleSelectChoice
 } from './components/Styled/SingleSelect';
+export { default as RadioButton } from './components/Styled/RadioButton';
 export { default as Stack } from './components/Styled/Stack';
 export { default as Switch } from './components/Styled/Switch';
 export { default as ScrollButton } from './components/Styled/ScrollButton';
@@ -44,5 +45,4 @@ export {
 } from './components/Styled/Zones';
 
 // classic
-export { default as RadioButton } from './components/RadioButton';
 export { default as TTS } from './components/TTS';
