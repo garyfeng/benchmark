@@ -1,19 +1,32 @@
 const path = require('path');
 const PeerDepsExternalsPlugin = require('peer-deps-externals-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
     main: './src/index.js'
   },
-  plugins: [new PeerDepsExternalsPlugin()],
+  plugins: [
+    // Don't include peer dependencies (such as React) with
+    // the bundle as the app(s) that uses this library will
+    // already have it loaded.
+    new PeerDepsExternalsPlugin(),
+
+    // style-loader does not work when doing SSR so we
+    // extract the css into a seperate file. This also helps
+    // prevent Flash of Unstyled Content (FOUC).  This only
+    // applies to components that import css files. It does
+    // not apply to components that use emotion for styling
+    // as they are generated at runtime.
+    new MiniCssExtractPlugin()
+  ],
   devtool: 'source-map',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist/components'),
     library: 'benchmark',
-    libraryTarget: 'umd',
-    // fix: https://github.com/webpack/webpack/issues/6522
-    globalObject: "typeof self !== 'undefined' ? self : this"
+    libraryTarget: 'umd'
   },
   optimization: {
     concatenateModules: false,
@@ -22,26 +35,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        loaders: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
-          },
-          require.resolve('sass-loader')
-        ]
-      },
-      {
         test: /\.css$/,
         exclude: /node_modules/,
         loaders: [
-          require.resolve('style-loader'),
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: devMode
+            }
+          },
           {
             loader: require.resolve('css-loader'),
             options: {

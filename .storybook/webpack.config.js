@@ -1,4 +1,16 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
+  plugins: [
+    // style-loader does not work when doing SSR so we
+    // extract the css into a seperate file. This also helps
+    // prevent Flash of Unstyled Content (FOUC).  This only
+    // applies to components that import css files. It does
+    // not apply to components that use emotion for styling
+    // as they are generated at runtime.
+    new MiniCssExtractPlugin()
+  ],
   module: {
     rules: [
       {
@@ -16,25 +28,14 @@ module.exports = {
         enforce: 'pre'
       },
       {
-        test: /\.scss$/,
-        loaders: [
-          require.resolve('style-loader'),
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              localsConvention: 'camelCaseOnly',
-              modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
-          },
-          require.resolve('sass-loader')
-        ]
-      },
-      {
         test: /\.css$/,
         loaders: [
-          require.resolve('style-loader'),
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: devMode
+            }
+          },
           {
             loader: require.resolve('css-loader'),
             options: {
