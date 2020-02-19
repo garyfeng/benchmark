@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-export function useArrayToggle() {
-  const [state, setState] = useState([]);
+export function useArrayToggle(initialValue = []) {
+  const [state, setState] = useState(initialValue);
 
   function toggle(item) {
     if (state.includes(item)) {
