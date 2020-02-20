@@ -28,6 +28,7 @@ export {
   default as SingleSelect,
   SingleSelectChoice
 } from './components/Styled/SingleSelect';
+export { default as Slider } from './components/Styled/Slider';
 export { default as RadioButton } from './components/Styled/RadioButton';
 export { default as Stack } from './components/Styled/Stack';
 export { default as Switch } from './components/Styled/Switch';
