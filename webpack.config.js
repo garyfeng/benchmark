@@ -27,7 +27,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist/components'),
     library: 'benchmark',
     libraryTarget: 'umd',
-    global: 'this'
+    globalObject: 'this'
   },
   optimization: {
     concatenateModules: false,
