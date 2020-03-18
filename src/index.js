@@ -22,6 +22,7 @@ export {
   default as MultipleSelect,
   MultipleSelectChoice
 } from './components/Styled/MultipleSelect';
+export { default as Modal } from './components/Styled/Modal';
 export { default as Option } from './components/Styled/Option';
 export { default as Paragraph } from './components/Styled/Paragraph';
 export {
