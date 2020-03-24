@@ -9,7 +9,7 @@ function QuestionsButton({ isOpen = false, onClick }) {
     <Button variant="primary" p="2" onClick={onClick}>
       <Flex
         sx={{
-          transform: isOpen ? 'rotate(180deg) translateZ(0)' : null,
+          transform: isOpen ? 'rotate(180deg)' : null,
           transition: 'transform .5s ease,-webkit-transform .5s ease'
         }}
       >
