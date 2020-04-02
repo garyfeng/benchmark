@@ -1,7 +1,7 @@
 import React from 'react';
 import { useId } from '@reach/auto-id';
 import PropTypes from 'prop-types';
-import Icon from '../../Icon/Icon.js';
+import Icon from '../Icon';
 import Button from '../Button';
 
 function Checkbox({
@@ -25,7 +25,7 @@ function Checkbox({
       disabled={disabled}
       {...props}
     >
-      <Icon iconName={icon} size="medium" sx={{ opactity: '.3' }} />
+      <Icon name={icon} />
     </Button>
   );
 }

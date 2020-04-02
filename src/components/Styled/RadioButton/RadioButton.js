@@ -2,7 +2,7 @@ import React from 'react';
 import { useId } from '@reach/auto-id';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import Icon from '../../Icon/Icon.js';
+import Icon from '../Icon';
 
 function RadioButton({
   checked = false,
@@ -37,7 +37,7 @@ function RadioButton({
       {...inputProps}
       {...props}
     >
-      <Icon iconName={icon} size="medium" />
+      <Icon name={icon} />
     </Button>
   );
 }
