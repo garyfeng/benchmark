@@ -69,8 +69,10 @@ function Choice({
         }
       }}
     >
+      {/* ELIMINATED STYLING CONTAINER */}
       <Flex flexGrow="1" opacity={isEliminated ? '50%' : '100%'}>
-        <Flex bg="blue.100" px="3" py="3" alignItems="center">
+        {/* CHECKBOX / RADIO BUTTON */}
+        <Flex bg="blue.100" px="3" py="3" flexShrink="0" alignItems="center">
           <InputControl
             checked={isSelected}
             disabled={isDisabled}
@@ -79,6 +81,8 @@ function Choice({
             aria-labelledby={optionId}
           />
         </Flex>
+
+        {/* TEXT / LABEL */}
         <Flex
           px="3"
           py="3"
@@ -93,7 +97,13 @@ function Choice({
       </Flex>
 
       {/* ELIMINATE BUTTON */}
-      <Flex px="3" py="3" alignContent="center" alignItems="center">
+      <Flex
+        px="3"
+        py="3"
+        flexShrink="0"
+        alignContent="center"
+        alignItems="center"
+      >
         <Button
           variant="bare"
           onClick={e => handleEliminate(e, value)}
