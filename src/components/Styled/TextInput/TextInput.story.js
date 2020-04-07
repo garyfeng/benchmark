@@ -12,7 +12,7 @@ storiesOf('TextInput', module).add('TextInput', () => {
   const label = text('Label', 'Item response text input');
 
   return (
-    <Box>
+    <Box width="500px">
       <TextInput
         label={label}
         rows={rows}

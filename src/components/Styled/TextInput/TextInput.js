@@ -46,7 +46,20 @@ function TextInput({
       onChange={checkLimit}
       rows={rows}
       autoComplete="off"
+      p="2"
+      spellCheck="false"
+      autoCapitalize="none"
+      autoCorrect="off"
       value={value}
+      maxWith="50ch"
+      sx={{
+        resize: 'none',
+        // todo: update to use theme
+        boxShadow: 'inset 0 0 0.19em #aaa',
+        ':focus': {
+          boxShadow: 'none'
+        }
+      }}
     />
   );
 }
