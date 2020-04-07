@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { Box } from '../Base';
+import { reducer, initialState } from './TextInput.reducer.js';
 
-function ExtendedText({
+function TextInput({
   id,
   label,
   onChange,
   maxLength = 3000,
   onMaxLength,
   rows = 5,
-  value = ''
+  value
 }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  // fallback event handlers for when they are not
+  // provided through props
+  function handleChange(value) {
+    dispatch({ type: 'TEXTINPUT_UPDATE', value });
+  }
+
+  value = value || state.value;
+  onChange = onChange || handleChange;
+
   function checkLimit(event) {
     const value = event.target.value;
     if (onChange) {
@@ -24,6 +36,7 @@ function ExtendedText({
       event.target.value = value.substring(0, maxLength);
     }
   }
+
   return (
     <Box
       as="textarea"
@@ -38,7 +51,7 @@ function ExtendedText({
   );
 }
 
-ExtendedText.propTypes = {
+TextInput.propTypes = {
   id: PropTypes.string,
   rows: PropTypes.number,
   maxLength: PropTypes.number,
@@ -46,4 +59,4 @@ ExtendedText.propTypes = {
   onMaxLength: PropTypes.func
 };
 
-export default ExtendedText;
+export default TextInput;

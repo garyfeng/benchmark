@@ -14,7 +14,7 @@ export { default as Alert } from './components/Styled/Alert';
 export { default as Checkbox } from './components/Styled/Checkbox';
 export { default as Button } from './components/Styled/Button';
 export { default as Dropdown } from './components/Styled/Dropdown';
-export { default as ExtendedText } from './components/Styled/ExtendedText';
+export { default as TextInput } from './components/Styled/TextInput';
 export { default as Heading } from './components/Styled/Heading';
 export { default as Icon } from './components/Styled/Icon';
 export { default as Image } from './components/Styled/Image';
