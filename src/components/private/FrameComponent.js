@@ -1,6 +1,6 @@
 import React from 'react';
-import ThemeProvider from '../Styled/ThemeProvider';
-import Global from '../Styled/Global';
+import ThemeProvider from '../ThemeProvider';
+import Global from '../Global';
 
 export default class FrameComponent extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { useToggle } from '../../../util/hooks';
+import { useToggle } from '../../util/hooks';
 import Stack from '../Stack';
 import Switch from './Switch.js';
 

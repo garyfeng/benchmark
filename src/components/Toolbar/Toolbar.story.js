@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Box, Flex } from '../Base';
 import Stack from '../Stack';
-import { useToggle } from '../../../util/hooks.js';
+import { useToggle } from '../../util/hooks.js';
 import Toolbar from './Toolbar.js';
 import ToolbarGroup from './ToolbarGroup.js';
 import ToolbarScratchButton from './ToolbarScratchButton.js';

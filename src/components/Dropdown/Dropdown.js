@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { useOutsideClick } from '../../../util/hooks';
+import { useOutsideClick } from '../../util/hooks';
 
 import { Flex, Box } from '../Base';
 

@@ -1,6 +1,6 @@
 import React, { useContext, createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import { Option, Box, Flex, Stack, Button } from '../../../index.js';
+import { Option, Box, Flex, Stack, Button } from '../../index.js';
 import { reducer, initialState } from './SingleSelect.reducer.js';
 
 // We create a SingleSelect context to enable communication between the

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, boolean, text } from '@storybook/addon-knobs';
 
-import Text from '../Text';
+import { Text } from '../Base';
 import TTS from './TTS';
 
 storiesOf('Lab', module).add('TTS', () => {

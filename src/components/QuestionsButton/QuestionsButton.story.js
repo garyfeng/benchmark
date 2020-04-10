@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { useToggle } from '../../../util/hooks';
+import { useToggle } from '../../util/hooks';
 import QuestionsButton from './QuestionsButton.js';
 
 storiesOf('SBT', module).add('QuestionsButton', () => {

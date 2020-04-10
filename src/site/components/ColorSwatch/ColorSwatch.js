@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import Text from '../../../components/Text';
+import { Text } from '../../../components/Base';
 import css from './ColorSwatch.module.css';
 
 function ColorSwatch({ children, className, id, color, name, border }) {
