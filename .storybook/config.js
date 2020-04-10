@@ -1,10 +1,10 @@
 import React from 'react';
 import { configure, addParameters, addDecorator } from '@storybook/react';
-import { withKnobs, radios } from '@storybook/addon-knobs';
+import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
-import ThemeProvider from '../src/components/ThemeProvider/';
-import css from './wrapper.css';
-import { Box, Flex } from '../src/components/Styled/Base';
+import { Flex } from '../src/components/Styled/Base';
+import ThemeProvider from '../src/components/Styled/ThemeProvider';
+import Global from '../src/components/Styled/Global';
 
 addParameters({
   options: {
@@ -16,45 +16,35 @@ addParameters({
   }
 });
 
-const withThemeProvider = storyFn => {
-  const themes = {
-    Default: 'Default',
-    Dark: 'Dark',
-    Beige: 'Beige'
-  };
-  const theme = radios('Theme', themes, 'Default');
-
-  return <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>;
-};
-
-const withStoryStyles = storyFn => {
+const withWrapper = storyFn => {
   return (
-    <Box
-      id="wrapper"
-      sx={{
-        overflow: 'auto',
-        width: '100%',
-        height: '100%'
-      }}
-    >
-      <Flex>{storyFn()}</Flex>
-    </Box>
+    <>
+      <React.StrictMode>
+        <Global />
+        <ThemeProvider>
+          <Flex
+            id="wrapper"
+            sx={{
+              overflow: 'auto',
+              width: '100%',
+              height: '100%'
+            }}
+          >
+            {storyFn()}
+          </Flex>
+        </ThemeProvider>
+      </React.StrictMode>
+    </>
   );
-};
-
-const withStrictMode = storyFn => {
-  return <React.StrictMode>{storyFn()}</React.StrictMode>;
 };
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /\.story\.js$/);
 
 function loadStories() {
-  addDecorator(withStrictMode);
+  addDecorator(withWrapper);
   addDecorator(withA11y);
   addDecorator(withKnobs);
-  addDecorator(withStoryStyles);
-  addDecorator(withThemeProvider);
 
   // hack to render functional components + hooks
   // without the need for a parent wrapper in the story

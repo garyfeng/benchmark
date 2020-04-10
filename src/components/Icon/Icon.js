@@ -1,37 +1,32 @@
 import React from 'react';
-import classnames from 'classnames';
-import PropTypes from 'prop-types';
-import styles from './Icon.module.css';
-import icons from './Icons.json';
+import Svg from '../SVG';
+import icons from './icons';
 
-function Icon({ iconName, size, className, color, label }) {
+function Icon({
+  name,
+  size = '1em',
+  focusable = false,
+  color = 'currentColor',
+  role = 'presentation'
+}) {
+  // fallback to question icon if name is not found
+  const icon = icons[name] || icons['question-circle'];
+  const { path, viewBox = '0 0 24 24' } = icon;
+
   return (
-    <span
-      aria-label={label}
-      data-icon={icons[iconName]}
-      className={classnames(
-        className,
-        styles.icon,
-        styles[iconName],
-        styles[size],
-        { [styles[color]]: color }
-      )}
-    />
+    <Svg
+      as="svg"
+      size={size}
+      color={color}
+      display="inline-block"
+      verticalAlign="middle"
+      viewBox={viewBox}
+      focusable={focusable}
+      role={role}
+    >
+      {path}
+    </Svg>
   );
 }
-
-Icon.propTypes = {
-  className: PropTypes.string,
-  iconName: PropTypes.string,
-  label: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large', 'huge']),
-  color: PropTypes.oneOf(['muted', 'danger', 'success', 'warning'])
-};
-
-Icon.defaultProps = {
-  iconName: 'question-circle'
-};
-
-Icon.types = Object.keys(icons);
 
 export default Icon;

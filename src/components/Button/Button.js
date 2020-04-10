@@ -1,65 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import css from './Button.module.css';
+import { useRovingTabIndex, useFocusEffect } from 'react-roving-tabindex';
+import { Box } from '../Base';
 
-function Button({
-  children,
-  className,
-  color,
-  disabled,
-  id,
-  small,
-  collapsed,
-  toggled,
-  type,
-  onClick
-}) {
-  const buttonProps = {
-    id,
-    disabled,
-    onClick
-  };
-
-  const classes = classnames(className, css.button, {
-    [css.small]: small,
-    [css.collapsed]: collapsed,
-    [css[color]]: color,
-    [css.toggled]: toggled,
-    [css[type]]: type
-  });
-
+function Button({ disabled, roving = false, ...props }) {
+  const ref = React.useRef(null);
+  const [tabIndex, focused, handleKeyDown, handleClick] = useRovingTabIndex(
+    ref,
+    disabled
+  );
+  useFocusEffect(focused, ref);
   return (
-    <button {...buttonProps} className={classes}>
-      {children}
-    </button>
+    <Box
+      as="button"
+      tx="buttons"
+      variant="primary"
+      __css={{
+        px: 3,
+        py: 2,
+        alignItems: 'center',
+        display: 'inline-flex',
+        cursor: 'pointer',
+        transition: 'background .2s,border .2s,box-shadow .2s,color .2s',
+        ':focus': {
+          outline: '1px dotted',
+          outlineColor: 'black',
+          outlineOffset: 2
+        },
+        ':disabled': {
+          pointerEvents: 'none',
+          bg: 'n.300',
+          color: 'n.600',
+          boxShadow: 'none'
+        }
+      }}
+      ref={ref}
+      tabIndex={roving ? tabIndex : undefined}
+      disabled={disabled}
+      onKeyDown={handleKeyDown}
+      onClick={handleClick}
+      {...props}
+    />
   );
 }
 
 Button.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  disabled: PropTypes.bool,
-
-  // styling
-  color: PropTypes.oneOf(['primary', 'secondary']),
-  /**
-   * The type of corner rounding.
-   */
-  type: PropTypes.oneOf(['rounded', 'circle', 'square']),
-  /**
-   * Render a small version of the button.
-   */
-  small: PropTypes.bool,
-  collapsed: PropTypes.bool,
-  toggled: PropTypes.bool,
-
-  // events
-  onClick: PropTypes.func
-};
-
-Button.propDescriptions = {
-  color: 'The color of the button'
+  variant: PropTypes.oneOf([
+    'bare',
+    'primary',
+    'secondary',
+    'prev',
+    'next',
+    'toolbar',
+    'toolbarActive'
+  ])
 };
 
 export default Button;

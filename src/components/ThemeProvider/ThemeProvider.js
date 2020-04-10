@@ -1,33 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import themes from '../../themes';
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
+import theme from '../themes/default.js';
+import { Box } from '../Base';
 
-// global
-import '../../styles/reset.css';
-import '../../styles/fonts.css';
-import '../../themes/Default.module.css';
-
-import typography from '../../styles/typography.module.css';
-import styles from './ThemeProvider.module.css';
-
-function ThemeProvider({ theme = 'Default', children }) {
-  const selectedTheme = themes[theme].theme;
-  let classes = classnames(
-    styles.base,
-    typography.base,
-    themes['Default'].theme,
-    selectedTheme
-  );
-  return <div className={classes}>{children}</div>;
-}
-
-ThemeProvider.propTypes = {
-  theme: PropTypes.oneOf(['Default', 'Beige', 'Dark', 'Docs', 'TTS'])
-};
+const ThemeProvider = ({ theme, children }) => (
+  <EmotionThemeProvider theme={theme}>
+    <Box
+      bg="n.0"
+      sx={{
+        width: '100%',
+        height: '100%',
+        fontSize: 3
+      }}
+    >
+      {children}
+    </Box>
+  </EmotionThemeProvider>
+);
 
 ThemeProvider.defaultProps = {
-  theme: 'Default'
+  theme
 };
 
 export default ThemeProvider;

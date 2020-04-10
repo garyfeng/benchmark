@@ -1,11 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-import typography from '../../../styles/typography.module.css';
-import '../../../styles/reset.css';
-import '../../../styles/fonts.css';
-
 import { ThemeProvider } from '../../../index.js';
 import css from './CodeFrame.module.css';
 
@@ -24,7 +19,7 @@ class CodeFrame extends PureComponent {
 
   render() {
     return (
-      <div className={classnames(css.codeframe, global.base, typography.base)}>
+      <div className={classnames(css.codeframe, global.base)}>
         <ThemeProvider>
           <div className={css.toolbar}>
             <div className={css.codeUtils}>
