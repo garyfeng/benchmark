@@ -1,10 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { useArrayToggle } from '../../util/hooks';
 import Checkbox from './Checkbox';
 
-storiesOf('Checkbox', module).add('Checkbox', () => {
+export default {
+  title: 'Checkbox',
+  component: Checkbox
+};
+
+export function Basic() {
   const [selected, setSelected] = useArrayToggle(['b']);
 
   return (
@@ -36,4 +40,4 @@ storiesOf('Checkbox', module).add('Checkbox', () => {
       </Checkbox>
     </div>
   );
-});
+}
