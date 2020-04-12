@@ -76,7 +76,7 @@ function Choice({
             checked={isSelected}
             disabled={isDisabled}
             onChange={handleChange}
-            size="24"
+            size="24px"
             label={label}
             aria-labelledby={optionId}
           />
@@ -120,9 +120,9 @@ function Choice({
             {isEliminated ? 'Enable' : 'Eliminate'} Option
           </VisuallyHidden>
           {isEliminated ? (
-            <Icon name="eliminate-selected" size="24" />
+            <Icon name="eliminate-selected" size="24px" />
           ) : (
-            <Icon name="eliminate-unselected" size="24" />
+            <Icon name="eliminate-unselected" size="24px" />
           )}
           {/* <EliminateIcon size="28" /> */}
         </Button>
