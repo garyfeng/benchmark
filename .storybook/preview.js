@@ -27,6 +27,6 @@ const withWrapper = storyFn => {
 addDecorator(withWrapper);
 addParameters({
   options: {
-    showRoots: false
+    showRoots: true
   }
 });

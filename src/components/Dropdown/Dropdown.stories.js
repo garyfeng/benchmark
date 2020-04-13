@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import Stack from '../Stack';
 import { Text, Box } from '../Base';
 import Dropdown from './Dropdown.js';
 
-storiesOf('Styled System', module).add('Dropdown', () => {
+export default {
+  title: 'Item Types/Dropdown',
+  component: Dropdown
+};
+
+export function Basic() {
   const [selected, setSelected] = useState();
   const [open, setOpen] = useState(true);
 
@@ -45,4 +49,4 @@ storiesOf('Styled System', module).add('Dropdown', () => {
       {/* END DROPDOWN  */}
     </Stack>
   );
-});
+}

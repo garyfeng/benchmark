@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import Button from '../Button';
 import Modal from './Modal.js';
 
-storiesOf('Modal', module).add('Modal', () => {
+export default {
+  title: 'Elements/Modal',
+  component: Modal
+};
+
+export function Basic() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -14,4 +18,4 @@ storiesOf('Modal', module).add('Modal', () => {
       <Button onClick={() => setOpen(true)}>Open Modal</Button>
     </>
   );
-});
+}

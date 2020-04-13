@@ -1,9 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box } from '../Base';
 import Stack from './Stack.js';
 
-storiesOf('Styled System', module).add('Stack', () => {
+export default {
+  title: 'Layout/Stack',
+  component: Stack
+};
+
+export function Basic() {
   return (
     <>
       <Stack spacing="2" border="1" borderColor="n.500">
@@ -30,4 +34,4 @@ storiesOf('Styled System', module).add('Stack', () => {
       </Stack>
     </>
   );
-});
+}

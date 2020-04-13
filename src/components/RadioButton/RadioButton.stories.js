@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 
 import RadioButton from './RadioButton.js';
 
-storiesOf('RadioButton', module).add('RadioButton', () => {
-  const [selected, setSelected] = useState('a');
+export default {
+  title: 'Elements/Radio',
+  component: RadioButton
+};
 
+export function Basic() {
+  const [selected, setSelected] = useState('a');
   return (
     <div role="radiogroup">
       <RadioButton
@@ -35,4 +38,4 @@ storiesOf('RadioButton', module).add('RadioButton', () => {
       </RadioButton>
     </div>
   );
-});
+}

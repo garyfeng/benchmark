@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Flex } from '../Base';
 import { Tabs, Tab, TabsList } from './Tabs.js';
 
-storiesOf('Styled System', module).add('Tabs ', () => {
+export default {
+  title: 'Elements/Tabs',
+  component: Tabs
+};
+
+export function Basic() {
   let [selectedTab, setSelectedTab] = useState(0);
 
   return (
@@ -22,4 +26,4 @@ storiesOf('Styled System', module).add('Tabs ', () => {
       </Box>
     </Flex>
   );
-});
+}

@@ -1,10 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { useArrayToggle } from '../../util/hooks';
 import { Box } from '../Base';
 import MultipleSelect, { MultipleSelectChoice } from './MultipleSelect';
 
-storiesOf('MultipleSelect', module).add('MultipleSelect', () => {
+export default {
+  title: 'Item Types/MultiSelect',
+  component: MultipleSelect
+};
+
+export function Basic() {
   const [selected, toggleSelected, resetSelected] = useArrayToggle();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -36,9 +40,9 @@ storiesOf('MultipleSelect', module).add('MultipleSelect', () => {
       <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
     </MultipleSelect>
   );
-});
+}
 
-storiesOf('MultipleSelect', module).add('Disabled', () => {
+export function Disabled() {
   const [selected, toggleSelected, resetSelected] = useArrayToggle();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -71,9 +75,9 @@ storiesOf('MultipleSelect', module).add('Disabled', () => {
       <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
     </MultipleSelect>
   );
-});
+}
 
-storiesOf('MultipleSelect', module).add('Option Disabled', () => {
+export function OptionDisabled() {
   const [selected, toggleSelected, resetSelected] = useArrayToggle();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -107,9 +111,9 @@ storiesOf('MultipleSelect', module).add('Option Disabled', () => {
       <MultipleSelectChoice value="c">Option C</MultipleSelectChoice>
     </MultipleSelect>
   );
-});
+}
 
-storiesOf('MultipleSelect', module).add('Long Labels', () => {
+export function LongLabels() {
   const [selected, toggleSelected, resetSelected] = useArrayToggle();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -147,4 +151,4 @@ storiesOf('MultipleSelect', module).add('Long Labels', () => {
       </MultipleSelect>
     </Box>
   );
-});
+}

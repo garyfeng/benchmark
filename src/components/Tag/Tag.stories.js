@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { AllTags } from './examples';
+import { AllTags } from './examples.js';
+import Tag from './Tag.js';
 
-storiesOf('Styled System', module).add('Tag', () => {
+export default {
+  title: 'Elements/Tag',
+  component: Tag
+};
+
+export function Basic() {
   return <AllTags />;
-});
+}

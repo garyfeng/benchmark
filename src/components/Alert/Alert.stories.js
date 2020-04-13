@@ -1,7 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { AllAlerts } from './examples';
+import Alert from './Alert.js';
 
-storiesOf('Styled System', module).add('Alert', () => {
+export default {
+  title: 'Elements/Alert',
+  component: Alert
+};
+
+export function Basic() {
   return <AllAlerts />;
-});
+}

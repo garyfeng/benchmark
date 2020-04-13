@@ -1,8 +1,12 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import Heading from './Heading';
 
-storiesOf('Styled System', module).add('Heading', () => {
+export default {
+  title: 'Typography/Heading',
+  component: Heading
+};
+
+export function Basic() {
   return (
     <>
       <Heading>Heading 1</Heading>
@@ -13,4 +17,4 @@ storiesOf('Styled System', module).add('Heading', () => {
       <Heading level={6}>Heading 6</Heading>
     </>
   );
-});
+}

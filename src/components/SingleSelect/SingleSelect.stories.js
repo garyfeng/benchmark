@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { useArrayToggle } from '../../util/hooks';
 import { Box } from '../Base';
 import SingleSelect, { SingleSelectChoice } from './SingleSelect';
 
-storiesOf('SingleSelect', module).add('SingleSelect', () => {
+export default {
+  title: 'Item Types/SingleSelect',
+  component: SingleSelect
+};
+
+export function Basic() {
   return (
     <SingleSelect>
       <SingleSelectChoice value="a">Option A</SingleSelectChoice>
@@ -12,9 +16,9 @@ storiesOf('SingleSelect', module).add('SingleSelect', () => {
       <SingleSelectChoice value="c">Option C</SingleSelectChoice>
     </SingleSelect>
   );
-});
+}
 
-storiesOf('SingleSelect', module).add('Option Disabled', () => {
+export function OptionDisabled() {
   const [selected, setSelected] = useState();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -47,9 +51,9 @@ storiesOf('SingleSelect', module).add('Option Disabled', () => {
       <SingleSelectChoice value="c">Option C</SingleSelectChoice>
     </SingleSelect>
   );
-});
+}
 
-storiesOf('SingleSelect', module).add('Disabled', () => {
+export function Disabled() {
   const [selected, setSelected] = useState();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -81,9 +85,9 @@ storiesOf('SingleSelect', module).add('Disabled', () => {
       <SingleSelectChoice value="c">Option C</SingleSelectChoice>
     </SingleSelect>
   );
-});
+}
 
-storiesOf('SingleSelect', module).add('Long Labels', () => {
+export function LongLabels() {
   const [selected, setSelected] = useState();
   const [eliminated, toggleEliminated] = useArrayToggle();
 
@@ -120,4 +124,4 @@ storiesOf('SingleSelect', module).add('Long Labels', () => {
       </SingleSelect>
     </Box>
   );
-});
+}

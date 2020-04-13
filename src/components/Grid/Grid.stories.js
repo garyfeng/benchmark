@@ -1,11 +1,16 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { GridCheckboxes, GridRadioButtons } from './examples';
+import Grid from './Grid.js';
 
-storiesOf('Grid', module).add('Checkboxes', () => {
+export default {
+  title: 'Item Types/Grid',
+  component: Grid
+};
+
+export function Checkboxes() {
   return <GridCheckboxes />;
-});
+}
 
-storiesOf('Grid', module).add('RadioButtons', () => {
+export function Radios() {
   return <GridRadioButtons />;
-});
+}

@@ -1,10 +1,9 @@
 import React from 'react';
-
 import { useArrayToggle } from '../../util/hooks';
 import Checkbox from './Checkbox';
 
 export default {
-  title: 'Checkbox',
+  title: 'Elements/Checkbox',
   component: Checkbox
 };
 

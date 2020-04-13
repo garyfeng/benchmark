@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import Zones, { Zone, ZonesBackground } from './Zones';
 import imageFile from './examples/example01.svg';
 
-storiesOf('Zones', module).add('Circles', () => {
+export default {
+  title: 'Item Types/Zones',
+  component: Zones
+};
+
+export function Circles() {
   const [selected, setSelected] = useState();
 
   return (
@@ -20,9 +24,9 @@ storiesOf('Zones', module).add('Circles', () => {
       </ZonesBackground>
     </Zones>
   );
-});
+}
 
-storiesOf('Zones', module).add('Rectangles', () => {
+export function Rectangles() {
   const [selected, setSelected] = useState();
 
   return (
@@ -42,4 +46,4 @@ storiesOf('Zones', module).add('Rectangles', () => {
       </ZonesBackground>
     </Zones>
   );
-});
+}

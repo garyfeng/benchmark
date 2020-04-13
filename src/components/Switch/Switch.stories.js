@@ -1,10 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { useToggle } from '../../util/hooks';
 import Stack from '../Stack';
 import Switch from './Switch.js';
 
-storiesOf('Styled System', module).add('Switch', () => {
+export default {
+  title: 'Elements/Switch',
+  component: Switch
+};
+
+export function Basic() {
   const [checked, setChecked] = useToggle();
   return (
     <Stack spacing="4">
@@ -18,4 +22,4 @@ storiesOf('Styled System', module).add('Switch', () => {
       </Stack>
     </Stack>
   );
-});
+}

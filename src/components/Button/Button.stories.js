@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { IoIosApps } from 'react-icons/io';
 import Stack from '../Stack';
 import Button from '../Button';
@@ -13,23 +12,14 @@ import {
 import ToolbarGroup from '../Toolbar/ToolbarGroup.js';
 import ToolbarScratchButton from '../Toolbar/ToolbarScratchButton.js';
 import ToolbarTimerButton from '../Toolbar/ToolbarTimerButton.js';
-import { Box, Text, Flex } from './Base.js';
+import { Box, Flex } from '../Base';
 
-storiesOf('Styled System', module).add('Text', () => {
-  return (
-    <Stack>
-      <Text fontSize={1}>Size 1</Text>
-      <Text fontSize={2}>Size 2</Text>
-      <Text fontSize={3}>Size 3</Text>
-      <Text fontSize={4}>Size 4</Text>
-      <Text fontSize={5}>Size 5</Text>
-      <Text fontSize={6}>Size 6</Text>
-      <Text fontSize={7}>Size 7</Text>
-    </Stack>
-  );
-});
+export default {
+  title: 'Elements/Button',
+  component: Button
+};
 
-storiesOf('Styled System', module).add('Buttons', () => {
+export function Basic() {
   return (
     <Stack spacing={3} p="3">
       <Stack spacing="2" direction="row">
@@ -125,4 +115,4 @@ storiesOf('Styled System', module).add('Buttons', () => {
       </Stack>
     </Stack>
   );
-});
+}
