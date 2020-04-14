@@ -30,8 +30,10 @@ storiesOf('Toolbar', module).add('Toolbar', () => {
 
   return (
     <Box
-      width="100%"
       sx={{
+        width: '100vw',
+        top: '0',
+        left: '0',
         position: 'absolute'
       }}
     >

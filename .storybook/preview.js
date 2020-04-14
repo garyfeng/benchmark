@@ -1,6 +1,6 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
-import { Global, ThemeProvider, Flex } from '../src/index.js';
+import { Global, ThemeProvider, Flex, Box } from '../src/index.js';
 
 const withWrapper = storyFn => {
   return (
@@ -8,15 +8,12 @@ const withWrapper = storyFn => {
       <React.StrictMode>
         <Global />
         <ThemeProvider>
-          <Flex
-            id="wrapper"
-            sx={{
-              overflow: 'auto',
-              width: '100%',
-              height: '100%'
-            }}
-          >
-            {storyFn()}
+          <Flex id="wrapper" padding="3" width="100%" height="100%">
+            {/* 
+            We use a Box here so that block based components 
+            such as Paragraph will display correctly. 
+            */}
+            <Box>{storyFn()}</Box>
           </Flex>
         </ThemeProvider>
       </React.StrictMode>

@@ -67,7 +67,7 @@ function Buttons() {
 
 storiesOf('Collections', module).add('All Buttons', () => {
   return (
-    <Stack direction="row">
+    <Stack>
       <Box>
         <ThemeProvider>
           <Buttons />
