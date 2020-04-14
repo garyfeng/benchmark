@@ -29,9 +29,7 @@ function Choice({
     onEliminate(value);
     // prevent onChange event from firing on the
     // parent container component
-    if (event) {
-      event.stopPropagation();
-    }
+    event.stopPropagation();
   }
 
   function handleClick(event, value) {
@@ -44,7 +42,6 @@ function Choice({
   function handleChange(event) {
     if (!isDisabled) {
       onChange(value);
-      event.stopPropagation();
     }
   }
 
