@@ -9,7 +9,6 @@ export { default as theme } from './components/themes/default.js';
 
 // main
 export { Box, Flex, Text } from './components/Base';
-export { Tab, Tabs, TabsList } from './components/Tabs';
 export { default as Alert } from './components/Alert';
 export { default as Checkbox } from './components/Checkbox';
 export { default as Button } from './components/Button';
@@ -34,6 +33,7 @@ export { default as RadioButton } from './components/RadioButton';
 export { default as Stack } from './components/Stack';
 export { default as Switch } from './components/Switch';
 export { default as ScrollButton } from './components/ScrollButton';
+export { Tab, Tabs, TabList, TabPanels, TabPanel } from './components/Tabs';
 export { default as Tag } from './components/Tag';
 export { default as Toolbar } from './components/Toolbar';
 export { NextButton, PrevButton } from './components/Toolbar/ToolbarButtons';

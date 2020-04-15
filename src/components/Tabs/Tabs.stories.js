@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Flex } from '../Base';
-import { Tabs, Tab, TabsList } from './Tabs.js';
+import Stack from '../Stack';
+import { Tabs, Tab, TabList, TabPanel, TabPanels } from './Tabs.js';
 
 export default {
   title: 'Elements/Tabs',
@@ -11,19 +12,78 @@ export function Basic() {
   let [selectedTab, setSelectedTab] = useState(0);
 
   return (
-    <Flex flexDirection="column" width="100%">
-      <Box>
-        <Tabs activeTab={selectedTab} onChange={setSelectedTab}>
-          <TabsList>
-            <Tab>1</Tab>
-            <Tab>2</Tab>
-            <Tab>3</Tab>
-            <Tab>4</Tab>
-            <Tab>5</Tab>
-            <Tab>Review</Tab>
-          </TabsList>
-        </Tabs>
-      </Box>
-    </Flex>
+    <Tabs
+      selectedTab={selectedTab}
+      setSelectedTab={tabIndex => setSelectedTab(tabIndex)}
+    >
+      <TabList>
+        <Tab>1</Tab>
+        <Tab>2</Tab>
+        <Tab>3</Tab>
+        <Tab>Review</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>One Content</TabPanel>
+        <TabPanel>Two Content</TabPanel>
+        <TabPanel>Three Content</TabPanel>
+        <TabPanel>Review Content</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+}
+
+export function LocalState() {
+  return (
+    <Tabs>
+      <TabList>
+        <Tab>1</Tab>
+        <Tab>2</Tab>
+        <Tab>3</Tab>
+        <Tab>Review</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>One Content</TabPanel>
+        <TabPanel>Two Content</TabPanel>
+        <TabPanel>Three Content</TabPanel>
+        <TabPanel>Review Content</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+}
+
+export function TabAlignment() {
+  let alignments = ['left', 'center', 'right'];
+
+  return (
+    <Stack flexDirection="column" width="400px">
+      {alignments.map(alignment => {
+        return (
+          <Box
+            width="100%"
+            key={alignment}
+            border="1"
+            borderColor="n.100"
+            p="3"
+            bg="n.50"
+          >
+            <Box>{alignment}</Box>
+            <Tabs align={alignment}>
+              <TabList>
+                <Tab>1</Tab>
+                <Tab>2</Tab>
+                <Tab>3</Tab>
+                <Tab>Review</Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel>One Content</TabPanel>
+                <TabPanel>Two Content</TabPanel>
+                <TabPanel>Three Content</TabPanel>
+                <TabPanel>Review Content</TabPanel>>
+              </TabPanels>
+            </Tabs>
+          </Box>
+        );
+      })}
+    </Stack>
   );
 }
