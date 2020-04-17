@@ -8,12 +8,7 @@ import React, {
 import { Box, Flex, Text } from '../Base';
 import { reducer, initialState } from './Tabs.reducer.js';
 
-// The following tabs component API is heavily inspired by
-// the reach-ui and chakra-ui implementations.
-// https://reacttraining.com/reach-ui/tabs
-// https://chakra-ui.com/tabs
-
-// We create a Tabs context to enable communication between the
+// We create a context to enable communication between the
 // parent <Tabs> it's <Tab> and <TabPanel> children.
 const TabsContext = createContext({
   activeTab: 0,
@@ -51,7 +46,7 @@ export function TabList({ activeTab, children, onChange }) {
 
   return (
     <Flex justifyContent={alignment} borderBottom="1">
-      <Flex>
+      <Flex role="tablist">
         {Children.map(children, (tab, index) => {
           const active = index === activeTab;
           return cloneElement(tab, { index, onClick: onChange, active });
@@ -107,6 +102,9 @@ export function Tab({ children, index }) {
   return (
     <Box
       as="button"
+      role="tab"
+      aria-selected={isActive ? true : false}
+      tabIndex={isActive ? 0 : -1}
       onClick={() => onChange(index)}
       border="1"
       borderColor="n.600"
@@ -139,7 +137,7 @@ export function TabPanel({ children, p = 3, ...props }) {
     // We pass on all the props so that styling props can be
     // applied to the TabPanel.
     // <TabPanel p="4" bg="blue.100">...
-    <Box p={p} {...props}>
+    <Box role="tabpanel" p={p} {...props}>
       {children}
     </Box>
   );
