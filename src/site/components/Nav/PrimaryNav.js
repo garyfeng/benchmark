@@ -18,7 +18,7 @@ function PrimaryNav({ data = [], toggleStatus }) {
               />
               <PrimarySubNavItem
                 title="Getting Started"
-                url="/overview/principals"
+                url="/overview/getting-started"
               />
               <PrimarySubNavItem
                 title="Deisgn Tokens"
