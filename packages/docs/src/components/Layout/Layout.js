@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Nav from '../Nav';
-import { Tag, Heading } from '../../../index.js';
+import { Tag, Heading } from '@coreym/benchmark';
 import SourceIcon from '../SourceIcon';
 import css from './Layout.module.css';
 

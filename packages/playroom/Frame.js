@@ -1,13 +1,13 @@
 import React from 'react';
-import ThemeProvider from '../ThemeProvider';
-import Global from '../Global';
+import { ThemeProvider, Global  } from '@coreym/benchmark';
 
 export default class FrameComponent extends React.Component {
   render() {
     return (
-      <Global>
+        <>
+      <Global />
         <ThemeProvider>{this.props.children}</ThemeProvider>
-      </Global>
+        </>
     );
   }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
-import { Heading, Paragraph, ThemeProvider, Tag, Global } from '../index.js';
-import Icon from '../components/Icon';
+import { Heading, Paragraph, ThemeProvider, Tag, Global, Icon } from '@coreym/benchmark';
 import docsTheme from './theme';
 import Layout from './components/Layout';
 import LiveCodeBlock from './components/LiveCodeBlock';

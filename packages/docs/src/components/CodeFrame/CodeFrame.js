@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ThemeProvider } from '../../../index.js';
+import { ThemeProvider } from '@coreym/benchmark';
 import css from './CodeFrame.module.css';
 
 class CodeFrame extends PureComponent {
