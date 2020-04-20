@@ -7,27 +7,39 @@ import React, {
 } from 'react';
 import { Box, Flex, Text } from '../Base';
 import { reducer, initialState } from './Tabs.reducer.js';
+import { useId } from '@reach/auto-id';
 
 // We create a context to enable communication between the
 // parent <Tabs> it's <Tab> and <TabPanel> children.
 const TabsContext = createContext({
   activeTab: 0,
   align: 'left',
+  tabsId: null,
+  label: null,
   onChange: () => {}
 });
 
-export function Tabs({ activeTab = 0, children, onChange, align = 'center' }) {
+export function Tabs({ label, activeTab = 0, children, onChange, align = 'center' }) {
+  // Local state and handler fallbacks
   const [state, dispatch] = useReducer(reducer, initialState);
   const handleChange = tabIndex => dispatch({ type: 'SELECT_TAB', tabIndex });
   activeTab = activeTab || state.activeTab;
   onChange = onChange || handleChange;
 
+  // Create a unique ID for this component instance. This
+  // will be used for accessibility where we link to Tabs
+  // with their TabPanel counterpart.  This ID is not
+  // applied to the root element as it is not needed.
+  const tabsId = `tabs-${useId()}`;
+
   return (
     <TabsContext.Provider
       value={{
         activeTab,
+        align,
+        label,
         onChange,
-        align
+        tabsId,
       }}
     >
       <Flex flexDirection="column">{children}</Flex>
@@ -35,8 +47,8 @@ export function Tabs({ activeTab = 0, children, onChange, align = 'center' }) {
   );
 }
 
-export function TabList({ activeTab, children, onChange }) {
-  const { align } = useContext(TabsContext);
+export function TabList({ children, onChange }) {
+  const { align, tabsId, activeTab, label } = useContext(TabsContext);
   const alignments = {
     left: 'flex-start',
     center: 'center',
@@ -46,19 +58,19 @@ export function TabList({ activeTab, children, onChange }) {
 
   return (
     <Flex justifyContent={alignment} borderBottom="1">
-      <Flex role="tablist">
+      <Flex role="tablist" aria-label={label}>
         {Children.map(children, (tab, index) => {
-          const active = index === activeTab;
-          return cloneElement(tab, { index, onClick: onChange, active });
+          const isActive = index === activeTab;
+          const id = `${tabsId}-tab-${index}`;
+          return cloneElement(tab, { index, id, onClick: onChange, isActive });
         })}
       </Flex>
     </Flex>
   );
 }
 
-export function Tab({ children, index }) {
-  const { onChange, activeTab } = useContext(TabsContext);
-  const isActive = index === activeTab;
+export function Tab({ children, index, id, isActive }) {
+  const { onChange, tabsId } = useContext(TabsContext);
   const states = {
     normal: {
       ':focus': {
@@ -103,7 +115,9 @@ export function Tab({ children, index }) {
     <Box
       as="button"
       role="tab"
+      id={id}
       aria-selected={isActive ? true : false}
+      aria-controls={`${tabsId}-panel-${index}`}
       tabIndex={isActive ? 0 : -1}
       onClick={() => onChange(index)}
       border="1"
@@ -122,10 +136,19 @@ export function Tab({ children, index }) {
 }
 
 export function TabPanels({ children }) {
-  const { activeTab } = useContext(TabsContext);
+  const { activeTab, tabsId } = useContext(TabsContext);
+
+  // Add accessibility labels to tab panels
+  const panelsWithIds = React.Children.toArray(children).map((child, index) => {
+    return cloneElement(child, {
+      'id': `${tabsId}-panel-${index}`,
+      'aria-labelledby': `${tabsId}-tab-${index}`,
+    });
+  });
+
   return (
     <Box width="100%">
-      {React.Children.toArray(children).filter((tab, index) => {
+      {React.Children.toArray(panelsWithIds).filter((tab, index) => {
         return index === activeTab;
       })}
     </Box>

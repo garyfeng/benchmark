@@ -68,4 +68,14 @@ describe('Tabs A11y', () => {
     const { getByRole } = render(<Example />);
     expect(getByRole('tabpanel')).toBeTruthy();
   });
+
+  it('should have a aria-labledby on the tab panels', async () => {
+    const { queryAllByRole } = render(<Example />);
+    const tabs = queryAllByRole('tab');
+    fireEvent.click(tabs[1]);
+    const panels = queryAllByRole('tabpanel');
+    const panelLabel = panels[0].getAttribute('aria-labelledby');
+    const tabId = tabs[1].getAttribute('id');
+    expect(panelLabel).toEqual(tabId);
+  });
 });

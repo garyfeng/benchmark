@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex } from '../Base';
+import { Box, Flex, Text } from '../Base';
 import Stack from '../Stack';
 import { Tabs, Tab, TabList, TabPanel, TabPanels } from './Tabs.js';
 
@@ -15,6 +15,7 @@ export function Basic() {
     <Tabs
       selectedTab={selectedTab}
       setSelectedTab={tabIndex => setSelectedTab(tabIndex)}
+      label="questions"
     >
       <TabList>
         <Tab>1</Tab>
@@ -34,7 +35,7 @@ export function Basic() {
 
 export function LocalState() {
   return (
-    <Tabs>
+    <Tabs label="questions">
       <TabList>
         <Tab>1</Tab>
         <Tab>2</Tab>
@@ -58,30 +59,33 @@ export function TabAlignment() {
     <Stack flexDirection="column" width="400px">
       {alignments.map(alignment => {
         return (
-          <Box
-            width="100%"
-            key={alignment}
-            border="1"
-            borderColor="n.100"
-            p="3"
-            bg="n.50"
-          >
-            <Box>{alignment}</Box>
-            <Tabs align={alignment}>
-              <TabList>
-                <Tab>1</Tab>
-                <Tab>2</Tab>
-                <Tab>3</Tab>
-                <Tab>Review</Tab>
-              </TabList>
-              <TabPanels>
-                <TabPanel>One Content</TabPanel>
-                <TabPanel>Two Content</TabPanel>
-                <TabPanel>Three Content</TabPanel>
-                <TabPanel>Review Content</TabPanel>>
-              </TabPanels>
-            </Tabs>
-          </Box>
+          <>
+            <Text p="1" fontSize="1">
+              {alignment}
+            </Text>
+            <Box
+              p="3"
+              width="100%"
+              key={alignment}
+              border="1"
+              borderColor="n.100"
+            >
+              <Tabs label="questions" align={alignment}>
+                <TabList>
+                  <Tab>1</Tab>
+                  <Tab>2</Tab>
+                  <Tab>3</Tab>
+                  <Tab>Review</Tab>
+                </TabList>
+                <TabPanels>
+                  <TabPanel>One Content</TabPanel>
+                  <TabPanel>Two Content</TabPanel>
+                  <TabPanel>Three Content</TabPanel>
+                  <TabPanel>Review Content</TabPanel>>
+                </TabPanels>
+              </Tabs>
+            </Box>
+          </>
         );
       })}
     </Stack>
