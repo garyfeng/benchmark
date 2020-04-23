@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Flex, Text } from '../Base';
+import { Box, Text } from '../Base';
 import Stack from '../Stack';
 import { Tabs, Tab, TabList, TabPanel, TabPanels } from './Tabs.js';
 
@@ -39,6 +39,25 @@ export function LocalState() {
       <TabList>
         <Tab>1</Tab>
         <Tab>2</Tab>
+        <Tab>3</Tab>
+        <Tab>Review</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>One Content</TabPanel>
+        <TabPanel>Two Content</TabPanel>
+        <TabPanel>Three Content</TabPanel>
+        <TabPanel>Review Content</TabPanel>
+      </TabPanels>
+    </Tabs>
+  );
+}
+
+export function DisabledTab() {
+  return (
+    <Tabs label="questions">
+      <TabList>
+        <Tab>1</Tab>
+        <Tab isDisabled>2</Tab>
         <Tab>3</Tab>
         <Tab>Review</Tab>
       </TabList>

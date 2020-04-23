@@ -1,25 +1,28 @@
 import React, {
   useReducer,
+  useRef,
   createContext,
+  forwardRef,
   useContext,
   Children,
   cloneElement
 } from 'react';
+import { useId } from '@reach/auto-id';
 import { Box, Flex, Text } from '../Base';
 import { reducer, initialState } from './Tabs.reducer.js';
-import { useId } from '@reach/auto-id';
+import styles from './Tabs.style.js';
 
 // We create a context to enable communication between the
 // parent <Tabs> it's <Tab> and <TabPanel> children.
-const TabsContext = createContext({
-  activeTab: 0,
-  align: 'left',
-  tabsId: null,
-  label: null,
-  onChange: () => {}
-});
+const TabsContext = createContext();
 
-export function Tabs({ label, activeTab = 0, children, onChange, align = 'center' }) {
+export function Tabs({
+  label,
+  activeTab = 0,
+  children,
+  onChange,
+  align = 'center'
+}) {
   // Local state and handler fallbacks
   const [state, dispatch] = useReducer(reducer, initialState);
   const handleChange = tabIndex => dispatch({ type: 'SELECT_TAB', tabIndex });
@@ -28,7 +31,7 @@ export function Tabs({ label, activeTab = 0, children, onChange, align = 'center
 
   // Create a unique ID for this component instance. This
   // will be used for accessibility where we link to Tabs
-  // with their TabPanel counterpart.  This ID is not
+  // with their TabPanel counterpart. This ID is not
   // applied to the root element as it is not needed.
   const tabsId = `tabs-${useId()}`;
 
@@ -39,7 +42,7 @@ export function Tabs({ label, activeTab = 0, children, onChange, align = 'center
         align,
         label,
         onChange,
-        tabsId,
+        tabsId
       }}
     >
       <Flex flexDirection="column">{children}</Flex>
@@ -47,14 +50,56 @@ export function Tabs({ label, activeTab = 0, children, onChange, align = 'center
   );
 }
 
-export function TabList({ children, onChange }) {
-  const { align, tabsId, activeTab, label } = useContext(TabsContext);
+export function TabList({ children }) {
+  const { align, tabsId, activeTab, label, onChange } = useContext(TabsContext);
+
   const alignments = {
     left: 'flex-start',
     center: 'center',
     right: 'flex-end'
   };
+
   const alignment = alignments[align] || 'flex-start';
+  const childEls = useRef([]);
+  const numTabs = children.length;
+
+  const focusableIndexes = children
+    .map((child, index) => (child.props.isDisabled === true ? null : index))
+    .filter(index => index != null);
+
+  const enabledSelectedIndex = focusableIndexes.indexOf(activeTab);
+
+  function changeTabFocus(tabIndex) {
+    const childIndex = focusableIndexes[tabIndex];
+    childEls.current[childIndex].focus();
+    onChange(childIndex);
+  }
+
+  function onKeyDown(event) {
+    event.preventDefault();
+
+    if (event.key === 'ArrowRight') {
+      if (activeTab + 1 < numTabs) {
+        const nextIndex = (enabledSelectedIndex + 1) % numTabs;
+        changeTabFocus(nextIndex);
+      }
+    }
+
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      if (activeTab !== 0) {
+        const nextIndex = (enabledSelectedIndex - 1 + numTabs) % numTabs;
+        changeTabFocus(nextIndex);
+      }
+    }
+
+    if (event.key === 'Home') {
+      changeTabFocus(0);
+    }
+
+    if (event.key === 'End') {
+      changeTabFocus(numTabs - 1);
+    }
+  }
 
   return (
     <Flex justifyContent={alignment} borderBottom="1">
@@ -62,87 +107,62 @@ export function TabList({ children, onChange }) {
         {Children.map(children, (tab, index) => {
           const isActive = index === activeTab;
           const id = `${tabsId}-tab-${index}`;
-          return cloneElement(tab, { index, id, onClick: onChange, isActive });
+          const ref = node => (childEls.current[index] = node);
+          return cloneElement(tab, {
+            key: id,
+            ref,
+            index,
+            id,
+            onKeyDown,
+            isActive
+          });
         })}
       </Flex>
     </Flex>
   );
 }
 
-export function Tab({ children, index, id, isActive }) {
-  const { onChange, tabsId } = useContext(TabsContext);
-  const states = {
-    normal: {
-      ':focus': {
-        outline: '1px dotted',
-        outlineColor: 'black',
-        outlineOffset: '-5px'
-      },
-      ':hover': {
-        cursor: 'pointer',
-        bg: 'white'
-      },
-      ':last-of-type': {
-        borderTopRightRadius: 'lg',
-        borderColor: 'n.600'
-      },
-      ':first-of-type': {
-        borderTopLeftRadius: 'lg',
-        borderColor: 'n.600'
-      }
-    },
-    active: {
-      borderTopLeftRadius: 'lg',
-      borderTopRightRadius: 'lg',
-      borderBottom: 0,
-      bg: 'white',
-      mt: 0,
-      pt: 2,
-      mb: '-1px',
-      borderColor: 'n.600',
-      zIndex: '2',
-      ':focus': {
-        outline: '1px dotted',
-        outlineColor: 'black',
-        outlineOffset: '-5px'
-      }
-    }
-  };
+export const Tab = forwardRef((props, ref) => {
+  const {
+    children,
+    id,
+    index,
+    isActive,
+    isDisabled,
+    onKeyDown,
+    ...rest
+  } = props;
 
-  const style = isActive ? states.active : states.normal;
+  const { onChange, tabsId } = useContext(TabsContext);
 
   return (
     <Box
       as="button"
       role="tab"
       id={id}
+      ref={ref}
+      disabled={isDisabled}
       aria-selected={isActive ? true : false}
       aria-controls={`${tabsId}-panel-${index}`}
+      aria-disabled={isDisabled}
       tabIndex={isActive ? 0 : -1}
       onClick={() => onChange(index)}
-      border="1"
-      borderColor="n.600"
-      borderBottom="0"
-      mt="2"
-      px="3"
-      py="2"
-      bg="n.50"
-      ml="-1px"
-      sx={style}
+      onKeyDown={onKeyDown}
+      sx={styles.tab}
+      {...rest}
     >
       <Text fontSize="3">{children}</Text>
     </Box>
   );
-}
+});
 
-export function TabPanels({ children }) {
+export const TabPanels = forwardRef(({ children }, ref) => {
   const { activeTab, tabsId } = useContext(TabsContext);
 
-  // Add accessibility labels to tab panels
   const panelsWithIds = React.Children.toArray(children).map((child, index) => {
     return cloneElement(child, {
-      'id': `${tabsId}-panel-${index}`,
-      'aria-labelledby': `${tabsId}-tab-${index}`,
+      id: `${tabsId}-panel-${index}`,
+      'aria-labelledby': `${tabsId}-tab-${index}`
     });
   });
 
@@ -153,7 +173,7 @@ export function TabPanels({ children }) {
       })}
     </Box>
   );
-}
+});
 
 export function TabPanel({ children, p = 3, ...props }) {
   return (

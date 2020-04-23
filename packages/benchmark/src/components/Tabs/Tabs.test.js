@@ -78,4 +78,22 @@ describe('Tabs A11y', () => {
     const tabId = tabs[1].getAttribute('id');
     expect(panelLabel).toEqual(tabId);
   });
+
+  it('should go to the next tab when the RightArrow key is pressed', async () => {
+    // stub
+    // todo: test for skipping disabled tabs
+  });
+
+  it('should go to the previous tab when the LeftArrow or UpArrow key is pressed', async () => {
+    // stub
+    // todo: test for skipping disabled tabs
+  });
+
+  it('should go to the first tab when the Home key is pressed', async () => {
+    // stub
+  });
+
+  it('should go to the last tab when the End key is pressed', async () => {
+    // stub
+  });
 });
