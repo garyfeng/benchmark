@@ -1,0 +1,31 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "gatsby develop --port 5001 --open",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "@coreym/benchmark": "0.1.12",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "classnames": "^2.2.6",
+    "emotion-theming": "^10.0.27",
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8",
+    "react-helmet": "^5.2.1",
+    "react-live": "^2.2.0"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
+    "babel-preset-gatsby": "^0.2.29",
+    "gatsby": "^2.19.18",
+    "gatsby-plugin-catch-links": "^2.1.25",
+    "gatsby-plugin-mdx": "^1.0.73",
+    "gatsby-plugin-page-creator": "^2.1.40",
+    "gatsby-source-filesystem": "^2.1.48"
+  }
+}
