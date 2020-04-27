@@ -60,7 +60,7 @@ function SingleSelect({
       <Flex id={id}>
         <Stack spacing={4}>
           <Stack>{children}</Stack>
-          <SingleSelectClear>Clean Answer</SingleSelectClear>
+          <SingleSelectClear>Clear Answer</SingleSelectClear>
         </Stack>
       </Flex>
     </SingleSelectContext.Provider>

@@ -47,7 +47,7 @@ function MultipleSelect({
       <Flex id={id}>
         <Stack spacing={4}>
           <Stack>{children}</Stack>
-          <ClearButton>Clean Answer</ClearButton>
+          <ClearButton>Clear Answer</ClearButton>
         </Stack>
       </Flex>
     </MultipleSelectContext.Provider>
