@@ -23,7 +23,8 @@ export function Tabs({
   align = 'center',
   children,
   label,
-  onChange
+  onChange,
+  ...props
 }) {
   // Local state and event handler fallbacks
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -57,14 +58,16 @@ export function Tabs({
         tabsId
       }}
     >
-      <Flex flexDirection="column">{children}</Flex>
+      <Flex flexDirection="column" {...props}>
+        {children}
+      </Flex>
     </TabsContext.Provider>
   );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
-export function TabList({ children }) {
+export function TabList({ children, ...props }) {
   const {
     align,
     tabsId,
@@ -125,7 +128,13 @@ export function TabList({ children }) {
   }
 
   return (
-    <Flex justifyContent={alignment} borderBottom="1">
+    <Flex
+      justifyContent={alignment}
+      borderBottom="1"
+      borderColor="n.400"
+      bg="green.100"
+      {...props}
+    >
       <Flex role="tablist" aria-label={label}>
         {Children.map(children, (tab, index) => {
           const isActive = index === activeTab;
@@ -186,7 +195,7 @@ export const Tab = forwardRef((props, ref) => {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-export function TabPanels({ children }) {
+export function TabPanels({ children, ...props }) {
   const { activeTab, tabsId } = useContext(TabsContext);
 
   let activePanel;
@@ -201,7 +210,7 @@ export function TabPanels({ children }) {
   });
 
   return (
-    <Box width="100%">
+    <Box width="100%" {...props}>
       {activePanel ? activePanel : <Box>No tab content found</Box>}
     </Box>
   );
@@ -210,11 +219,12 @@ export function TabPanels({ children }) {
 ////////////////////////////////////////////////////////////////////////////////
 
 export function TabPanel({
-  id = 'test',
+  id,
   labelBy,
   children,
   p = 3,
-  isActive = false
+  isActive = false,
+  ...props
 }) {
   const { activePanelRef } = useContext(TabsContext);
 
@@ -229,6 +239,7 @@ export function TabPanel({
       tabIndex={isActive ? 0 : null}
       ref={activePanelRef}
       p={p}
+      {...props}
     >
       {children}
     </Box>
