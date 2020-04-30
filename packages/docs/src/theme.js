@@ -159,6 +159,7 @@ const p = {
 // http://www.colorbox.io/#steps=10#hue_start=0#hue_end=0#hue_curve=easeInQuad#sat_start=0#sat_end=0#sat_curve=easeOutQuad#sat_rate=130#lum_start=94#lum_end=5#lum_curve=easeOutQuad#minor_steps_map=0
 const n = {
   '0': '#fff',
+  '25': '#f5f5f5',
   '50': '#eeeeee',
   '100': '#ebebeb',
   '200': '#e4e4e4',
@@ -219,6 +220,7 @@ export const base = {
   shadows: {
     sm: '0 1px 2px rgba(0,0,0,.20)',
     md: '0 2px 3px rgba(0,0,0,.25)',
+    lg: '0 3px 4px rgba(0,0,0,.25)',
     none: 'none'
   },
 
