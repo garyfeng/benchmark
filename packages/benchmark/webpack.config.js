@@ -24,7 +24,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist/components'),
+    path: path.resolve(__dirname, 'dist/'),
     library: 'benchmark',
     libraryTarget: 'umd',
     globalObject: 'this'

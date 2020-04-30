@@ -1,23 +1,12 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "**/react",
-      "**/react-dom"
-    ]
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna run build"
-  },
-  "command": {
-    "run": {
-      "npmClient": "yarn"
-    }
   },
   "devDependencies": {
     "lerna": "^3.20.2"
