@@ -1,8 +1,11 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import Component from './Component';
 
-storiesOf('Component', module).add('Default', () => {
+export default {
+  title: 'Elements/Component',
+  component: Component
+};
+
+export function Basic() {
   return <Component>Hello World</Component>;
-});
+}
