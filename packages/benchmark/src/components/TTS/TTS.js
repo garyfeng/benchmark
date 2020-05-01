@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import css from './TTS.css';
+import { Box } from '../Base';
 
-function TTS({ children, voice = 'native', enabled = false }) {
-  const classes = classnames({ [css.enabled]: enabled });
-
+function TTS({ children, voice = 'native', active = false }) {
   function speak(event) {
-    if (!enabled) {
+    if (!active) {
       return;
     }
     const text = event.currentTarget.textContent;
@@ -19,14 +16,19 @@ function TTS({ children, voice = 'native', enabled = false }) {
   }
 
   return (
-    <button className={classes} onClick={speak}>
+    <Box
+      as="button"
+      onClick={speak}
+      border={active ? 2 : null}
+      sx={{ cursor: active ? 'pointer' : null }}
+    >
       {children}
-    </button>
+    </Box>
   );
 }
 
 TTS.propTypes = {
-  enabled: PropTypes.bool,
+  active: PropTypes.bool,
   voice: PropTypes.string
 };
 
