@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "gatsby develop --port 5001 --open",
+    "start": "gatsby develop --port 5001 --open",
     "build": "gatsby build"
   },
   "dependencies": {
+    "@babel/core": "^7.9.6",
     "@coreym/benchmark": "^0.1.12",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -19,6 +20,7 @@
     "react-live": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
     "babel-preset-gatsby": "^0.2.29",

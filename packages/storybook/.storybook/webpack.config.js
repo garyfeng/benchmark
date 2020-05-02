@@ -5,7 +5,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    main: './index.js'
+    main: './src/index.js'
   },
   plugins: [
     // Don't include peer dependencies (such as React) with

@@ -1,6 +1,6 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
-import { Global, ThemeProvider, Flex, Box } from '../src/index.js';
+import { Global, ThemeProvider, Flex, Box } from '@coreym/benchmark';
 
 const withWrapper = storyFn => {
   return (

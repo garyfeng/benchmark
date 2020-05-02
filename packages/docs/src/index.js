@@ -1,7 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
-import { Heading, Paragraph, ThemeProvider, Tag, Global, Icon } from '@coreym/benchmark';
+import {
+  Heading,
+  Paragraph,
+  ThemeProvider,
+  Tag,
+  Global,
+  Icon
+} from '@coreym/benchmark';
 import docsTheme from './theme';
 import Layout from './components/Layout';
 import LiveCodeBlock from './components/LiveCodeBlock';
@@ -27,14 +34,13 @@ export default function Root(props) {
       <Helmet defaultTitle="Benchmark Design System">
         <html lang="en" />
       </Helmet>
+      <Global />
       <MDXProvider components={components}>
-        <Global>
-          <ThemeProvider theme={docsTheme}>
-            <Layout frontmatter={props.pageContext.frontmatter}>
-              {props.children}
-            </Layout>
-          </ThemeProvider>
-        </Global>
+        <ThemeProvider theme={docsTheme}>
+          <Layout frontmatter={props.pageContext.frontmatter}>
+            {props.children}
+          </Layout>
+        </ThemeProvider>
       </MDXProvider>
     </div>
   );
