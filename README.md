@@ -28,7 +28,7 @@ $ yarn install
 # The script links together all the packages in the monorepo. 
 # This allows the "docs" package to use a live reference to the 
 # components from the main "benchmark" package.
-$ yarn run boostrap
+$ yarn run bootstrap
 ```
 
 ### Docs & Storybook
