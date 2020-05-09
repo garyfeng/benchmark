@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { Box, Flex } from '../Base';
 import Stack from '../Stack';
 import { useToggle } from '../../util/hooks.js';
@@ -14,7 +13,12 @@ import {
   NextButton
 } from './ToolbarButtons.js';
 
-storiesOf('Toolbar', module).add('Toolbar', () => {
+export default {
+  title: 'Toolbar',
+  component: Toolbar
+};
+
+export function Basic() {
   const [helpActive, setHelpActive] = useToggle();
   const [timerActive, setTimerActive] = useToggle();
   const [ttsActive, setTTSActive] = useToggle();
@@ -65,9 +69,9 @@ storiesOf('Toolbar', module).add('Toolbar', () => {
       />
     </Box>
   );
-});
+}
 
-storiesOf('Toolbar', module).add('Buttons', () => {
+export function Buttons() {
   return (
     <Stack spacing={3} p="3">
       <Stack direction="row" bg="n.100" p={1}>
@@ -135,4 +139,4 @@ storiesOf('Toolbar', module).add('Buttons', () => {
       </Stack>
     </Stack>
   );
-});
+}

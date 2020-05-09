@@ -1,5 +1,4 @@
 import React from 'react';
-import { Flex } from '../Base';
 import Slider from './Slider.js';
 
 export default {
@@ -8,9 +7,5 @@ export default {
 };
 
 export function Basic() {
-  return (
-    <Flex p="6" justifyConent="center" alignItems="center" label="container">
-      <Slider min="1" max="1000" />
-    </Flex>
-  );
+  return <Slider min="1" max="1000" />;
 }

@@ -132,7 +132,6 @@ export function TabList({ children, ...props }) {
       justifyContent={alignment}
       borderBottom="1"
       borderColor="n.400"
-      bg="green.100"
       {...props}
     >
       <Flex role="tablist" aria-label={label}>

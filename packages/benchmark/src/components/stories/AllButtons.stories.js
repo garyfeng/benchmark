@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 import ButtonExamples from '../Button/examples.js';
 import ScrollButtonExamples from '../ScrollButton/examples.js';
@@ -9,7 +8,11 @@ import Stack from '../Stack';
 import Button from '../Button';
 import { Box, Text, Flex } from '../Base';
 
-function Buttons() {
+export default {
+  title: 'Collections'
+};
+
+function ButtonCollection() {
   return (
     <Stack spacing={3} p="3">
       <Box>
@@ -65,24 +68,24 @@ function Buttons() {
   );
 }
 
-storiesOf('Collections', module).add('All Buttons', () => {
+export function AllButtons() {
   return (
     <Stack>
       <Box>
         <ThemeProvider>
-          <Buttons />
+          <ButtonCollection />
         </ThemeProvider>
       </Box>
       <Box>
         <ThemeProvider theme={themes.dark}>
-          <Buttons />
+          <ButtonCollection />
         </ThemeProvider>
       </Box>
       <Box>
         <ThemeProvider theme={themes.beiege}>
-          <Buttons />
+          <ButtonCollection />
         </ThemeProvider>
       </Box>
     </Stack>
   );
-});
+}
