@@ -223,6 +223,10 @@ export const theme = {
     lg: '0 3px 4px rgba(0,0,0,.25)',
     none: 'none'
   },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    mono: 'Menlo, monospace'
+  },
   fontWeights: {
     hairline: 100,
     thin: 200,

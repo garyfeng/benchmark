@@ -10,7 +10,9 @@ const ThemeProvider = ({ theme, children }) => (
       sx={{
         width: '100%',
         height: '100%',
-        fontSize: 3
+        fontSize: 3,
+        fontFamily: 'body',
+        lineHeight: 1.1
       }}
     >
       {children}
