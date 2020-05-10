@@ -6,6 +6,10 @@ import {
   Paragraph,
   ThemeProvider,
   Tag,
+  Box,
+  Stack,
+  Text,
+  Flex,
   Global,
   Icon
 } from '@coreym/benchmark';
@@ -16,15 +20,19 @@ import ColorSwatch from './components/ColorSwatch';
 
 const components = {
   h1: props => <Heading level={1} {...props} />,
-  h2: props => <Heading level={2} {...props} />,
-  h3: props => <Heading level={3} {...props} />,
-  h4: props => <Heading level={4} {...props} />,
+  h2: props => <Heading level={2} mt="3" {...props} />,
+  h3: props => <Heading level={3} mt="3" {...props} />,
+  h4: props => <Heading level={4} mt="3" {...props} />,
   h5: props => <Heading level={5} {...props} />,
-  p: Paragraph,
+  p: props => <Paragraph lineHeight="1.5" mt="2" {...props} />,
   pre: props => <div {...props} />,
   code: LiveCodeBlock,
   Tag,
   ColorSwatch,
+  ThemeProvider,
+  Box,
+  Stack,
+  Flex,
   Icon
 };
 
