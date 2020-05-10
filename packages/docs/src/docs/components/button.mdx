@@ -9,7 +9,7 @@ owner: CM
 
 Buttons are simple controls for executing specific on-page actions and code. Buttons are most commonly used in forms, dialogs, and modals to facilitate required user actions.
 
-## Useage Guidelines
+## Usage
 
 - **Do** make sure the label conveys a clear purpose of the button to the user.
 - **Do not** use generic labels like "Ok," especially in the case of an error; errors are never "Ok."
@@ -17,71 +17,17 @@ Buttons are simple controls for executing specific on-page actions and code. But
 ## Variations
 
 ```jsx
-<div>
-  <Button color="primary">Primary</Button>
-  <Button color="secondary">Secondary</Button>
-  <Button>Bare</Button>
-</div>
+<Stack direction="row">
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+</Stack>
 ```
-
-## Small
-
-```jsx
-<div>
-  <Button color="primary" small>
-    Primary
-  </Button>
-  <Button color="secondary" small>
-    Secondary
-  </Button>
-  <Button small>Bare</Button>
-</div>
-```
-
-## Icon Buttons
-
-```jsx
-<div>
-  <Button type="circle" color="primary">
-    <Icon iconName="pause" />
-  </Button>
-
-  <Button small type="circle" color="primary">
-    <Icon iconName="pause" />
-  </Button>
-</div>
-```
-
-## Toggle Buttons
-
-```jsx
-<div>
-  <Button small color="secondary">
-    <Icon iconName="cross-thin" color="muted" />
-    <Text>Delete</Text>
-  </Button>
-
-  <Button small toggled color="secondary">
-    <Icon iconName="cross-thin" color="danger" />
-    <Text>Delete</Text>
-  </Button>
-</div>
-```
-
-## Special Buttons
-
-- Next & Previous
-- Media Buttons
 
 ## Accessibility
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 ## Properties
 
 ## See Also
-
-- [Icon](http://github.com)
 
 ## References
 
