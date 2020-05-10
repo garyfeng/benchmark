@@ -191,13 +191,19 @@ export const colors = {
   // MAIN
   transparent: 'transparent',
   current: 'currentColor',
+  bg: n['0'],
+  text: n['100'],
+
+  // remove? should keep the neutral colors
+  // agbostic.
   black: n['1000'],
   white: n['0'],
-  bg: n['0'],
 
   // FEEDBACK
+  info: cyan['400'],
   primary: p['500'],
   primaryAlt: n['0'],
+  secondary: blue['100'],
   warning: yellow['300'],
   warningAlt: n['800'],
   success: green['300'],
