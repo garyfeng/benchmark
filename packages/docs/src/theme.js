@@ -194,6 +194,7 @@ export const colors = {
   black: n['1000'],
   white: n['0'],
   bg: n['0'],
+  text: n['800'],
 
   // FEEDBACK
   primary: p['500'],
@@ -207,7 +208,7 @@ export const colors = {
 };
 
 export const base = {
-  fontSizes: [12, 14, 16, 18, 32, 48, 64, 96, 128],
+  fontSizes: [12, 14, 16, 18, 24, 30, 36, 42, 50],
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   radii: {
     none: '0',
@@ -216,6 +217,10 @@ export const base = {
     md: '4px',
     lg: '6px',
     full: '9999px'
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace'
   },
   shadows: {
     sm: '0 1px 2px rgba(0,0,0,.20)',
