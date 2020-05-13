@@ -8,6 +8,7 @@ module.exports = {
   widths: [1600],
   port: 5003,
   openBrowser: true,
+  snippets: './snippets.js',
   exampleCode: `
     <Button>
       Hello World!
@@ -21,10 +22,10 @@ module.exports = {
           exclude: /node_modules/,
           use: [
             {
-              loader: 'style-loader',
+              loader: 'style-loader'
             },
             {
-              loader: 'css-loader',
+              loader: 'css-loader'
             }
           ]
         },
