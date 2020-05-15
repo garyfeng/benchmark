@@ -20,7 +20,7 @@ const TabsContext = createContext();
 
 export function Tabs({
   activeTab = 0,
-  align = 'center',
+  align = 'left',
   children,
   label,
   onChange,
