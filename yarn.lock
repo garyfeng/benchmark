@@ -988,20 +988,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@coreym/benchmark@0.1.13":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@coreym/benchmark/-/benchmark-0.1.13.tgz#62e1f52ca370ace322742174ce41411d639b76ce"
-  integrity sha512-S6TDvQjSj0ieIoqDcWD3vJjfv2kG/S6JZc2qA150U4OqR3rzO0YXV3IRn+T/aXZL01gwwB4Hr3JEBa0RwA4yCQ==
-  dependencies:
-    "@emotion/styled-base" "^10.0.31"
-    "@reach/auto-id" "^0.6.1"
-    "@styled-system/css" "^5.1.5"
-    "@styled-system/should-forward-prop" "^5.1.5"
-    prop-types "^15.7.2"
-    react-icons "^3.9.0"
-    react-roving-tabindex "^0.7.1"
-    styled-system "^5.1.5"
-
 "@emotion/cache@^10.0.27", "@emotion/cache@^10.0.9":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
