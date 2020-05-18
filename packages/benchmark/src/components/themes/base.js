@@ -192,7 +192,7 @@ export const colors = {
   transparent: 'transparent',
   current: 'currentColor',
   bg: n['0'],
-  text: n['100'],
+  text: n['800'],
 
   // remove? should keep the neutral colors
   // agbostic.
@@ -277,7 +277,7 @@ export const theme = {
       fontSize: 2,
       color: 'p.500',
       fontWeight: 'bold',
-      bg: 'white',
+      bg: 'n.0',
       borderRadius: 'md',
       border: 2,
       borderColor: 'n.400',

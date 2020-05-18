@@ -68,7 +68,7 @@ function Choice({
       {/* ELIMINATED STYLING CONTAINER */}
       <Flex flexGrow="1" opacity={isEliminated ? '50%' : '100%'}>
         {/* CHECKBOX / RADIO BUTTON */}
-        <Flex bg="blue.100" px="3" py="3" flexShrink="0" alignItems="center">
+        <Flex bg="secondary" px="3" py="3" flexShrink="0" alignItems="center">
           <InputControl
             checked={isSelected}
             disabled={isDisabled}

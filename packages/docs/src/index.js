@@ -20,7 +20,7 @@ import ColorSwatch from './components/ColorSwatch';
 
 const components = {
   h1: props => <Heading level={1} {...props} />,
-  h2: props => <Heading level={2} mt="3" {...props} />,
+  h2: props => <Heading level={2} mt="4" {...props} />,
   h3: props => <Heading level={3} mt="3" {...props} />,
   h4: props => <Heading level={4} mt="3" {...props} />,
   h5: props => <Heading level={5} {...props} />,

@@ -33,6 +33,7 @@ function RadioButton({
       id={inputId}
       label={label}
       aria-checked={checked}
+      color="text"
       variant="bare"
       onClick={() => onChange(value)}
       {...inputProps}
