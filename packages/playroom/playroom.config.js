@@ -5,10 +5,11 @@ module.exports = {
   // Optional:
   title: 'Benchmark Playroom',
   frameComponent: './Frame.js',
-  widths: [1600],
+  widths: [1200],
   port: 5003,
   openBrowser: true,
   snippets: './snippets.js',
+  themes: './themes.js',
   exampleCode: `
     <Button>
       Hello World!

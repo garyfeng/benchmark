@@ -9,10 +9,15 @@ export default [
     `
   },
   {
-    group: 'Item Types',
+    group: 'Toolbar',
+    name: 'Default',
+    code: '<Toolbar />'
+  },
+  {
+    group: 'Single Select',
     name: 'Single Select',
     code: `
-        <SingleSelect>
+      <SingleSelect>
           <SingleSelectChoice value="a">Option A</SingleSelectChoice>
           <SingleSelectChoice value="b">Option B</SingleSelectChoice>
           <SingleSelectChoice value="c">Option C</SingleSelectChoice>
@@ -20,7 +25,7 @@ export default [
     `
   },
   {
-    group: 'Item Types',
+    group: 'Text Input',
     name: 'Text Input',
     code: `
           <Box width="500px">
