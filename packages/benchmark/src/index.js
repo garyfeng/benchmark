@@ -6,11 +6,14 @@
 export { default as ThemeProvider } from './components/ThemeProvider';
 export { default as Global } from './components/Global';
 export { default as theme } from './components/themes/default.js';
+export { default as themes } from './components/themes/';
 
 // main
 export { Box, Flex, Text } from './components/Base';
 export { default as Alert } from './components/Alert';
 export { default as Checkbox } from './components/Checkbox';
+export { default as Column } from './components/Column';
+export { default as Columns } from './components/Columns';
 export { default as Button } from './components/Button';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Heading } from './components/Heading';

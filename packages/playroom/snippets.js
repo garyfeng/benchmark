@@ -32,10 +32,24 @@ export default [
     group: 'Layouts',
     name: '2 Column',
     code: `
-        <Flex height="100%">
-          <Box flexGrow="1" p="3" border="1">Column 1</Box>
-          <Box flexGrow="1" p="3" border="1">Column 2</Box>
-        </Flex>
+        <Columns>
+          <Column>Column 1</Column>
+          <Column>Column 2</Column>
+        </Columns>
     `
+  },
+  {
+    group: 'Layouts',
+    name: '3 Column',
+    code: `<Columns>
+          <Column>Column 1</Column>
+          <Column>Column 2</Column>
+          <Column>Column 3</Column>
+        </Columns>`
+  },
+  {
+    group: 'Typography',
+    name: 'Paragraph',
+    code: '<Paragraph>Paragraph Text</Paragraph>'
   }
 ];
