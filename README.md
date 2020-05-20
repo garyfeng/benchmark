@@ -50,6 +50,16 @@ $ cd packages/docs
 $ yarn start
 ```
 
+### Playroom
+
+Playroom is a zero-install code-oriented design environment, built into a standalone bundle that can be deployed alongside benchmark's design system documentation.
+
+```bash
+# playroom
+$ cd packages/playroom
+$ yarn start
+```
+
 ## License
 
 MIT
