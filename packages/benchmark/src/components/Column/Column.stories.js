@@ -1,6 +1,6 @@
 import React from 'react';
-import Column from './Column';
 import Columns from '../Columns';
+import Column from './Column';
 
 export default {
   title: 'Layout/Column',

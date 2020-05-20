@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { IoMdArrowDropdown } from 'react-icons/io';
 import { useOutsideClick } from '../../util/hooks';
-
+import Icon from '../Icon';
 import { Flex, Box } from '../Base';
 
 function Option({ children, selected = false, onClick }) {
@@ -45,7 +44,7 @@ function Selected({ selected }) {
       <Flex flex="1">
         <Box flex="1">{selected ? selected : <div>&nbsp;</div>}</Box>
         <Flex pl="2" alignItems="center">
-          <IoMdArrowDropdown />
+          <Icon name="dropdown-arrow" />
         </Flex>
       </Flex>
     </Flex>

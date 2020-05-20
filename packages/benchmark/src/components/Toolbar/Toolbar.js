@@ -1,11 +1,4 @@
 import React from 'react';
-import { MdZoomIn, MdZoomOut } from 'react-icons/md';
-import {
-  IoMdHelpCircle,
-  IoMdCalculator,
-  IoIosApps,
-  IoIosGlobe
-} from 'react-icons/io';
 import { RovingTabIndexProvider } from 'react-roving-tabindex';
 import { Box, Text, Flex } from '../Base';
 import ToolbarGroup from './ToolbarGroup';
@@ -85,7 +78,7 @@ const Toolbar = ({
           <ToolbarToggleButton
             id="help-btn"
             title="Help. Shows help and directions."
-            icon={IoMdHelpCircle}
+            icon="question-circle"
             isActive={isHelpActive}
             onClick={onClickHelp}
             disabled={isHelpDisabled}
@@ -97,24 +90,24 @@ const Toolbar = ({
           <ToolbarButton
             id="theme-btn"
             title="Change Theme. Changes the colors used on the screen."
-            icon={IoIosApps}
+            icon="change-theme"
             disabled={isThemeDisabled}
           />
           <ToolbarButton
             id="zoomout-btn"
             title="Zoom Out. Makes the words and images smaller."
-            icon={MdZoomOut}
+            icon="zoom-out"
             disabled={isZoomOutDisabled}
           />
           <ToolbarButton
             title="Zoom In. Makes the words and images larger."
             id="zoomin-btn"
-            icon={MdZoomIn}
+            icon="zoom-in"
             disabled={isZoomInDisabled}
           />
           <ToolbarButton
             id="lang-btn"
-            icon={IoIosGlobe}
+            icon={language === 'es' ? 'lang-es' : 'lang-en'}
             title={
               // todo: should the I be capitalized in inglés?
               language === 'es' ? 'Cambiar a inglés.' : 'Change to Spanish.'
@@ -122,9 +115,9 @@ const Toolbar = ({
             onClick={onClickLang}
             disabled={isLangDisabled}
             sx={{
-              transform: language === 'es' ? 'rotateY(180deg);' : null,
+              transform: language === 'es' ? 'rotateY(360deg);' : null,
               color: language === 'es' ? 'green.500' : 'n.800',
-              transition: 'transform .2s'
+              transition: 'transform .4s'
             }}
           />
         </ToolbarGroup>
@@ -134,7 +127,7 @@ const Toolbar = ({
           <ToolbarToggleButton
             id="tts-btn"
             title="Read Aloud. Turns on read aloud mode. You can tap any box to hear the text read out loud."
-            icon={IoIosApps}
+            icon="placeholder"
             isActive={isTTSActive}
             onClick={onClickTTS}
             disabled={isTTSDisabled}
@@ -180,13 +173,13 @@ const Toolbar = ({
           <ToolbarButton
             title="Math Keyboard. Shows the on-screen math keyboard."
             id="math-btn"
-            icon={IoIosApps}
+            icon="placeholder"
             disabled={isMathDisabled}
           />
           <ToolbarToggleButton
             title="Calculator. Shows the calculator."
             id="calc-btn"
-            icon={IoMdCalculator}
+            icon="placeholder"
             isActive={isCalcActive}
             onClick={onClickCalc}
             disabled={isCalcDisabled}

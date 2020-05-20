@@ -37,7 +37,6 @@
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "prop-types": "^15.7.2",
-    "react-icons": "^3.9.0",
     "react-roving-tabindex": "^0.7.1",
     "styled-system": "^5.1.5"
   },

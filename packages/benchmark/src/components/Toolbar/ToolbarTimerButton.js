@@ -1,6 +1,6 @@
 import React from 'react';
-import { IoIosTimer } from 'react-icons/io';
 import { Flex, Text } from '../Base';
+import Icon from '../Icon';
 import { ToolbarToggleButton } from './ToolbarButtons.js';
 
 const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
@@ -23,7 +23,7 @@ const ToolbarTimerButton = ({ isTimerActive, onClickTimer, ...rest }) => {
           }
         }
       >
-        <IoIosTimer size="42" />
+        <Icon size="42px" name="timer" />
       </ToolbarToggleButton>
 
       {isTimerActive ? (

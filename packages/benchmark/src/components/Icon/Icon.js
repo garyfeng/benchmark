@@ -10,7 +10,7 @@ function Icon({
   role = 'presentation'
 }) {
   // fallback to question icon if name is not found
-  const icon = icons[name] || icons['question-circle'];
+  const icon = icons[name] || icons['placeholder'];
   const { path, viewBox = '0 0 24 24' } = icon;
 
   return (

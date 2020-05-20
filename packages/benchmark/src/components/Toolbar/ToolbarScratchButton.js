@@ -1,7 +1,7 @@
 import React from 'react';
-import { IoIosColorPalette } from 'react-icons/io';
 import { Flex } from '../Base';
 import Stack from '../Stack';
+import Icon from '../Icon';
 import { ToolbarToggleButton } from './ToolbarButtons.js';
 
 const ToolbarScratchButton = ({
@@ -25,7 +25,7 @@ const ToolbarScratchButton = ({
           }
         }
       >
-        <IoIosColorPalette size="42" />
+        <Icon size="42px" name="scratchwork" />
       </ToolbarToggleButton>
 
       {isScratchActive && (

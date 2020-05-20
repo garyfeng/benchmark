@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  IoIosWarning,
-  IoIosCheckmarkCircleOutline,
-  IoIosCloseCircleOutline,
-  IoIosGlobe
-} from 'react-icons/io';
 import { Flex, Box } from '../Base';
+import Icon from '../Icon';
 
 function Alert({ variant = 'default', border = true, children }) {
   const variants = {
@@ -28,15 +23,6 @@ function Alert({ variant = 'default', border = true, children }) {
   };
   const color = variants[variant];
 
-  const icons = {
-    default: IoIosGlobe,
-    warning: IoIosWarning,
-    success: IoIosCheckmarkCircleOutline,
-    danger: IoIosCloseCircleOutline
-  };
-
-  const Icon = icons[variant];
-
   return (
     <Box>
       <Flex
@@ -47,7 +33,7 @@ function Alert({ variant = 'default', border = true, children }) {
       >
         <Box>
           <Flex borderRadius="md" sx={color} p="2">
-            <Icon size="50" />
+            <Icon size="50px" />
           </Flex>
         </Box>
 
