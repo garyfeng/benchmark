@@ -36,6 +36,7 @@ export { default as Stack } from './components/Stack';
 export { default as Switch } from './components/Switch';
 export { default as ScrollButton } from './components/ScrollButton';
 export { Tab, Tabs, TabList, TabPanels, TabPanel } from './components/Tabs';
+export { default as TTS } from './components/TTS';
 export { default as Tag } from './components/Tag';
 export { default as TextInput } from './components/TextInput';
 export {
@@ -45,5 +46,5 @@ export {
 } from './components/Toolbar';
 export { default as Zones, Zone, ZonesBackground } from './components/Zones';
 
-// classic
-export { default as TTS } from './components/TTS';
+// hooks
+export * from './util/hooks.js';
