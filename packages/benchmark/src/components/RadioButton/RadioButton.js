@@ -7,10 +7,10 @@ import Icon from '../Icon';
 function RadioButton({
   checked = false,
   disabled,
-  onBlur,
-  onClick,
-  onChange,
-  onFocus,
+  onBlur = () => {},
+  onClick = () => {},
+  onChange = () => {},
+  onFocus = () => {},
   label,
   value,
   size,
@@ -57,7 +57,7 @@ RadioButton.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func
 };
 
 export default RadioButton;

@@ -39,12 +39,6 @@ function Choice({
     }
   }
 
-  function handleChange(event) {
-    if (!isDisabled) {
-      onChange(value);
-    }
-  }
-
   const InputControl = variant === 'radio' ? RadioButton : Checkbox;
 
   return (
@@ -72,7 +66,6 @@ function Choice({
           <InputControl
             checked={isSelected}
             disabled={isDisabled}
-            onChange={handleChange}
             size="24px"
             label={label}
             aria-labelledby={optionId}
