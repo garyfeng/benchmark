@@ -182,6 +182,7 @@ export const colors = {
   whiteAlpha,
   blackAlpha,
   orange,
+  red,
   blue,
   cyan,
   purple,

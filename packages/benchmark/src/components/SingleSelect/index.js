@@ -1,1 +1,1 @@
-export { default, SingleSelectChoice } from './SingleSelect';
+export { default, SingleSelectChoice, SingleSelectClear } from './SingleSelect';

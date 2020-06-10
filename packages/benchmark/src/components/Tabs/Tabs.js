@@ -163,6 +163,7 @@ export const Tab = forwardRef((props, ref) => {
     isActive,
     isDisabled,
     onKeyDown,
+    isActioned = false,
     ...rest
   } = props;
 
@@ -184,7 +185,10 @@ export const Tab = forwardRef((props, ref) => {
       onClick={() => onChange(index)}
       onKeyDown={onKeyDown}
       // other
-      sx={styles.tab}
+      sx={{
+        ...styles.tab,
+        bg: isActioned === true ? 'n.300' : 'n.25'
+      }}
       {...rest}
     >
       <Text fontSize="3">{children}</Text>
@@ -235,7 +239,9 @@ export function TabPanel({
       id={id}
       role="tabpanel"
       aria-labelledby={labelBy}
-      tabIndex={isActive ? 0 : null}
+      // todo: disabling focus ring on panel until guidelines
+      // are finalised.
+      // tabIndex={isActive ? 0 : null}
       ref={activePanelRef}
       p={p}
       {...props}

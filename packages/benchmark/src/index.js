@@ -28,7 +28,8 @@ export { default as Option } from './components/Option';
 export { default as Paragraph } from './components/Paragraph';
 export {
   default as SingleSelect,
-  SingleSelectChoice
+  SingleSelectChoice,
+  SingleSelectClear
 } from './components/SingleSelect';
 export { default as RadioButton } from './components/RadioButton';
 export { default as Slider } from './components/Slider';
