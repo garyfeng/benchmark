@@ -44,7 +44,7 @@ function PrimaryNav({ data = [], toggleStatus }) {
           subNavItem={
             <ul className={css.secondary}>
               {data
-                .filter(page => page.node.frontmatter.group === 'Guidelines')
+                .filter((page) => page.node.frontmatter.group === 'Guidelines')
                 .map(({ node: post }) => {
                   return (
                     <PrimarySubNavItem
@@ -64,7 +64,7 @@ function PrimaryNav({ data = [], toggleStatus }) {
           subNavItem={
             <ul className={css.secondary}>
               {data
-                .filter(page => page.node.frontmatter.group === 'Patterns')
+                .filter((page) => page.node.frontmatter.group === 'Patterns')
                 .map(({ node: post }) => {
                   return (
                     <PrimarySubNavItem
@@ -84,7 +84,7 @@ function PrimaryNav({ data = [], toggleStatus }) {
           subNavItem={
             <ul className={css.secondary}>
               {data
-                .filter(page => page.node.frontmatter.group === 'Styles')
+                .filter((page) => page.node.frontmatter.group === 'Styles')
                 .map(({ node: post }) => {
                   return (
                     <PrimarySubNavItem
@@ -103,7 +103,7 @@ function PrimaryNav({ data = [], toggleStatus }) {
           subNavItem={
             <ul className={css.secondary}>
               {data
-                .filter(page => page.node.frontmatter.group === 'Components')
+                .filter((page) => page.node.frontmatter.group === 'Components')
                 .map(({ node: post }) => {
                   return (
                     <PrimarySubNavItem

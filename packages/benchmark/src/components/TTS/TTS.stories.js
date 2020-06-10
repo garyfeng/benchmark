@@ -10,7 +10,7 @@ export default {
 };
 
 export function Basic() {
-  const txt = text('Text', `Hello World`);
+  const txt = text('Text', 'Hello World');
   const active = boolean('Active', true);
 
   let voices = {

@@ -15,7 +15,7 @@ function PrimaryNavItem({ label, subNavItem, href }) {
 
 PrimaryNavItem.propTypes = {
   url: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
 };
 
 export default PrimaryNavItem;

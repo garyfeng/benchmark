@@ -2,7 +2,7 @@
 export default {
   plain: {
     color: '#000000',
-    backgroundColor: '#f6f8fa'
+    backgroundColor: '#f6f8fa',
   },
   styles: [
     {
@@ -14,11 +14,11 @@ export default {
         'punctuation',
         'operator',
         'entity',
-        'url'
+        'url',
       ],
       style: {
-        color: '#777777'
-      }
+        color: '#777777',
+      },
     },
     { types: ['comment'], style: { fontStyle: 'italic' } },
     {
@@ -34,19 +34,19 @@ export default {
         'class-name',
         'regex',
         'important',
-        'variable'
+        'variable',
       ],
       style: {
-        color: '#660099'
-      }
+        color: '#660099',
+      },
     },
     {
       types: ['atrule', 'attr-value', 'keyword'],
-      style: { color: '#3333ee' }
+      style: { color: '#3333ee' },
     },
     {
       types: ['selector', 'attr-name', 'string', 'char', 'builtin', 'inserted'],
-      style: { color: '#111199' }
-    }
-  ]
+      style: { color: '#111199' },
+    },
+  ],
 };

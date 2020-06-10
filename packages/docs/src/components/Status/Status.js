@@ -6,7 +6,7 @@ function Status({ status }) {
 }
 
 Status.propTypes = {
-  status: PropTypes.oneOf(['In Progress', 'Complete', 'Pending'])
+  status: PropTypes.oneOf(['In Progress', 'Complete', 'Pending']),
 };
 
 export default Status;

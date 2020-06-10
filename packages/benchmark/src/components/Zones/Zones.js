@@ -14,7 +14,7 @@ function useZonesContext() {
   const context = useContext(ZonesContext);
   if (!context) {
     throw new Error(
-      `Choice compound components cannot be rendered outside the Zones component`
+      'Choice compound components cannot be rendered outside the Zones component'
     );
   }
   return context;

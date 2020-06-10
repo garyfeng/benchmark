@@ -54,7 +54,7 @@ describe('Tabs A11y', () => {
     expect(tabs[0]).toHaveAttribute('aria-selected', 'false');
   });
 
-  it(`should set tabindex to "0" selected tabs and "-1" unselected tabs`, async () => {
+  it('should set tabindex to "0" selected tabs and "-1" unselected tabs', async () => {
     const { getAllByRole, queryByText } = render(<Example />);
     const tabs = getAllByRole('tab');
     fireEvent.click(tabs[1]);

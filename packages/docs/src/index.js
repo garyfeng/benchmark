@@ -8,10 +8,9 @@ import {
   Tag,
   Box,
   Stack,
-  Text,
   Flex,
   Global,
-  Icon
+  Icon,
 } from '@coreym/benchmark';
 import docsTheme from './theme';
 import Layout from './components/Layout';
@@ -19,13 +18,13 @@ import LiveCodeBlock from './components/LiveCodeBlock';
 import ColorSwatch from './components/ColorSwatch';
 
 const components = {
-  h1: props => <Heading level={1} {...props} />,
-  h2: props => <Heading level={2} mt="4" {...props} />,
-  h3: props => <Heading level={3} mt="3" {...props} />,
-  h4: props => <Heading level={4} mt="3" {...props} />,
-  h5: props => <Heading level={5} {...props} />,
-  p: props => <Paragraph lineHeight="1.5" mt="2" {...props} />,
-  pre: props => <div {...props} />,
+  h1: (props) => <Heading level={1} {...props} />,
+  h2: (props) => <Heading level={2} mt="4" {...props} />,
+  h3: (props) => <Heading level={3} mt="3" {...props} />,
+  h4: (props) => <Heading level={4} mt="3" {...props} />,
+  h5: (props) => <Heading level={5} {...props} />,
+  p: (props) => <Paragraph lineHeight="1.5" mt="2" {...props} />,
+  pre: (props) => <div {...props} />,
   code: LiveCodeBlock,
   Tag,
   ColorSwatch,
@@ -33,7 +32,7 @@ const components = {
   Box,
   Stack,
   Flex,
-  Icon
+  Icon,
 };
 
 export default function Root(props) {

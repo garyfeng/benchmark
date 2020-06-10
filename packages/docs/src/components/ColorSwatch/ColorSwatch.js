@@ -35,7 +35,7 @@ ColorSwatch.propTypes = {
   color: PropTypes.string,
   // todo: remove need for this prop
   // calculate automatically
-  border: PropTypes.bool
+  border: PropTypes.bool,
 };
 
 ColorSwatch.defaultProps = {};

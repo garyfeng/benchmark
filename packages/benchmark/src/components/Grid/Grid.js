@@ -14,7 +14,7 @@ function useResponseContext() {
   const context = useContext(GridContext);
   if (!context) {
     throw new Error(
-      `Grid compound components cannot be rendered outside the Grid component`
+      'Grid compound components cannot be rendered outside the Grid component'
     );
   }
   return context;

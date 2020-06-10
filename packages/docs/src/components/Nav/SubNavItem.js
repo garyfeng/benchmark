@@ -14,7 +14,7 @@ function PrimarySubNavItem({ url, title }) {
 
 PrimarySubNavItem.propTypes = {
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default PrimarySubNavItem;

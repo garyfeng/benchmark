@@ -8,9 +8,18 @@
     "build": "lerna run build",
     "clean": "lerna clean",
     "start": "lerna run build && lerna run start --parallel",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "lint": "lerna run lint",
+    "lint:fix": "lerna run lint:fix",
+    "test": "lerna run test"
   },
   "devDependencies": {
+    "husky": "^4.2.5",
     "lerna": "^3.20.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint:fix && yarn run test"
+    }
   }
 }
