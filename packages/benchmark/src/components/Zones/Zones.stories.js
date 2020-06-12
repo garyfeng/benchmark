@@ -19,8 +19,8 @@ export function Circles() {
       <ZonesBackground width="301" height="301" src={imageFile}>
         <Zone type="circle" value="a" cx="100" cy="100" r="22" />
         <Zone type="circle" value="b" cx="200" cy="100" r="22" />
-        <Zones type="circle" value="c" cx="100" cy="200" r="22" />
-        <Zones type="circle" value="d" cx="200" cy="200" r="22" />
+        <Zone type="circle" value="c" cx="100" cy="200" r="22" />
+        <Zone type="circle" value="d" cx="200" cy="200" r="22" />
       </ZonesBackground>
     </Zones>
   );

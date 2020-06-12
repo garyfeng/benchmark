@@ -39,12 +39,6 @@ function Choice({
     }
   }
 
-  function handleChange(event) {
-    if (!isDisabled) {
-      onChange(value);
-    }
-  }
-
   const InputControl = variant === 'radio' ? RadioButton : Checkbox;
 
   return (
@@ -68,11 +62,10 @@ function Choice({
       {/* ELIMINATED STYLING CONTAINER */}
       <Flex flexGrow="1" opacity={isEliminated ? '50%' : '100%'}>
         {/* CHECKBOX / RADIO BUTTON */}
-        <Flex bg="blue.100" px="3" py="3" flexShrink="0" alignItems="center">
+        <Flex bg="secondary" px="3" py="3" flexShrink="0" alignItems="center">
           <InputControl
             checked={isSelected}
             disabled={isDisabled}
-            onChange={handleChange}
             size="24px"
             label={label}
             aria-labelledby={optionId}

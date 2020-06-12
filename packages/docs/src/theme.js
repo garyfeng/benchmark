@@ -8,7 +8,7 @@ const yellow = {
   600: '#b7791f',
   700: '#975a16',
   800: '#744210',
-  900: '#5F370E'
+  900: '#5F370E',
 };
 
 const green = {
@@ -21,7 +21,7 @@ const green = {
   600: '#2f855a',
   700: '#276749',
   800: '#22543d',
-  900: '#1C4532'
+  900: '#1C4532',
 };
 
 const red = {
@@ -34,7 +34,7 @@ const red = {
   600: '#c53030',
   700: '#9b2c2c',
   800: '#822727',
-  900: '#63171b'
+  900: '#63171b',
 };
 
 const whiteAlpha = {
@@ -47,7 +47,7 @@ const whiteAlpha = {
   600: 'rgba(255, 255, 255, 0.48)',
   700: 'rgba(255, 255, 255, 0.64)',
   800: 'rgba(255, 255, 255, 0.80)',
-  900: 'rgba(255, 255, 255, 0.92)'
+  900: 'rgba(255, 255, 255, 0.92)',
 };
 
 const blackAlpha = {
@@ -60,7 +60,7 @@ const blackAlpha = {
   600: 'rgba(0, 0, 0, 0.48)',
   700: 'rgba(0, 0, 0, 0.64)',
   800: 'rgba(0, 0, 0, 0.80)',
-  900: 'rgba(0, 0, 0, 0.92)'
+  900: 'rgba(0, 0, 0, 0.92)',
 };
 
 const orange = {
@@ -73,7 +73,7 @@ const orange = {
   600: '#C05621',
   700: '#9C4221',
   800: '#7B341E',
-  900: '#652B19'
+  900: '#652B19',
 };
 
 const teal = {
@@ -86,7 +86,7 @@ const teal = {
   600: '#2C7A7B',
   700: '#285E61',
   800: '#234E52',
-  900: '#1D4044'
+  900: '#1D4044',
 };
 
 const blue = {
@@ -99,7 +99,7 @@ const blue = {
   600: '#2a69ac',
   700: '#1e4e8c',
   800: '#153e75',
-  900: '#1a365d'
+  900: '#1a365d',
 };
 
 const cyan = {
@@ -112,7 +112,7 @@ const cyan = {
   600: '#00A3C4',
   700: '#0987A0',
   800: '#086F83',
-  900: '#065666'
+  900: '#065666',
 };
 
 const purple = {
@@ -125,7 +125,7 @@ const purple = {
   600: '#6b46c1',
   700: '#553c9a',
   800: '#44337a',
-  900: '#322659'
+  900: '#322659',
 };
 
 const pink = {
@@ -138,7 +138,7 @@ const pink = {
   600: '#b83280',
   700: '#97266d',
   800: '#702459',
-  900: '#521B41'
+  900: '#521B41',
 };
 
 // primary colors
@@ -152,13 +152,14 @@ const p = {
   600: '#005eaf',
   700: '#004693',
   800: '#003077',
-  900: '#001b5d'
+  900: '#001b5d',
 };
 
 // neutral
 // http://www.colorbox.io/#steps=10#hue_start=0#hue_end=0#hue_curve=easeInQuad#sat_start=0#sat_end=0#sat_curve=easeOutQuad#sat_rate=130#lum_start=94#lum_end=5#lum_curve=easeOutQuad#minor_steps_map=0
 const n = {
   '0': '#fff',
+  '25': '#f5f5f5',
   '50': '#eeeeee',
   '100': '#ebebeb',
   '200': '#e4e4e4',
@@ -169,7 +170,7 @@ const n = {
   '700': '#696969',
   '800': '#3c3c3c',
   '900': '#0d0d0d',
-  '1000': '#000'
+  '1000': '#000',
 };
 
 export const colors = {
@@ -193,6 +194,7 @@ export const colors = {
   black: n['1000'],
   white: n['0'],
   bg: n['0'],
+  text: n['800'],
 
   // FEEDBACK
   primary: p['500'],
@@ -202,11 +204,11 @@ export const colors = {
   success: green['300'],
   successAlt: n['800'],
   danger: red['300'],
-  dangerAlt: n['80']
+  dangerAlt: n['80'],
 };
 
 export const base = {
-  fontSizes: [12, 14, 16, 18, 32, 48, 64, 96, 128],
+  fontSizes: [12, 14, 16, 18, 24, 30, 36, 42, 50],
   space: [0, 4, 8, 16, 32, 64, 128, 256],
   radii: {
     none: '0',
@@ -214,12 +216,17 @@ export const base = {
     sm: '2px',
     md: '4px',
     lg: '6px',
-    full: '9999px'
+    full: '9999px',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
   },
   shadows: {
     sm: '0 1px 2px rgba(0,0,0,.20)',
     md: '0 2px 3px rgba(0,0,0,.25)',
-    none: 'none'
+    lg: '0 3px 4px rgba(0,0,0,.25)',
+    none: 'none',
   },
 
   fontWeights: {
@@ -231,14 +238,14 @@ export const base = {
     semibold: 600,
     bold: 700,
     extrabold: 800,
-    black: 900
+    black: 900,
   },
 
   borders: {
     none: 0,
     '1': '1px solid',
     '2': '2px solid',
-    '4': '4px solid'
+    '4': '4px solid',
   },
 
   buttons: {
@@ -251,12 +258,12 @@ export const base = {
       borderWidth: 0,
       ':hover': {
         bg: 'p.400',
-        boxShadow: 'md'
+        boxShadow: 'md',
       },
       ':active': {
         bg: 'p.600',
-        boxShadow: 'none'
-      }
+        boxShadow: 'none',
+      },
     },
     secondary: {
       fontSize: 2,
@@ -269,18 +276,18 @@ export const base = {
       ':hover': {
         boxShadow: 'md',
         borderColor: 'p.400',
-        color: 'p.400'
+        color: 'p.400',
       },
       ':active': {
         bg: 'n.50',
         border: 'n.700',
-        boxShadow: 'none'
-      }
-    }
-  }
+        boxShadow: 'none',
+      },
+    },
+  },
 };
 
 export default {
   ...base,
-  colors
+  colors,
 };

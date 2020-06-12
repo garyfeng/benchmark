@@ -1,8 +1,0 @@
-.tts {
-  display: block;
-}
-
-.enabled {
-  border: 2px solid var(--color-text);
-  cursor: pointer;
-}

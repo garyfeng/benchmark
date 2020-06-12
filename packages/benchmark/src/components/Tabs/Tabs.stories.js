@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Text } from '../Base';
 import Stack from '../Stack';
+import Button from '../Button';
 import { Tabs, Tab, TabList, TabPanel, TabPanels } from './Tabs.js';
+import Paragraph from '../Paragraph';
 
 export default {
   title: 'Elements/Tabs',
@@ -24,7 +26,14 @@ export function Basic() {
         <Tab>Review</Tab>
       </TabList>
       <TabPanels>
-        <TabPanel>One Content</TabPanel>
+        <TabPanel>
+          <Paragraph>
+            Arrow keys to navigate tabs. Tab key to focus below.
+          </Paragraph>
+          <Stack>
+            <Button variant="secondary">Example Button</Button>
+          </Stack>
+        </TabPanel>
         <TabPanel>Two Content</TabPanel>
         <TabPanel>Three Content</TabPanel>
         <TabPanel>Review Content</TabPanel>
@@ -108,5 +117,24 @@ export function TabAlignment() {
         );
       })}
     </Stack>
+  );
+}
+
+export function TabActioned() {
+  return (
+    <Tabs label="questions">
+      <TabList>
+        <Tab isActioned>1</Tab>
+        <Tab>2</Tab>
+        <Tab isActioned>3</Tab>
+        <Tab>Review</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel>Answered Item</TabPanel>
+        <TabPanel>Unanswered Item</TabPanel>
+        <TabPanel>Answered Item</TabPanel>
+        <TabPanel>Review Content</TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 }

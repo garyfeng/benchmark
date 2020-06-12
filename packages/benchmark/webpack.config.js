@@ -5,7 +5,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    main: './index.js'
   },
   plugins: [
     // Don't include peer dependencies (such as React) with
@@ -24,7 +24,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist/components'),
+    path: path.resolve(__dirname, 'dist/'),
     library: 'benchmark',
     libraryTarget: 'umd',
     globalObject: 'this'
@@ -35,27 +35,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        loaders: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: devMode
-            }
-          },
-          {
-            loader: require.resolve('css-loader'),
-            options: {
-              localsConvention: 'camelCaseOnly',
-              modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]'
-              }
-            }
-          }
-        ]
-      },
       {
         test: /\.(woff|woff2)$/,
         exclude: /node_modules/,

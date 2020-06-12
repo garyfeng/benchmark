@@ -21,7 +21,7 @@ export default ({ children }) => {
           }
         }
       `}
-      render={data => <PrimaryNav data={data.allMdx.edges}></PrimaryNav>}
+      render={(data) => <PrimaryNav data={data.allMdx.edges}></PrimaryNav>}
     />
   );
 };

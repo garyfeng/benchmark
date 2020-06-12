@@ -39,5 +39,4 @@ export function All() {
   );
 }
 
-// export default { Primary, Secondary, Cases };
 export default All;

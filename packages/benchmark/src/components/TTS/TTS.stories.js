@@ -1,13 +1,17 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { select, boolean, text } from '@storybook/addon-knobs';
 
 import { Text } from '../Base';
 import TTS from './TTS';
 
-storiesOf('Lab', module).add('TTS', () => {
-  const txt = text('Text', `Hello AJ`);
-  const enabled = boolean('Enabled', true);
+export default {
+  title: 'Lab/TTS',
+  component: TTS
+};
+
+export function Basic() {
+  const txt = text('Text', 'Hello World');
+  const active = boolean('Active', true);
 
   let voices = {
     default: null
@@ -17,8 +21,8 @@ storiesOf('Lab', module).add('TTS', () => {
   });
   const voice = select('Voice', voices);
   return (
-    <TTS enabled={enabled} voice={voice}>
+    <TTS active={active} voice={voice}>
       <Text>{txt}</Text>
     </TTS>
   );
-});
+}

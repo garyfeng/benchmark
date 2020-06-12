@@ -5,6 +5,7 @@
 //
 // Usage: node ./scripts/create-component.js MyNewComponent
 
+const { join } = require('path');
 const {
   existsSync,
   copySync,
@@ -13,7 +14,6 @@ const {
   readdirSync,
   writeFileSync
 } = require('fs-extra');
-const { join } = require('path');
 
 const templateDir = './scripts/template';
 const templateName = 'Component';
@@ -38,18 +38,18 @@ async function createComponent(componentName) {
   copySync(templateDir, destination);
 
   // get newly created files
-  let match = RegExp(templateName, 'g');
-  let files = readdirSync(destination);
+  const match = RegExp(templateName, 'g');
+  const files = readdirSync(destination);
 
   // update file contents
   files.forEach(file => {
-    let filePath = join(destination, file);
-    let data = readFileSync(filePath, 'utf8');
-    data = data.replace(RegExp(templateName, 'g'), componentName);
-    data = data.replace(
-      RegExp(templateName.toLowerCase(), 'g'),
-      componentName.toLowerCase()
-    );
+    const filePath = join(destination, file);
+    const data = readFileSync(filePath, 'utf8')
+      .replace(RegExp(templateName, 'g'), componentName)
+      .replace(
+        RegExp(templateName.toLowerCase(), 'g'),
+        componentName.toLowerCase()
+      );
     writeFileSync(filePath, data, 'utf8');
   });
 
@@ -57,8 +57,8 @@ async function createComponent(componentName) {
   files
     .filter(file => file.match(match))
     .forEach(file => {
-      let filePath = join(destination, file);
-      let newFilePath = join(destination, file.replace(match, componentName));
+      const filePath = join(destination, file);
+      const newFilePath = join(destination, file.replace(match, componentName));
       renameSync(filePath, newFilePath);
     });
   console.log(componentName, 'component created.');

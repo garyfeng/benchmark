@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoIosApps } from 'react-icons/io';
 import Stack from '../Stack';
 import Button from '../Button';
 import ScrollButton from '../ScrollButton';
@@ -58,28 +57,28 @@ export function Basic() {
       </Stack>
 
       <Flex bg="n.100" p={1}>
-        <ToolbarButton icon={IoIosApps} />
-        <ToolbarButton icon={IoIosApps} disabled={true} />
+        <ToolbarButton />
+        <ToolbarButton disabled={true} />
       </Flex>
       <Flex bg="n.100">
         <ToolbarGroup>
-          <ToolbarButton icon={IoIosApps} />
-          <ToolbarButton icon={IoIosApps} />
-          <ToolbarButton icon={IoIosApps} />
+          <ToolbarButton />
+          <ToolbarButton />
+          <ToolbarButton />
         </ToolbarGroup>
         <ToolbarGroup>
-          <ToolbarButton icon={IoIosApps} />
-          <ToolbarButton icon={IoIosApps} />
+          <ToolbarButton />
+          <ToolbarButton />
         </ToolbarGroup>
         <ToolbarGroup>
-          <ToolbarButton icon={IoIosApps} />
+          <ToolbarButton />
         </ToolbarGroup>
       </Flex>
       <Stack direction="row" bg="n.100" p={1}>
-        <ToolbarToggleButton icon={IoIosApps} isActive={false} />
-        <ToolbarToggleButton icon={IoIosApps} isActive={true} />
-        <ToolbarToggleButton icon={IoIosApps} isActive={false} disabled />
-        <ToolbarToggleButton icon={IoIosApps} isActive={true} disabled />
+        <ToolbarToggleButton isActive={false} />
+        <ToolbarToggleButton isActive={true} />
+        <ToolbarToggleButton isActive={false} disabled />
+        <ToolbarToggleButton isActive={true} disabled />
       </Stack>
       <Stack direction="row" bg="n.100" p={1}>
         <ToolbarScratchButton isScratchActive={false} />

@@ -60,7 +60,7 @@ function SingleSelect({
       <Flex id={id}>
         <Stack spacing={4}>
           <Stack>{children}</Stack>
-          <SingleSelectClear>Clean Answer</SingleSelectClear>
+          <SingleSelectClear>Clear Answer</SingleSelectClear>
         </Stack>
       </Flex>
     </SingleSelectContext.Provider>
@@ -97,7 +97,7 @@ function useSingleSelectContext() {
   const context = useContext(SingleSelectContext);
   if (!context) {
     throw new Error(
-      `Option compound components cannot be rendered outside the SingleSelect component`
+      'Option compound components cannot be rendered outside the SingleSelect component'
     );
   }
   return context;

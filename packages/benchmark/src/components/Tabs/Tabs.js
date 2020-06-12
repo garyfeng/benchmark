@@ -16,18 +16,29 @@ import styles from './Tabs.style.js';
 // parent <Tabs> it's <Tab> and <TabPanel> children.
 const TabsContext = createContext();
 
+////////////////////////////////////////////////////////////////////////////////
+
 export function Tabs({
-  label,
   activeTab = 0,
+  align = 'left',
   children,
+  label,
   onChange,
-  align = 'center'
+  ...props
 }) {
-  // Local state and handler fallbacks
+  // Local state and event handler fallbacks
   const [state, dispatch] = useReducer(reducer, initialState);
   const handleChange = tabIndex => dispatch({ type: 'SELECT_TAB', tabIndex });
   activeTab = activeTab || state.activeTab;
   onChange = onChange || handleChange;
+
+  // Create a ref that will be applied to the active panel.
+  // This will allous us to set focus on it when the down
+  // arrow key is pressed.
+  const activePanelRef = useRef();
+  function onFocusPanel() {
+    activePanelRef.current.focus();
+  }
 
   // Create a unique ID for this component instance. This
   // will be used for accessibility where we link to Tabs
@@ -42,16 +53,29 @@ export function Tabs({
         align,
         label,
         onChange,
+        onFocusPanel,
+        activePanelRef,
         tabsId
       }}
     >
-      <Flex flexDirection="column">{children}</Flex>
+      <Flex flexDirection="column" {...props}>
+        {children}
+      </Flex>
     </TabsContext.Provider>
   );
 }
 
-export function TabList({ children }) {
-  const { align, tabsId, activeTab, label, onChange } = useContext(TabsContext);
+////////////////////////////////////////////////////////////////////////////////
+
+export function TabList({ children, ...props }) {
+  const {
+    align,
+    tabsId,
+    activeTab,
+    label,
+    onChange,
+    onFocusPanel
+  } = useContext(TabsContext);
 
   const alignments = {
     left: 'flex-start',
@@ -76,8 +100,6 @@ export function TabList({ children }) {
   }
 
   function onKeyDown(event) {
-    event.preventDefault();
-
     if (event.key === 'ArrowRight') {
       if (activeTab + 1 < numTabs) {
         const nextIndex = (enabledSelectedIndex + 1) % numTabs;
@@ -92,6 +114,10 @@ export function TabList({ children }) {
       }
     }
 
+    if (event.key === 'ArrowDown') {
+      onFocusPanel();
+    }
+
     if (event.key === 'Home') {
       changeTabFocus(0);
     }
@@ -102,7 +128,12 @@ export function TabList({ children }) {
   }
 
   return (
-    <Flex justifyContent={alignment} borderBottom="1">
+    <Flex
+      justifyContent={alignment}
+      borderBottom="1"
+      borderColor="n.400"
+      {...props}
+    >
       <Flex role="tablist" aria-label={label}>
         {Children.map(children, (tab, index) => {
           const isActive = index === activeTab;
@@ -122,6 +153,8 @@ export function TabList({ children }) {
   );
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 export const Tab = forwardRef((props, ref) => {
   const {
     children,
@@ -130,6 +163,7 @@ export const Tab = forwardRef((props, ref) => {
     isActive,
     isDisabled,
     onKeyDown,
+    isActioned = false,
     ...rest
   } = props;
 
@@ -142,13 +176,19 @@ export const Tab = forwardRef((props, ref) => {
       id={id}
       ref={ref}
       disabled={isDisabled}
+      // a11y
       aria-selected={isActive ? true : false}
       aria-controls={`${tabsId}-panel-${index}`}
       aria-disabled={isDisabled}
       tabIndex={isActive ? 0 : -1}
+      // events
       onClick={() => onChange(index)}
       onKeyDown={onKeyDown}
-      sx={styles.tab}
+      // other
+      sx={{
+        ...styles.tab,
+        bg: isActioned === true ? 'n.300' : 'n.25'
+      }}
       {...rest}
     >
       <Text fontSize="3">{children}</Text>
@@ -156,34 +196,61 @@ export const Tab = forwardRef((props, ref) => {
   );
 });
 
-export const TabPanels = forwardRef(({ children }, ref) => {
+////////////////////////////////////////////////////////////////////////////////
+
+export function TabPanels({ children, ...props }) {
   const { activeTab, tabsId } = useContext(TabsContext);
 
-  const panelsWithIds = React.Children.toArray(children).map((child, index) => {
-    return cloneElement(child, {
-      id: `${tabsId}-panel-${index}`,
-      'aria-labelledby': `${tabsId}-tab-${index}`
-    });
+  let activePanel;
+  React.Children.toArray(children).forEach((child, index) => {
+    if (index === activeTab) {
+      activePanel = cloneElement(child, {
+        isActive: activeTab === index,
+        id: `${tabsId}-panel-${index}`,
+        labelBy: `${tabsId}-tab-${index}`
+      });
+    }
   });
 
   return (
-    <Box width="100%">
-      {React.Children.toArray(panelsWithIds).filter((tab, index) => {
-        return index === activeTab;
-      })}
+    <Box width="100%" {...props}>
+      {activePanel ? activePanel : <Box>No tab content found</Box>}
     </Box>
   );
-});
+}
 
-export function TabPanel({ children, p = 3, ...props }) {
+////////////////////////////////////////////////////////////////////////////////
+
+export function TabPanel({
+  id,
+  labelBy,
+  children,
+  p = 3,
+  isActive = false,
+  ...props
+}) {
+  const { activePanelRef } = useContext(TabsContext);
+
   return (
     // We pass on all the props so that styling props can be
     // applied to the TabPanel.
     // <TabPanel p="4" bg="blue.100">...
-    <Box role="tabpanel" p={p} {...props}>
+    <Box
+      id={id}
+      role="tabpanel"
+      aria-labelledby={labelBy}
+      // todo: disabling focus ring on panel until guidelines
+      // are finalised.
+      // tabIndex={isActive ? 0 : null}
+      ref={activePanelRef}
+      p={p}
+      {...props}
+    >
       {children}
     </Box>
   );
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 export default { Tabs, Tab, TabList, TabPanels, TabPanel };

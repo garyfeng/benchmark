@@ -7,10 +7,10 @@ import Icon from '../Icon';
 function RadioButton({
   checked = false,
   disabled,
-  onBlur,
-  onClick,
-  onChange,
-  onFocus,
+  onBlur = () => {},
+  onClick = () => {},
+  onChange = () => {},
+  onFocus = () => {},
   label,
   value,
   size,
@@ -33,6 +33,7 @@ function RadioButton({
       id={inputId}
       label={label}
       aria-checked={checked}
+      color="text"
       variant="bare"
       onClick={() => onChange(value)}
       {...inputProps}
@@ -56,7 +57,7 @@ RadioButton.propTypes = {
   onFocus: PropTypes.func,
   onBlur: PropTypes.func,
   onClick: PropTypes.func,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func
 };
 
 export default RadioButton;

@@ -1,9 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { useToggle } from '../../util/hooks';
 import QuestionsButton from './QuestionsButton.js';
 
-storiesOf('SBT', module).add('QuestionsButton', () => {
+export default {
+  title: 'SBT/QuestionsButton',
+  component: QuestionsButton
+};
+
+export function Basic() {
   const [open, setOpen] = useToggle(false);
   return <QuestionsButton isOpen={open} onClick={setOpen} />;
-});
+}

@@ -17,7 +17,7 @@ function useMultipleSelectContext() {
   const context = useContext(MultipleSelectContext);
   if (!context) {
     throw new Error(
-      `Option compound components cannot be rendered outside the MultipleSelect component`
+      'Option compound components cannot be rendered outside the MultipleSelect component'
     );
   }
   return context;
@@ -47,7 +47,7 @@ function MultipleSelect({
       <Flex id={id}>
         <Stack spacing={4}>
           <Stack>{children}</Stack>
-          <ClearButton>Clean Answer</ClearButton>
+          <ClearButton>Clear Answer</ClearButton>
         </Stack>
       </Flex>
     </MultipleSelectContext.Provider>

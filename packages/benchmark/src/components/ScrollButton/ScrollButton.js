@@ -1,11 +1,11 @@
 import React from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import Button from '../Button';
+import Icon from '../Icon';
 import { Text } from '../Base';
 
 function ScrollButton({ direction = 'down', ...props }) {
   const Label = direction === 'down' ? 'More' : 'Top';
-  const Icon = direction === 'down' ? FaChevronDown : FaChevronUp;
+  const icon = direction === 'down' ? 'chevron-down' : 'chevron-up';
 
   return (
     <Button
@@ -23,7 +23,7 @@ function ScrollButton({ direction = 'down', ...props }) {
       <Text fontSize="2" fontWeight="normal">
         {Label}
       </Text>
-      <Icon size="24" />
+      <Icon name={icon} size="24px" />
     </Button>
   );
 }

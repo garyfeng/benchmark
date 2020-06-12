@@ -1,19 +1,19 @@
 import React from 'react';
-import {
-  IoIosApps,
-  IoMdArrowRoundBack,
-  IoMdArrowRoundForward
-} from 'react-icons/io';
 import Button from '../Button';
 import { Text } from '../Base';
+import Icon from '../Icon';
 
-export const ToolbarButton = ({ children, icon, size = 'md', ...rest }) => {
-  const Icon = icon || IoIosApps;
+export const ToolbarButton = ({
+  children,
+  icon = 'placeholder',
+  size = 'md',
+  ...rest
+}) => {
   const iconSize = size === 'md' ? 42 : 32;
 
   return (
     <Button variant="toolbar" roving={true} {...rest}>
-      {children || <Icon size={iconSize} />}
+      {children || <Icon name={icon} size={iconSize} />}
     </Button>
   );
 };
@@ -46,7 +46,7 @@ export const ToolbarToggleButton = ({ isActive = false, sx, ...rest }) => {
 export function PrevButton({ ...rest }) {
   return (
     <Button variant="prev" flexShrink={0} roving={true} {...rest}>
-      <IoMdArrowRoundBack size={30} />
+      <Icon name="arrow-left" size="30px" />
     </Button>
   );
 }
@@ -67,7 +67,7 @@ export function NextButton({ ...rest }) {
       >
         Next
       </Text>
-      <IoMdArrowRoundForward size={32} />
+      <Icon name="arrow-right" size="32px" />
     </Button>
   );
 }
